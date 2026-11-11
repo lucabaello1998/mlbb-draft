@@ -21,7 +21,7 @@
       <button role="tab" id="tab-drafter" aria-selected="false" aria-controls="vista-drafter" data-vista="drafter">Drafter</button>
       <button role="tab" id="tab-heroes" aria-selected="false" aria-controls="vista-heroes" data-vista="heroes">Héroes</button>
     </nav>
-    <input class="buscador" id="buscador" type="search" placeholder="Buscar héroe…" aria-label="Buscar héroe">
+    <input class="buscador" id="buscador" type="search" placeholder="Buscar en la tier list…" aria-label="Buscar héroe en la tier list">
   </header>
 
   <p class="aviso" id="aviso-datos" hidden>
@@ -44,75 +44,88 @@
   <section id="vista-drafter" role="tabpanel" aria-labelledby="tab-drafter" hidden>
     <h1>Drafter</h1>
     <p class="sub">
-      Elegí el equipo activo y tocá héroes del pool. El panel de abajo te dice qué counters te faltan,
-      qué sinergias tenés, qué bans te convienen y qué carril queda vacío. Para banear: tocá
-      <strong>Banear</strong> en un equipo y después el héroe en el pool.
+      Elegí el equipo activo y tocá héroes del pool. Buscá por nombre o filtrá por rol. Para banear:
+      tocá <strong>Banear</strong> y después el héroe.
     </p>
 
-    <div class="drafter">
-      <article class="equipo activo" id="equipo-alido">
-        <h3>Mi equipo <span class="meta" id="conteo-alido">0/5</span></h3>
-        <div class="slots" id="slots-alido"></div>
-        <div class="bans">
-          <span class="bans-rotulo">Bans <span class="meta" id="conteo-bans-alido">0/5</span></span>
-          <div class="bans-lista" id="bans-alido"></div>
-          <button class="boton-ban" type="button" data-banear="alido" aria-pressed="false"
-            title="Tocá y después un héroe del pool para banearlo">Banear</button>
+    <div class="drafter-zona">
+      <div class="drafter-equipos">
+        <article class="equipo activo" id="equipo-alido">
+          <h3>Mi equipo <span class="meta" id="conteo-alido">0/5</span></h3>
+          <div class="slots" id="slots-alido"></div>
+          <div class="bans">
+            <span class="bans-rotulo">Bans <span class="meta" id="conteo-bans-alido">0/5</span></span>
+            <div class="bans-lista" id="bans-alido"></div>
+            <button class="boton-ban" type="button" data-banear="alido" aria-pressed="false"
+              title="Tocá y después un héroe del pool para banearlo">Banear</button>
+          </div>
+        </article>
+
+        <article class="equipo" id="equipo-enemigo">
+          <h3>Enemigo <span class="meta" id="conteo-enemigo">0/5</span></h3>
+          <div class="slots" id="slots-enemigo"></div>
+          <div class="bans">
+            <span class="bans-rotulo">Bans <span class="meta" id="conteo-bans-enemigo">0/5</span></span>
+            <div class="bans-lista" id="bans-enemigo"></div>
+            <button class="boton-ban" type="button" data-banear="enemigo" aria-pressed="false"
+              title="Tocá y después un héroe del pool para banearlo">Banear</button>
+          </div>
+        </article>
+
+        <p class="cobertura" id="cobertura" aria-live="polite"></p>
+      </div>
+
+      <div class="drafter-pool">
+        <div class="pool-barra">
+          <input class="buscador" id="buscador-pool" type="search" placeholder="Buscar héroe en el pool…"
+            aria-label="Buscar héroe en el pool por nombre, rol o carril">
+          <span class="meta" id="conteo-pool" aria-live="polite"></span>
+          <button class="boton chico" id="copiar" type="button">Copiar</button>
+          <button class="boton secundario chico" id="limpiar" type="button">Limpiar</button>
         </div>
-      </article>
 
-      <article class="equipo" id="equipo-enemigo">
-        <h3>Enemigo <span class="meta" id="conteo-enemigo">0/5</span></h3>
-        <div class="slots" id="slots-enemigo"></div>
-        <div class="bans">
-          <span class="bans-rotulo">Bans <span class="meta" id="conteo-bans-enemigo">0/5</span></span>
-          <div class="bans-lista" id="bans-enemigo"></div>
-          <button class="boton-ban" type="button" data-banear="enemigo" aria-pressed="false"
-            title="Tocá y después un héroe del pool para banearlo">Banear</button>
+        <div class="chips" id="chips-pool" role="group" aria-label="Filtrar el pool por rol"></div>
+        <p class="aviso" id="modo-ban" hidden></p>
+
+        <div class="pool">
+          <div class="tier-grid" id="pool"></div>
         </div>
-      </article>
-    </div>
 
-    <div class="analisis">
-      <h3>Análisis</h3>
-      <div class="bloque">
-        <div class="rotulo">Bans sugeridos para mi equipo</div>
-        <p class="leyenda">No es winrate: cruza tus counters, la tier list y las sinergias del enemigo. Tocá uno para banearlo.</p>
-        <div id="sugerencias-bans" class="tier-grid"></div>
-      </div>
-      <div class="bloque">
-        <div class="rotulo">Counters sugeridos contra el enemigo</div>
-        <div id="sugerencias-counter" class="tier-grid"></div>
-      </div>
-      <div class="bloque">
-        <div class="rotulo">Sinergias con tus picks</div>
-        <div id="sugerencias-sinergia" class="tier-grid"></div>
-      </div>
-      <div class="bloque">
-        <div class="rotulo">Ventajas de la composición</div>
-        <p class="leyenda"><i class="muestra propio"></i> Mi equipo <i class="muestra rival"></i> Enemigo</p>
-        <div id="ventajas" class="comparativa"></div>
-        <p class="resumen" id="resumen-ventajas"></p>
-      </div>
-      <div class="bloque">
-        <div class="rotulo">Ítems que pide la partida</div>
-        <div id="items" class="items"></div>
-      </div>
-      <div class="bloque">
-        <div class="rotulo">Cobertura</div>
-        <div id="cobertura" class="vacio"></div>
-      </div>
-      <div class="botones">
-        <button class="boton" id="copiar">Copiar composición</button>
-        <button class="boton secundario" id="limpiar">Limpiar</button>
+        <div class="bans-sugeridos">
+          <span class="rotulo">Bans sugeridos</span>
+          <div id="sugerencias-bans" class="fila-sugerencias"></div>
+        </div>
       </div>
     </div>
 
-    <div class="chips" id="chips-pool" role="group" aria-label="Filtrar el pool por rol"></div>
-    <p class="aviso" id="modo-ban" hidden></p>
-    <div class="pool">
-      <div class="tier-grid" id="pool"></div>
-    </div>
+    <details class="analisis" id="analisis">
+      <summary>
+        Análisis de la composición
+        <span class="meta" id="resumen-analisis"></span>
+      </summary>
+      <p class="leyenda">No hay winrates inventados: counters y sinergias salen del dataset; las ventajas,
+        de rol + tags.</p>
+      <div class="analisis-grid">
+        <div class="bloque">
+          <div class="rotulo">Counters sugeridos contra el enemigo</div>
+          <div id="sugerencias-counter" class="tier-grid"></div>
+        </div>
+        <div class="bloque">
+          <div class="rotulo">Sinergias con tus picks</div>
+          <div id="sugerencias-sinergia" class="tier-grid"></div>
+        </div>
+        <div class="bloque">
+          <div class="rotulo">Ventajas de la composición</div>
+          <p class="leyenda"><i class="muestra propio"></i> Mi equipo <i class="muestra rival"></i> Enemigo</p>
+          <div id="ventajas" class="comparativa"></div>
+          <p class="resumen" id="resumen-ventajas"></p>
+        </div>
+        <div class="bloque">
+          <div class="rotulo">Ítems que pide la partida</div>
+          <div id="items" class="items"></div>
+        </div>
+      </div>
+    </details>
   </section>
 
   <!-- ===================== HÉROES ===================== -->

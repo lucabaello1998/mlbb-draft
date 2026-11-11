@@ -12,6 +12,7 @@ const estado = {
   rolPool: "",
   rolHeroes: "",
   busqueda: "",
+  busquedaPool: "",
   busquedaHeroes: "",
   activo: "alido", // qué equipo recibe el próximo pick
   alido: {}, // carril -> id
@@ -180,9 +181,9 @@ function pintarSlots() {
       const id = equipo[carril];
       const heroe = id ? estado.porId.get(id) : null;
       return `
-        <div class="slot ${heroe ? "lleno" : ""}">
+        <div class="slot ${heroe ? "lleno" : ""}" title="${carril}">
+          ${heroe ? `${avatar(heroe, 30)}<span class="nombre-slot">${escapar(heroe.nombre)}</span>` : `<span class="vacio">—</span>`}
           <span class="carril">${carril}</span>
-          ${heroe ? `${avatar(heroe, 30)}<span>${escapar(heroe.nombre)}</span>` : `<span class="vacio">—</span>`}
           ${heroe ? `<button class="quitar" type="button" data-quitar="${lado}" data-carril="${carril}" aria-label="Quitar ${escapar(heroe.nombre)}">×</button>` : ""}
         </div>`;
     }).join("");
@@ -335,8 +336,13 @@ function todosElegidos() {
 function pintarPool() {
   const usados = new Set([...todosElegidos().map((h) => h.id), ...banesTodos()]);
   const visibles = estado.heroes
-    .filter((h) => (!estado.rolPool || h.rol === estado.rolPool) && coincide(h) && !usados.has(h.id))
+    .filter((h) => (!estado.rolPool || h.rol === estado.rolPool) && coincide(h, estado.busquedaPool) && !usados.has(h.id))
     .sort((a, b) => a.nombre.localeCompare(b.nombre));
+
+  const conteo = $("#conteo-pool");
+  if (conteo) {
+    conteo.textContent = `${visibles.length} ${visibles.length === 1 ? "héroe" : "héroes"}`;
+  }
 
   const pool = $("#pool");
   if (!visibles.length) {
@@ -593,6 +599,13 @@ function pintarAnalisis() {
     ? `Te falta cubrir: ${faltan.join(", ")}.`
     : "Carriles completos: 5/5.";
 
+  const resumen = $("#resumen-analisis");
+  if (resumen) {
+    const counters = counterDe(enemigos).length;
+    const sinergias = sinergiasDe(mios).length;
+    resumen.textContent = `${bansSugeridos().length} bans · ${counters} counters · ${sinergias} sinergias`;
+  }
+
   pintarBansSugeridos();
   pintarVentajas();
   pintarItems();
@@ -832,6 +845,10 @@ async function iniciar() {
   $("#buscador").addEventListener("input", (evento) => {
     estado.busqueda = evento.target.value;
     pintarTier();
+  });
+
+  $("#buscador-pool").addEventListener("input", (evento) => {
+    estado.busquedaPool = evento.target.value;
     pintarPool();
   });
 
