@@ -26,25 +26,28 @@ const heroes = datos.heroes ?? [];
 const ids = new Set(heroes.map((h) => h.id));
 const ROLES = new Set(["Marksman", "Mage", "Assassin", "Fighter", "Tank", "Support"]);
 const CARRILES = new Set(["Oro", "Medio", "Exp", "Jungla", "Roam"]);
-const TIERS = new Set(["S", "A", "B", "C"]);
+const TIERS = new Set(["S", "A", "B", "C", "?"]);
 
 console.log("== dataset ==");
-ok("hay héroes", heroes.length >= 20, String(heroes.length));
+ok("hay el roster completo", heroes.length >= 100, String(heroes.length));
+const curados = heroes.filter((h) => h.curado !== false);
+ok("hay héroes curados con tips", curados.length >= 20, String(curados.length));
 ok("los ids son únicos", ids.size === heroes.length, `${ids.size} ids para ${heroes.length} héroes`);
 ok("todos tienen nombre, rol, carril, tier y dificultad", heroes.every((h) =>
   h.nombre && h.rol && h.carril && h.tier && h.dificultad));
 ok("los roles son los del juego", heroes.every((h) => ROLES.has(h.rol)));
 ok("los carriles son los del juego", heroes.every((h) => CARRILES.has(h.carril)));
-ok("los tiers son S/A/B/C", heroes.every((h) => TIERS.has(h.tier)));
+ok("los tiers son S/A/B/C/?", heroes.every((h) => TIERS.has(h.tier)));
 ok("la dificultad va de 1 a 3", heroes.every((h) => [1, 2, 3].includes(h.dificultad)));
-ok("cada héroe tiene al menos 3 tips", heroes.every((h) => (h.tips ?? []).length >= 3));
-ok("ningún tip está vacío", heroes.every((h) => (h.tips ?? []).every((t) => typeof t === "string" && t.trim().length > 10)));
+ok("cada héroe curado tiene al menos 3 tips", curados.every((h) => (h.tips ?? []).length >= 3));
+ok("ningún tip está vacío", curados.every((h) => (h.tips ?? []).every((t) => typeof t === "string" && t.trim().length > 10)));
+ok("los héroes sin curar no tienen tips inventados", heroes.filter((h) => h.curado === false).every((h) => (h.tips ?? []).length === 0));
 ok("los counters existen", heroes.every((h) => (h.counters ?? []).every((id) => ids.has(id))));
 ok("las sinergias existen", heroes.every((h) => (h.sinergias ?? []).every((id) => ids.has(id))));
 ok("cada rol tiene al menos 3 héroes", [...ROLES].every((rol) => heroes.filter((h) => h.rol === rol).length >= 3),
   [...ROLES].map((r) => `${r}: ${heroes.filter((h) => h.rol === r).length}`).join(" · "));
 ok("cada carril tiene al menos 3 héroes", [...CARRILES].every((c) => heroes.filter((h) => h.carril === c).length >= 3));
-ok("hay héroes en los cuatro tiers", [...TIERS].every((t) => heroes.some((h) => h.tier === t)));
+ok("hay héroes en los cuatro tiers", ["S", "A", "B", "C"].every((t) => heroes.some((h) => h.tier === t)));
 ok("el dataset declara fecha", typeof datos.actualizado === "string" && /^\d{4}-\d{2}-\d{2}$/.test(datos.actualizado));
 
 // Un counter que no es recíproco es sospechoso pero no un error; se informa.

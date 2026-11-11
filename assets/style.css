@@ -47,6 +47,7 @@ a { color: var(--oro); }
 .nav button {
   background: transparent; border: 1px solid transparent; color: var(--apagado);
   padding: 8px 14px; border-radius: 999px; font: inherit; font-size: 0.88rem; cursor: pointer;
+  touch-action: manipulation;
 }
 .nav button:hover { background: var(--panel); color: var(--texto); }
 .nav button[aria-selected="true"] {
@@ -67,6 +68,8 @@ h1 { font-size: clamp(1.6rem, 3.4vw, 2.3rem); letter-spacing: -0.03em; margin: 0
 .chip {
   background: var(--panel); border: 1px solid var(--borde); color: var(--apagado);
   padding: 6px 12px; border-radius: 999px; font: inherit; font-size: 0.8rem; cursor: pointer;
+  /* Sin esto, el primer toque en el celular se lo come el zoom por doble tap. */
+  touch-action: manipulation;
 }
 .chip:hover { color: var(--texto); }
 .chip[aria-pressed="true"] { background: var(--oro-suave); border-color: rgba(212, 175, 55, 0.4); color: var(--oro); }
@@ -81,6 +84,7 @@ h1 { font-size: clamp(1.6rem, 3.4vw, 2.3rem); letter-spacing: -0.03em; margin: 0
 .tier-a .tier-letra { background: linear-gradient(160deg, #ffc46b, var(--a)); }
 .tier-b .tier-letra { background: linear-gradient(160deg, #7ba6ff, var(--b)); }
 .tier-c .tier-letra { background: linear-gradient(160deg, #9aa7bd, var(--c)); }
+.tier-sin .tier-letra { background: linear-gradient(160deg, #7d879b, #343a48); font-size: 1.3rem; }
 .tier-cuerpo { background: var(--panel); border: 1px solid var(--borde); border-radius: var(--radio); padding: 12px; }
 .tier-grid { display: flex; flex-wrap: wrap; gap: 8px; }
 
@@ -88,6 +92,7 @@ h1 { font-size: clamp(1.6rem, 3.4vw, 2.3rem); letter-spacing: -0.03em; margin: 0
   display: flex; align-items: center; gap: 10px; background: var(--panel-2);
   border: 1px solid var(--borde); border-radius: 12px; padding: 7px 13px 7px 7px;
   cursor: pointer; color: inherit; font: inherit; text-align: left;
+  touch-action: manipulation;
 }
 .heroe-mini:hover { border-color: rgba(212, 175, 55, 0.45); }
 .heroe-avatar {

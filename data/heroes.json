@@ -26,7 +26,8 @@
       "sinergias": [
         "angela",
         "estes"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "miya",
@@ -51,7 +52,8 @@
       "sinergias": [
         "angela",
         "diggie"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "bruno",
@@ -76,7 +78,8 @@
       "sinergias": [
         "khufra",
         "angela"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "claude",
@@ -101,7 +104,8 @@
       "sinergias": [
         "angela",
         "diggie"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "wanwan",
@@ -126,7 +130,8 @@
       "sinergias": [
         "diggie",
         "angela"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "beatrix",
@@ -151,7 +156,8 @@
       "sinergias": [
         "khufra",
         "atlas"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "eudora",
@@ -176,7 +182,8 @@
       "sinergias": [
         "khufra",
         "franco"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "valir",
@@ -201,7 +208,8 @@
       "sinergias": [
         "khufra",
         "atlas"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "kagura",
@@ -226,7 +234,8 @@
       "sinergias": [
         "atlas",
         "khufra"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "lunox",
@@ -251,7 +260,8 @@
       "sinergias": [
         "estes",
         "angela"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "xavier",
@@ -276,7 +286,8 @@
       "sinergias": [
         "khufra",
         "grock"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "valentina",
@@ -301,7 +312,8 @@
       "sinergias": [
         "atlas",
         "angela"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "gusion",
@@ -327,7 +339,8 @@
       "sinergias": [
         "atlas",
         "angela"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "lancelot",
@@ -352,7 +365,8 @@
       "sinergias": [
         "chou",
         "atlas"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "fanny",
@@ -378,7 +392,8 @@
       "sinergias": [
         "diggie",
         "angela"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "ling",
@@ -403,7 +418,8 @@
       "sinergias": [
         "angela",
         "diggie"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "joy",
@@ -428,7 +444,8 @@
       "sinergias": [
         "atlas",
         "angela"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "chou",
@@ -453,7 +470,8 @@
       "sinergias": [
         "gusion",
         "lancelot"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "paquito",
@@ -478,7 +496,8 @@
       "sinergias": [
         "atlas",
         "angela"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "yu-zhong",
@@ -503,7 +522,8 @@
       "sinergias": [
         "atlas",
         "estes"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "esmeralda",
@@ -528,7 +548,8 @@
       "sinergias": [
         "angela",
         "estes"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "arlott",
@@ -553,7 +574,8 @@
       "sinergias": [
         "gusion",
         "lancelot"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "ruby",
@@ -578,7 +600,8 @@
       "sinergias": [
         "atlas",
         "angela"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "khufra",
@@ -605,7 +628,8 @@
       "sinergias": [
         "valir",
         "beatrix"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "atlas",
@@ -629,7 +653,8 @@
       "sinergias": [
         "valir",
         "gusion"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "franco",
@@ -654,7 +679,8 @@
       "sinergias": [
         "eudora",
         "gusion"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "grock",
@@ -679,7 +705,8 @@
       "sinergias": [
         "xavier",
         "beatrix"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "angela",
@@ -705,7 +732,8 @@
         "miya",
         "claude",
         "wanwan"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "diggie",
@@ -730,7 +758,8 @@
       "sinergias": [
         "fanny",
         "lancelot"
-      ]
+      ],
+      "curado": true
     },
     {
       "id": "estes",
@@ -754,7 +783,1212 @@
       "sinergias": [
         "lunox",
         "yu-zhong"
-      ]
+      ],
+      "curado": true
+    },
+    {
+      "id": "akai",
+      "nombre": "Akai",
+      "rol": "Tank",
+      "carril": "Roam",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Akai"
+    },
+    {
+      "id": "aldous",
+      "nombre": "Aldous",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Aldous"
+    },
+    {
+      "id": "alice",
+      "nombre": "Alice",
+      "rol": "Mage",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Alice"
+    },
+    {
+      "id": "alpha",
+      "nombre": "Alpha",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Alpha"
+    },
+    {
+      "id": "alucard",
+      "nombre": "Alucard",
+      "rol": "Assassin",
+      "carril": "Jungla",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Alucard"
+    },
+    {
+      "id": "argus",
+      "nombre": "Argus",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Argus"
+    },
+    {
+      "id": "aurora",
+      "nombre": "Aurora",
+      "rol": "Mage",
+      "carril": "Medio",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Aurora"
+    },
+    {
+      "id": "badang",
+      "nombre": "Badang",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Badang"
+    },
+    {
+      "id": "balmond",
+      "nombre": "Balmond",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Balmond"
+    },
+    {
+      "id": "bane",
+      "nombre": "Bane",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Bane"
+    },
+    {
+      "id": "barats",
+      "nombre": "Barats",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Barats"
+    },
+    {
+      "id": "baxia",
+      "nombre": "Baxia",
+      "rol": "Tank",
+      "carril": "Roam",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Baxia"
+    },
+    {
+      "id": "belerick",
+      "nombre": "Belerick",
+      "rol": "Tank",
+      "carril": "Roam",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Belerick"
+    },
+    {
+      "id": "benedetta",
+      "nombre": "Benedetta",
+      "rol": "Assassin",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Benedetta"
+    },
+    {
+      "id": "brody",
+      "nombre": "Brody",
+      "rol": "Marksman",
+      "carril": "Oro",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Brody"
+    },
+    {
+      "id": "carmilla",
+      "nombre": "Carmilla",
+      "rol": "Support",
+      "carril": "Roam",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Carmilla"
+    },
+    {
+      "id": "cecilion",
+      "nombre": "Cecilion",
+      "rol": "Mage",
+      "carril": "Medio",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Cecilion"
+    },
+    {
+      "id": "change",
+      "nombre": "Chang'e",
+      "rol": "Mage",
+      "carril": "Medio",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Chang'e"
+    },
+    {
+      "id": "clint",
+      "nombre": "Clint",
+      "rol": "Marksman",
+      "carril": "Oro",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Clint"
+    },
+    {
+      "id": "cyclops",
+      "nombre": "Cyclops",
+      "rol": "Mage",
+      "carril": "Medio",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Cyclops"
+    },
+    {
+      "id": "dyrroth",
+      "nombre": "Dyrroth",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Dyrroth"
+    },
+    {
+      "id": "faramis",
+      "nombre": "Faramis",
+      "rol": "Mage",
+      "carril": "Medio",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Faramis"
+    },
+    {
+      "id": "freya",
+      "nombre": "Freya",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Freya"
+    },
+    {
+      "id": "gatotkaca",
+      "nombre": "Gatotkaca",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Gatotkaca"
+    },
+    {
+      "id": "gord",
+      "nombre": "Gord",
+      "rol": "Mage",
+      "carril": "Medio",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Gord"
+    },
+    {
+      "id": "granger",
+      "nombre": "Granger",
+      "rol": "Marksman",
+      "carril": "Oro",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Granger"
+    },
+    {
+      "id": "guinevere",
+      "nombre": "Guinevere",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Guinevere"
+    },
+    {
+      "id": "hanabi",
+      "nombre": "Hanabi",
+      "rol": "Marksman",
+      "carril": "Oro",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Hanabi"
+    },
+    {
+      "id": "hanzo",
+      "nombre": "Hanzo",
+      "rol": "Assassin",
+      "carril": "Jungla",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Hanzo"
+    },
+    {
+      "id": "harith",
+      "nombre": "Harith",
+      "rol": "Mage",
+      "carril": "Oro",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Harith"
+    },
+    {
+      "id": "harley",
+      "nombre": "Harley",
+      "rol": "Assassin",
+      "carril": "Jungla",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Harley"
+    },
+    {
+      "id": "hayabusa",
+      "nombre": "Hayabusa",
+      "rol": "Assassin",
+      "carril": "Jungla",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Hayabusa"
+    },
+    {
+      "id": "helcurt",
+      "nombre": "Helcurt",
+      "rol": "Assassin",
+      "carril": "Jungla",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Helcurt"
+    },
+    {
+      "id": "hilda",
+      "nombre": "Hilda",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Hilda"
+    },
+    {
+      "id": "hylos",
+      "nombre": "Hylos",
+      "rol": "Tank",
+      "carril": "Roam",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Hylos"
+    },
+    {
+      "id": "irithel",
+      "nombre": "Irithel",
+      "rol": "Marksman",
+      "carril": "Oro",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Irithel"
+    },
+    {
+      "id": "jawhead",
+      "nombre": "Jawhead",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Jawhead"
+    },
+    {
+      "id": "johnson",
+      "nombre": "Johnson",
+      "rol": "Support",
+      "carril": "Roam",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Johnson"
+    },
+    {
+      "id": "kadita",
+      "nombre": "Kadita",
+      "rol": "Assassin",
+      "carril": "Medio",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Kadita"
+    },
+    {
+      "id": "kaja",
+      "nombre": "Kaja",
+      "rol": "Support",
+      "carril": "Roam",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Kaja"
+    },
+    {
+      "id": "karina",
+      "nombre": "Karina",
+      "rol": "Assassin",
+      "carril": "Jungla",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Karina"
+    },
+    {
+      "id": "karrie",
+      "nombre": "Karrie",
+      "rol": "Marksman",
+      "carril": "Oro",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Karrie"
+    },
+    {
+      "id": "khaleed",
+      "nombre": "Khaleed",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Khaleed"
+    },
+    {
+      "id": "kimmy",
+      "nombre": "Kimmy",
+      "rol": "Mage",
+      "carril": "Medio",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Kimmy"
+    },
+    {
+      "id": "lapu-lapu",
+      "nombre": "Lapu-Lapu",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Lapu-Lapu"
+    },
+    {
+      "id": "leomord",
+      "nombre": "Leomord",
+      "rol": "Fighter",
+      "carril": "Jungla",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Leomord"
+    },
+    {
+      "id": "lesley",
+      "nombre": "Lesley",
+      "rol": "Assassin",
+      "carril": "Oro",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Lesley"
+    },
+    {
+      "id": "lolita",
+      "nombre": "Lolita",
+      "rol": "Support",
+      "carril": "Roam",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Lolita"
+    },
+    {
+      "id": "luo-yi",
+      "nombre": "Luo Yi",
+      "rol": "Mage",
+      "carril": "Medio",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Luo Yi"
+    },
+    {
+      "id": "lylia",
+      "nombre": "Lylia",
+      "rol": "Mage",
+      "carril": "Medio",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Lylia"
+    },
+    {
+      "id": "martis",
+      "nombre": "Martis",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Martis"
+    },
+    {
+      "id": "masha",
+      "nombre": "Masha",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Masha"
+    },
+    {
+      "id": "mathilda",
+      "nombre": "Mathilda",
+      "rol": "Assassin",
+      "carril": "Roam",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Mathilda"
+    },
+    {
+      "id": "melissa",
+      "nombre": "Melissa",
+      "rol": "Marksman",
+      "carril": "Oro",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Melissa"
+    },
+    {
+      "id": "minotaur",
+      "nombre": "Minotaur",
+      "rol": "Support",
+      "carril": "Roam",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Minotaur"
+    },
+    {
+      "id": "minsitthar",
+      "nombre": "Minsitthar",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Minsitthar"
+    },
+    {
+      "id": "moskov",
+      "nombre": "Moskov",
+      "rol": "Marksman",
+      "carril": "Oro",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Moskov"
+    },
+    {
+      "id": "nana",
+      "nombre": "Nana",
+      "rol": "Mage",
+      "carril": "Medio",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Nana"
+    },
+    {
+      "id": "natalia",
+      "nombre": "Natalia",
+      "rol": "Assassin",
+      "carril": "Jungla",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Natalia"
+    },
+    {
+      "id": "natan",
+      "nombre": "Natan",
+      "rol": "Marksman",
+      "carril": "Oro",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Natan"
+    },
+    {
+      "id": "nolan",
+      "nombre": "Nolan",
+      "rol": "Assassin",
+      "carril": "Jungla",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Nolan"
+    },
+    {
+      "id": "novaria",
+      "nombre": "Novaria",
+      "rol": "Mage",
+      "carril": "Medio",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Novaria"
+    },
+    {
+      "id": "odette",
+      "nombre": "Odette",
+      "rol": "Mage",
+      "carril": "Medio",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Odette"
+    },
+    {
+      "id": "pharsa",
+      "nombre": "Pharsa",
+      "rol": "Mage",
+      "carril": "Medio",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Pharsa"
+    },
+    {
+      "id": "phoveus",
+      "nombre": "Phoveus",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Phoveus"
+    },
+    {
+      "id": "popol-and-kupa",
+      "nombre": "Popol and Kupa",
+      "rol": "Marksman",
+      "carril": "Oro",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Popol and Kupa"
+    },
+    {
+      "id": "rafaela",
+      "nombre": "Rafaela",
+      "rol": "Support",
+      "carril": "Roam",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Rafaela"
+    },
+    {
+      "id": "roger",
+      "nombre": "Roger",
+      "rol": "Fighter",
+      "carril": "Jungla",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Roger"
+    },
+    {
+      "id": "saber",
+      "nombre": "Saber",
+      "rol": "Assassin",
+      "carril": "Jungla",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Saber"
+    },
+    {
+      "id": "selena",
+      "nombre": "Selena",
+      "rol": "Assassin",
+      "carril": "Medio",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Selena"
+    },
+    {
+      "id": "silvanna",
+      "nombre": "Silvanna",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Silvanna"
+    },
+    {
+      "id": "sun",
+      "nombre": "Sun",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Sun"
+    },
+    {
+      "id": "terizla",
+      "nombre": "Terizla",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Terizla"
+    },
+    {
+      "id": "thamuz",
+      "nombre": "Thamuz",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Thamuz"
+    },
+    {
+      "id": "tigreal",
+      "nombre": "Tigreal",
+      "rol": "Tank",
+      "carril": "Roam",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Tigreal"
+    },
+    {
+      "id": "uranus",
+      "nombre": "Uranus",
+      "rol": "Tank",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Uranus"
+    },
+    {
+      "id": "vale",
+      "nombre": "Vale",
+      "rol": "Mage",
+      "carril": "Medio",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Vale"
+    },
+    {
+      "id": "vexana",
+      "nombre": "Vexana",
+      "rol": "Mage",
+      "carril": "Medio",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Vexana"
+    },
+    {
+      "id": "x-borg",
+      "nombre": "X.Borg",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "X.Borg"
+    },
+    {
+      "id": "yi-sun-shin",
+      "nombre": "Yi Sun-shin",
+      "rol": "Assassin",
+      "carril": "Jungla",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Yi Sun-shin"
+    },
+    {
+      "id": "yin",
+      "nombre": "Yin",
+      "rol": "Assassin",
+      "carril": "Jungla",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Yin"
+    },
+    {
+      "id": "yve",
+      "nombre": "Yve",
+      "rol": "Mage",
+      "carril": "Medio",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Yve"
+    },
+    {
+      "id": "zetian",
+      "nombre": "Zetian",
+      "rol": "Mage",
+      "carril": "Medio",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Zetian"
+    },
+    {
+      "id": "zhask",
+      "nombre": "Zhask",
+      "rol": "Mage",
+      "carril": "Medio",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Zhask"
+    },
+    {
+      "id": "zhuxin",
+      "nombre": "Zhuxin",
+      "rol": "Mage",
+      "carril": "Medio",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Zhuxin"
+    },
+    {
+      "id": "zilong",
+      "nombre": "Zilong",
+      "rol": "Assassin",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "?",
+      "curado": false,
+      "tags": [],
+      "tips": [],
+      "counters": [],
+      "sinergias": [],
+      "wiki": "Zilong"
     }
   ]
 }

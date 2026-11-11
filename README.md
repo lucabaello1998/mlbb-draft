@@ -7,17 +7,17 @@ sin instalar nada: abre en el celular o en la compu y arma la composición.
 
 ![Tier list](docs/tierlist.png)
 
-| Drafter | Ficha de héroe |
+| Drafter | Héroes |
 |---|---|
-| ![Drafter](docs/drafter.png) | Tocá cualquier héroe y te dice qué lo contrarresta, con quién sinergiza y tres tips concretos |
+| ![Drafter](docs/drafter.png) | ![Héroes](docs/heroes.png) |
 
 ## Qué hace
 
 ### Tier list
 
-S/A/B/C por héroe, con filtro por rol y buscador. La lista ordena por **facilidad para ganar ranked con
-equipo aleatorio**, no por winrate de torneo: es una opinión curada, con fecha, que se edita en un JSON
-cuando cambia el parche.
+S/A/B/C por héroe, con filtro por rol y buscador. Los que no están clasificados van a una quinta fila
+("?"). La lista ordena por **facilidad para ganar ranked con equipo aleatorio**, no por winrate de
+torneo: es una opinión curada, con fecha, que se edita en un JSON cuando cambia el parche.
 
 ### Drafter
 
@@ -35,8 +35,10 @@ cuando cambia el parche.
 
 ### Héroes
 
-Ficha por héroe con tres tips concretos, quién lo contrarresta y con quién sinergiza. 30 héroes
-curados a mano.
+**Roster completo (116 héroes)** con retrato oficial, rol y carril. 30 están **curados a mano** con
+tres tips, counters y sinergias; el resto tiene la ficha básica y se completa editando el JSON. Los
+que todavía no tienen tier aparecen en "Sin clasificar": preferimos decirlo antes que inventarles una
+letra.
 
 ## Cómo se calculan las ventajas
 
@@ -139,7 +141,8 @@ data/heroes.json        el dataset de héroes: la única fuente de verdad
 data/items.json         categorías de ítem y cuándo usarlas
 data/iconos.json        URLs de los retratos e íconos oficiales (wiki)
 scripts/generar-arte.mjs      regenera los SVG de respaldo
-scripts/iconos-oficiales.mjs  resuelve los íconos oficiales por API
+scripts/importar-heroes.mjs   trae el roster completo (rol, carril y retrato) desde la wiki
+scripts/iconos-oficiales.mjs  refresca los retratos oficiales por API
 scripts/check.mjs       validación del dataset, del arte y de la maqueta
 docs/                   capturas para el README
 ```

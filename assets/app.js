@@ -2,7 +2,7 @@
 // Sin dependencias y sin build: el mismo archivo que se sirve es el que se edita.
 
 const CARRILES = ["Oro", "Medio", "Exp", "Jungla", "Roam"];
-const TIERS = ["S", "A", "B", "C"];
+const TIERS = ["S", "A", "B", "C", "?"];
 
 const estado = {
   heroes: [],
@@ -32,8 +32,9 @@ function avatar(heroe, tamano = 40) {
 }
 
 function insignia(tier) {
-  const colores = { S: "#ef4444", A: "#f59e0b", B: "#3b82f6", C: "#64748b" };
-  return `<span class="insignia" style="background:${colores[tier] ?? "#64748b"}">${escapar(tier)}</span>`;
+  const colores = { S: "#ef4444", A: "#f59e0b", B: "#3b82f6", C: "#64748b", "?": "#4b5563" };
+  const texto = tier === "?" ? "?" : tier;
+  return `<span class="insignia" title="${tier === "?" ? "Sin clasificar" : "Tier " + tier}" style="background:${colores[tier] ?? "#64748b"}">${escapar(texto)}</span>`;
 }
 
 function coincide(heroe) {
@@ -47,17 +48,29 @@ function coincide(heroe) {
 
 // --- pintado ---------------------------------------------------------------
 
-function pintarChips(contenedor, activo, alElegir) {
-  const roles = ["", ...new Set(estado.heroes.map((h) => h.rol))];
+// Chips de filtro: se pintan UNA vez y el click sólo cambia aria-pressed. Antes
+// cada click rehacía el innerHTML y, en el celular, el botón desaparecía bajo el
+// dedo: había que tocar dos veces.
+function montarChips(contenedor, obtener, setter, repintar) {
+  const roles = ["", ...new Set(estado.heroes.map((h) => h.rol).filter(Boolean))];
+
   contenedor.innerHTML = roles
     .map(
-      (rol) => `<button class="chip" type="button" data-rol="${escapar(rol)}" aria-pressed="${
-        activo === rol ? "true" : "false"
-      }">${rol || "Todos"}</button>`,
+      (rol) =>
+        `<button class="chip" type="button" data-rol="${escapar(rol)}" aria-pressed="${
+          obtener() === rol ? "true" : "false"
+        }">${rol || "Todos"}</button>`,
     )
     .join("");
-  contenedor.querySelectorAll("[data-rol]").forEach((boton) => {
-    boton.addEventListener("click", () => alElegir(boton.dataset.rol));
+
+  contenedor.addEventListener("click", (evento) => {
+    const boton = evento.target.closest("[data-rol]");
+    if (!boton) return;
+    setter(boton.dataset.rol);
+    for (const chip of contenedor.querySelectorAll("[data-rol]")) {
+      chip.setAttribute("aria-pressed", String(chip.dataset.rol === obtener()));
+    }
+    repintar();
   });
 }
 
@@ -74,8 +87,8 @@ function pintarTier() {
     const grupo = visibles.filter((h) => h.tier === tier).sort((a, b) => a.nombre.localeCompare(b.nombre));
     if (!grupo.length) return "";
     return `
-      <div class="tier tier-${tier.toLowerCase()}">
-        <div class="tier-letra">${tier}</div>
+      <div class="tier tier-${tier === "?" ? "sin" : tier.toLowerCase()}">
+        <div class="tier-letra">${tier === "?" ? "?" : tier}</div>
         <div class="tier-cuerpo">
           <div class="tier-grid">
             ${grupo
@@ -111,8 +124,12 @@ function pintarHeroes() {
           <span class="meta" style="margin-left:auto">${escapar(h.carril)}</span>
         </div>
         <h3>${escapar(h.nombre)}</h3>
-        <div class="meta">${escapar(h.rol)} · dificultad ${"●".repeat(h.dificultad)}${"○".repeat(3 - h.dificultad)}</div>
-        <div class="tags">${(h.tags ?? []).map((t) => `<span class="tag">${escapar(t)}</span>`).join("")}</div>
+        <div class="meta">${escapar(h.rol)} · ${
+          h.curado === false ? "sin curar" : `dificultad ${"●".repeat(h.dificultad)}${"○".repeat(3 - h.dificultad)}`
+        }</div>
+        <div class="tags">${(h.tags ?? []).map((t) => `<span class="tag">${escapar(t)}</span>`).join("")}${
+          h.curado === false ? '<span class="tag">sin tips</span>' : ""
+        }</div>
       </button>`,
     )
     .join("");
@@ -462,26 +479,34 @@ function abrirFicha(id) {
 
   const nombre = (otroId) => estado.porId.get(otroId)?.nombre ?? otroId;
 
-  $("#modal-caja").innerHTML = `
-    <button class="cerrar" type="button" aria-label="Cerrar">×</button>
-    <div style="display:flex;align-items:center;gap:10px">
-      ${avatar(heroe, 96)}
-      ${insignia(heroe.tier)}
-      <span class="meta">Tier ${escapar(heroe.tier)} · ${escapar(heroe.rol)} · ${escapar(heroe.carril)}</span>
-    </div>
-    <h2 id="modal-titulo">${escapar(heroe.nombre)}</h2>
-    <div class="meta">Dificultad ${"●".repeat(heroe.dificultad)}${"○".repeat(3 - heroe.dificultad)} · ${(heroe.tags ?? [])
-      .map(escapar)
-      .join(" · ")}</div>
-    <ul class="lista-tips">${(heroe.tips ?? []).map((t) => `<li>${escapar(t)}</li>`).join("")}</ul>
-    <div class="pares">
+  const curado = heroe.curado !== false;
+  const parecido = curado
+    ? `<div class="pares">
       <div><h4>Lo contrarrestan</h4><ul>${
         (heroe.counters ?? []).map((x) => `<li>${escapar(nombre(x))}</li>`).join("") || "<li>—</li>"
       }</ul></div>
       <div><h4>Sinergiza con</h4><ul>${
         (heroe.sinergias ?? []).map((x) => `<li>${escapar(nombre(x))}</li>`).join("") || "<li>—</li>"
       }</ul></div>
+    </div>`
+    : `<p class="aviso">Ficha básica: todavía no tiene tips ni counters curados. Sumalos en
+       <code>data/heroes.json</code> y la página los muestra.</p>`;
+
+  $("#modal-caja").innerHTML = `
+    <button class="cerrar" type="button" aria-label="Cerrar">×</button>
+    <div style="display:flex;align-items:center;gap:10px">
+      ${avatar(heroe, 96)}
+      ${insignia(heroe.tier)}
+      <span class="meta">${heroe.tier === "?" ? "Sin clasificar" : `Tier ${escapar(heroe.tier)}`} · ${escapar(heroe.rol)} · ${escapar(heroe.carril)}</span>
     </div>
+    <h2 id="modal-titulo">${escapar(heroe.nombre)}</h2>
+    <div class="meta">${
+      curado
+        ? `Dificultad ${"●".repeat(heroe.dificultad)}${"○".repeat(3 - heroe.dificultad)} · ${(heroe.tags ?? []).map(escapar).join(" · ")}`
+        : "Ficha básica (rol y carril de la wiki)"
+    }</div>
+    ${(heroe.tips ?? []).length ? `<ul class="lista-tips">${heroe.tips.map((t) => `<li>${escapar(t)}</li>`).join("")}</ul>` : ""}
+    ${parecido}
     <div class="botones">
       <button class="boton" type="button" id="ficha-alido">Sumar a mi equipo</button>
       <button class="boton secundario" type="button" id="ficha-enemigo">Marcar como enemigo</button>
@@ -596,16 +621,9 @@ async function iniciar() {
     mostrarVista(vistaInicial);
   }
 
-  const chipsRol = (contenedor, valor, setter, despues) =>
-    pintarChips(contenedor, valor, (rol) => {
-      setter(rol);
-      pintarChips(contenedor, rol, (otro) => chipsRol(contenedor, otro, setter, despues));
-      despues();
-    });
-
-  chipsRol($("#chips-rol"), estado.rol, (rol) => (estado.rol = rol), pintarTier);
-  chipsRol($("#chips-pool"), estado.rolPool, (rol) => (estado.rolPool = rol), pintarPool);
-  chipsRol($("#chips-heroes"), estado.rolHeroes, (rol) => (estado.rolHeroes = rol), pintarHeroes);
+  montarChips($("#chips-rol"), () => estado.rol, (rol) => (estado.rol = rol), pintarTier);
+  montarChips($("#chips-pool"), () => estado.rolPool, (rol) => (estado.rolPool = rol), pintarPool);
+  montarChips($("#chips-heroes"), () => estado.rolHeroes, (rol) => (estado.rolHeroes = rol), pintarHeroes);
 
   document.querySelectorAll("[data-vista]").forEach((boton) => {
     boton.addEventListener("click", () => mostrarVista(boton.dataset.vista));
