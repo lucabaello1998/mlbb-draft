@@ -23,6 +23,12 @@ torneo: es una opinión curada, con fecha, que se edita en un JSON cuando cambia
 
 - Dos equipos de 5 con los carriles reales (Oro, Medio, Exp, Jungla, Roam).
 - Elegís el equipo activo y vas tocando héroes del pool: cada uno cae en su carril.
+- **Bans**: 5 por equipo. Tocás *Banear* en un equipo y después el héroe en el pool; el baneado sale
+  del pool y se ve en la fila de bans con su retrato. Se saca con la ×.
+- **Bans sugeridos**: cinco candidatos para tu equipo, con el motivo escrito al lado. No es winrate ni
+  una tier global: cruza tres cosas del dataset — el héroe tiene a alguno de tus picks en su lista de
+  `counters` (3 puntos), es tier S o A y sigue libre (2 o 1), o sinergiza con lo que ya eligió el
+  enemigo (1). Se recalcula con cada pick y cada ban.
 - **Análisis en vivo**: qué héroes del pool contrarrestan a los enemigos ya elegidos, qué sinergias te
   faltan y qué carril queda vacío.
 - **Ventajas de la composición**: comparación lado a lado de frontline, engage/CC, sustain, poke,
@@ -30,15 +36,19 @@ torneo: es una opinión curada, con fecha, que se edita en un JSON cuando cambia
   y el reparto de daño físico/mágico.
 - **Ítems que pide la partida**: si el enemigo cura mucho, pide anti-curación; si tiene dos tanques,
   penetración; si escala, cerrar temprano. Categorías con ejemplos reales, no una build cerrada.
-- **Copiar composición** deja el draft en texto listo para pegar en el chat del equipo.
-- El draft se guarda en el navegador: si recargás, sigue ahí.
+- **Copiar composición** deja el draft en texto listo para pegar en el chat del equipo, con los bans.
+- El draft y los bans se guardan en el navegador: si recargás, siguen ahí.
 
 ### Héroes
 
-**Roster completo (116 héroes)** con retrato oficial, rol y carril. 30 están **curados a mano** con
+**Roster completo (134 héroes)** con retrato oficial, rol y carril. 30 están **curados a mano** con
 tres tips, counters y sinergias; el resto tiene la ficha básica y se completa editando el JSON. Los
 que todavía no tienen tier aparecen en "Sin clasificar": preferimos decirlo antes que inventarles una
 letra.
+
+Buscador propio de la vista (nombre, rol o carril), tolerante a acentos y apóstrofes: `chang e`
+encuentra a Chang'e y `yi sun shin` a Yi Sun-shin. Muestra "3 de 134" mientras filtrás. El buscador
+del encabezado sigue filtrando la tier list y el pool del drafter.
 
 ## Cómo se calculan las ventajas
 
@@ -166,6 +176,11 @@ viene del JSON. Lo corre el CI en cada push; no hay dependencias ni build.
 - Los tips son de fundamentos (posicionamiento, cuándo entrar, qué evitar), justamente para que no
   envejezcan con cada ajuste de números.
 - No hay builds ni emblemas: cambian demasiado seguido y una build vieja hace más daño que ayuda.
+- El roster sale de la wiki, no de una API oficial. La API de MediaWiki corta en **500 categorías por
+  request** y lo avisa con un `continue`: el importador parte los lotes hasta que entra todo. Sin eso,
+  los últimos héroes de cada lote se perdían en silencio (Gloo, Aamon, Julian, Kalea y otros 15).
+- Los héroes **sin rol publicado** (por ejemplo Noctis, marcado "Unfinished") no entran: no se les
+  inventa un carril. Hoy falta sólo ese.
 
 ## Licencia
 

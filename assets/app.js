@@ -12,9 +12,12 @@ const estado = {
   rolPool: "",
   rolHeroes: "",
   busqueda: "",
+  busquedaHeroes: "",
   activo: "alido", // qué equipo recibe el próximo pick
   alido: {}, // carril -> id
   enemigo: {},
+  bans: { alido: [], enemigo: [] }, // ids, máx. 5 por equipo
+  banDe: null, // equipo en modo ban: el próximo toque del pool es un ban
 };
 
 const $ = (sel) => document.querySelector(sel);
@@ -37,13 +40,24 @@ function insignia(tier) {
   return `<span class="insignia" title="${tier === "?" ? "Sin clasificar" : "Tier " + tier}" style="background:${colores[tier] ?? "#64748b"}">${escapar(texto)}</span>`;
 }
 
-function coincide(heroe) {
-  const q = estado.busqueda.trim().toLowerCase();
-  if (!q) return true;
-  return [heroe.nombre, heroe.rol, heroe.carril, ...(heroe.tags ?? [])]
-    .join(" ")
+// Búsqueda tolerante: sin acentos, sin apóstrofes y con los espacios colapsados,
+// así "chang e" encuentra a Chang'e y "yi sun shin" a Yi Sun-shin.
+function normalizar(texto) {
+  return String(texto ?? "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
-    .includes(q);
+    .replace(/['’.-]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function coincide(heroe, consulta = estado.busqueda) {
+  const q = normalizar(consulta);
+  if (!q) return true;
+  const texto = normalizar([heroe.nombre, heroe.rol, heroe.carril, ...(heroe.tags ?? [])].join(" "));
+  // Cada palabra tiene que aparecer: "miya oro" no trae a Miya si es de otro carril.
+  return q.split(" ").every((palabra) => texto.includes(palabra));
 }
 
 // --- pintado ---------------------------------------------------------------
@@ -111,8 +125,21 @@ function pintarTier() {
 
 function pintarHeroes() {
   const visibles = estado.heroes
-    .filter((h) => (!estado.rolHeroes || h.rol === estado.rolHeroes) && coincide(h))
+    .filter((h) => (!estado.rolHeroes || h.rol === estado.rolHeroes) && coincide(h, estado.busquedaHeroes))
     .sort((a, b) => a.nombre.localeCompare(b.nombre));
+
+  const conteo = $("#conteo-heroes");
+  if (conteo) {
+    conteo.textContent = visibles.length === estado.heroes.length
+      ? `${estado.heroes.length} héroes`
+      : `${visibles.length} de ${estado.heroes.length}`;
+  }
+
+  if (!visibles.length) {
+    $("#grilla-heroes").innerHTML = `<p class="vacio">Ningún héroe coincide. Probá con el nombre
+      (sin importar acentos) o limpiá el buscador.</p>`;
+    return;
+  }
 
   $("#grilla-heroes").innerHTML = visibles
     .map(
@@ -165,7 +192,112 @@ function pintarSlots() {
   $("#equipo-alido").classList.toggle("activo", estado.activo === "alido");
   $("#equipo-enemigo").classList.toggle("activo", estado.activo === "enemigo");
 
+  pintarBans();
   contenedorEventos();
+}
+
+// --- bans ------------------------------------------------------------------
+
+const MAX_BANS = 5;
+
+function banesDe(lado) {
+  return (estado.bans[lado] ?? []).map((id) => estado.porId.get(id)).filter(Boolean);
+}
+
+function banesTodos() {
+  return [...(estado.bans.alido ?? []), ...(estado.bans.enemigo ?? [])];
+}
+
+function pintarBans() {
+  for (const lado of ["alido", "enemigo"]) {
+    const lista = $(`#bans-${lado}`);
+    if (!lista) continue;
+    const bans = banesDe(lado);
+    lista.innerHTML = bans
+      .map(
+        (h) => `<span class="ban" title="Baneado: ${escapar(h.nombre)}">
+          ${avatar(h, 24)}<span>${escapar(h.nombre)}</span>
+          <button class="quitar-ban" type="button" data-quitar-ban="${lado}" data-id="${escapar(h.id)}"
+            aria-label="Sacar el ban de ${escapar(h.nombre)}">×</button>
+        </span>`,
+      )
+      .join("");
+    for (let i = bans.length; i < MAX_BANS; i++) lista.insertAdjacentHTML("beforeend", '<span class="ban-vacio">—</span>');
+
+    $(`#conteo-bans-${lado}`).textContent = `${bans.length}/${MAX_BANS}`;
+    const boton = document.querySelector(`[data-banear="${lado}"]`);
+    if (boton) boton.setAttribute("aria-pressed", String(estado.banDe === lado));
+  }
+
+  const aviso = $("#modo-ban");
+  if (aviso) {
+    aviso.hidden = !estado.banDe;
+    aviso.textContent = estado.banDe
+      ? `Modo ban para ${estado.banDe === "alido" ? "mi equipo" : "el enemigo"}: tocá un héroe del pool.`
+      : "";
+  }
+}
+
+function banear(lado, id) {
+  const heroe = estado.porId.get(id);
+  if (!heroe) return;
+  const bans = estado.bans[lado] ?? (estado.bans[lado] = []);
+  if (bans.includes(id)) return;
+  if (bans.length >= MAX_BANS) {
+    alert(`Ya hay ${MAX_BANS} bans para ese equipo. Sacá uno para cambiarlo.`);
+    return;
+  }
+  bans.push(id);
+  if (estado.bans[lado].length >= MAX_BANS) estado.banDe = null;
+  guardar();
+  pintarSlots();
+  pintarAnalisis();
+  pintarPool();
+}
+
+function sacarBan(lado, id) {
+  estado.bans[lado] = (estado.bans[lado] ?? []).filter((otro) => otro !== id);
+  guardar();
+  pintarSlots();
+  pintarAnalisis();
+  pintarPool();
+}
+
+// Bans sugeridos para MI equipo: no es winrate ni una tier global, son tres cosas
+// del dataset, con el motivo a la vista.
+//   - amenaza: el héroe tiene a alguno de mis picks en su lista de counters.
+//   - tier: es S o A y sigue libre.
+//   - combo: sinergiza con lo que ya eligió el enemigo.
+function bansSugeridos() {
+  const mios = elegidos("alido");
+  const enemigos = elegidos("enemigo");
+  const ocupados = new Set([...todosElegidos().map((h) => h.id), ...banesTodos()]);
+
+  const candidatos = [];
+  for (const heroe of estado.heroes) {
+    if (ocupados.has(heroe.id)) continue;
+
+    const amenaza = mios.filter((mio) => (heroe.counters ?? []).includes(mio.id)).map((mio) => mio.nombre);
+    const combo = enemigos
+      .filter(
+        (enemigo) =>
+          (heroe.sinergias ?? []).includes(enemigo.id) || (enemigo.sinergias ?? []).includes(heroe.id),
+      )
+      .map((enemigo) => enemigo.nombre);
+    const tier = { S: 2, A: 1 }[heroe.tier] ?? 0;
+
+    const punto = amenaza.length * 3 + combo.length + tier;
+    if (punto <= 0) continue;
+
+    const motivos = [];
+    if (amenaza.length) motivos.push(`contrarresta a ${amenaza.join(", ")}`);
+    if (combo.length) motivos.push(`sinergiza con ${combo.join(", ")}`);
+    if (tier) motivos.push(`tier ${heroe.tier} libre`);
+
+    candidatos.push({ heroe, punto, motivos });
+  }
+
+  return candidatos.sort((a, b) => b.punto - a.punto || a.heroe.nombre.localeCompare(b.heroe.nombre)).slice(0, MAX_BANS);
 }
 
 function contenedorEventos() {
@@ -176,6 +308,18 @@ function contenedorEventos() {
       pintarSlots();
       pintarAnalisis();
       pintarPool();
+    });
+  });
+
+  document.querySelectorAll("[data-quitar-ban]").forEach((boton) => {
+    boton.addEventListener("click", () => sacarBan(boton.dataset.quitarBan, boton.dataset.id));
+  });
+
+  document.querySelectorAll("[data-banear]").forEach((boton) => {
+    boton.addEventListener("click", () => {
+      const lado = boton.dataset.banear;
+      estado.banDe = estado.banDe === lado ? null : lado;
+      pintarBans();
     });
   });
 }
@@ -189,7 +333,7 @@ function todosElegidos() {
 }
 
 function pintarPool() {
-  const usados = new Set(todosElegidos().map((h) => h.id));
+  const usados = new Set([...todosElegidos().map((h) => h.id), ...banesTodos()]);
   const visibles = estado.heroes
     .filter((h) => (!estado.rolPool || h.rol === estado.rolPool) && coincide(h) && !usados.has(h.id))
     .sort((a, b) => a.nombre.localeCompare(b.nombre));
@@ -217,6 +361,11 @@ function pintarPool() {
 function elegir(id) {
   const heroe = estado.porId.get(id);
   if (!heroe) return;
+
+  if (estado.banDe) {
+    banear(estado.banDe, id);
+    return;
+  }
 
   const equipo = equipoActual();
   // Si su carril está ocupado, cae en el primero libre; si el equipo está lleno, avisa.
@@ -444,11 +593,41 @@ function pintarAnalisis() {
     ? `Te falta cubrir: ${faltan.join(", ")}.`
     : "Carriles completos: 5/5.";
 
+  pintarBansSugeridos();
   pintarVentajas();
   pintarItems();
 }
 
-function composicionTexto() {  const lineas = ["MI EQUIPO"];
+function pintarBansSugeridos() {
+  const contenedor = $("#sugerencias-bans");
+  if (!contenedor) return;
+
+  const sugeridos = bansSugeridos();
+  if (!sugeridos.length) {
+    contenedor.innerHTML = `<span class="vacio">Elegí tus picks o los del enemigo y acá aparecen los bans
+      que te convienen, con el motivo.</span>`;
+    return;
+  }
+
+  contenedor.innerHTML = sugeridos
+    .map(
+      ({ heroe, motivos }) => `<button class="heroe-mini" type="button" data-ban-sugerido="${escapar(heroe.id)}"
+        title="Banear a ${escapar(heroe.nombre)}: ${escapar(motivos.join("; "))}">
+        ${avatar(heroe, 30)}
+        <span class="nombre">${escapar(heroe.nombre)}</span>
+        ${insignia(heroe.tier)}
+        <span class="motivo">${escapar(motivos[0])}</span>
+      </button>`,
+    )
+    .join("");
+
+  contenedor.querySelectorAll("[data-ban-sugerido]").forEach((boton) => {
+    boton.addEventListener("click", () => banear("alido", boton.dataset.banSugerido));
+  });
+}
+
+function composicionTexto() {
+  const lineas = ["MI EQUIPO"];
   for (const carril of CARRILES) {
     const heroe = estado.alido[carril] ? estado.porId.get(estado.alido[carril]) : null;
     lineas.push(`${carril}: ${heroe ? heroe.nombre : "—"}`);
@@ -458,6 +637,8 @@ function composicionTexto() {  const lineas = ["MI EQUIPO"];
     const heroe = estado.enemigo[carril] ? estado.porId.get(estado.enemigo[carril]) : null;
     lineas.push(`${carril}: ${heroe ? heroe.nombre : "—"}`);
   }
+  const bans = (lado) => (banesDe(lado).map((h) => h.nombre).join(", ") || "—");
+  lineas.push("", `BANS MIOS: ${bans("alido")}`, `BANS ENEMIGOS: ${bans("enemigo")}`);
   return lineas.join("\n");
 }
 
@@ -546,7 +727,10 @@ function mostrarVista(vista) {
 
 function guardar() {
   try {
-    localStorage.setItem("mlbb-draft", JSON.stringify({ alido: estado.alido, enemigo: estado.enemigo }));
+    localStorage.setItem(
+      "mlbb-draft",
+      JSON.stringify({ alido: estado.alido, enemigo: estado.enemigo, bans: estado.bans }),
+    );
   } catch {
     // Modo privado o sin storage: el draft vive sólo en memoria.
   }
@@ -561,6 +745,12 @@ function cargar() {
         if (id && estado.porId.has(id)) estado[lado][carril] = id;
       }
     }
+    for (const lado of ["alido", "enemigo"]) {
+      const bans = guardado?.bans?.[lado];
+      if (Array.isArray(bans)) {
+        estado.bans[lado] = bans.filter((id) => estado.porId.has(id)).slice(0, MAX_BANS);
+      }
+    }
   } catch {
     // Un JSON viejo o roto no puede romper la página.
   }
@@ -569,6 +759,7 @@ function cargar() {
 const DEMO = {
   alido: { Oro: "miya", Medio: "valir", Exp: "chou", Jungla: "lancelot", Roam: "khufra" },
   enemigo: { Oro: "ling", Medio: "gusion", Exp: "paquito", Jungla: "fanny", Roam: "atlas" },
+  bans: { alido: ["grock", "selena"], enemigo: ["estes"] },
 };
 
 async function iniciar() {
@@ -613,6 +804,7 @@ async function iniciar() {
       for (const [carril, id] of Object.entries(DEMO[lado])) {
         if (estado.porId.has(id)) estado[lado][carril] = id;
       }
+      estado.bans[lado] = (DEMO.bans?.[lado] ?? []).filter((id) => estado.porId.has(id));
     }
   }
 
@@ -640,14 +832,20 @@ async function iniciar() {
   $("#buscador").addEventListener("input", (evento) => {
     estado.busqueda = evento.target.value;
     pintarTier();
-    pintarHeroes();
     pintarPool();
+  });
+
+  $("#buscador-heroes").addEventListener("input", (evento) => {
+    estado.busquedaHeroes = evento.target.value;
+    pintarHeroes();
   });
 
   $("#copiar").addEventListener("click", copiarComposicion);
   $("#limpiar").addEventListener("click", () => {
     estado.alido = {};
     estado.enemigo = {};
+    estado.bans = { alido: [], enemigo: [] };
+    estado.banDe = null;
     guardar();
     pintarSlots();
     pintarAnalisis();

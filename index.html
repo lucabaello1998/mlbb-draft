@@ -45,23 +45,41 @@
     <h1>Drafter</h1>
     <p class="sub">
       Elegí el equipo activo y tocá héroes del pool. El panel de abajo te dice qué counters te faltan,
-      qué sinergias tenés y qué carril queda vacío.
+      qué sinergias tenés, qué bans te convienen y qué carril queda vacío. Para banear: tocá
+      <strong>Banear</strong> en un equipo y después el héroe en el pool.
     </p>
 
     <div class="drafter">
       <article class="equipo activo" id="equipo-alido">
         <h3>Mi equipo <span class="meta" id="conteo-alido">0/5</span></h3>
         <div class="slots" id="slots-alido"></div>
+        <div class="bans">
+          <span class="bans-rotulo">Bans <span class="meta" id="conteo-bans-alido">0/5</span></span>
+          <div class="bans-lista" id="bans-alido"></div>
+          <button class="boton-ban" type="button" data-banear="alido" aria-pressed="false"
+            title="Tocá y después un héroe del pool para banearlo">Banear</button>
+        </div>
       </article>
 
       <article class="equipo" id="equipo-enemigo">
         <h3>Enemigo <span class="meta" id="conteo-enemigo">0/5</span></h3>
         <div class="slots" id="slots-enemigo"></div>
+        <div class="bans">
+          <span class="bans-rotulo">Bans <span class="meta" id="conteo-bans-enemigo">0/5</span></span>
+          <div class="bans-lista" id="bans-enemigo"></div>
+          <button class="boton-ban" type="button" data-banear="enemigo" aria-pressed="false"
+            title="Tocá y después un héroe del pool para banearlo">Banear</button>
+        </div>
       </article>
     </div>
 
     <div class="analisis">
       <h3>Análisis</h3>
+      <div class="bloque">
+        <div class="rotulo">Bans sugeridos para mi equipo</div>
+        <p class="leyenda">No es winrate: cruza tus counters, la tier list y las sinergias del enemigo. Tocá uno para banearlo.</p>
+        <div id="sugerencias-bans" class="tier-grid"></div>
+      </div>
       <div class="bloque">
         <div class="rotulo">Counters sugeridos contra el enemigo</div>
         <div id="sugerencias-counter" class="tier-grid"></div>
@@ -91,6 +109,7 @@
     </div>
 
     <div class="chips" id="chips-pool" role="group" aria-label="Filtrar el pool por rol"></div>
+    <p class="aviso" id="modo-ban" hidden></p>
     <div class="pool">
       <div class="tier-grid" id="pool"></div>
     </div>
@@ -99,7 +118,12 @@
   <!-- ===================== HÉROES ===================== -->
   <section id="vista-heroes" role="tabpanel" aria-labelledby="tab-heroes" hidden>
     <h1>Héroes</h1>
-    <p class="sub">Roster completo: 116 héroes. 30 con tips, counters y sinergias curados a mano; el resto con ficha básica (rol y carril) lista para completar. Tocá uno para verla.</p>
+    <p class="sub">Roster completo: 134 héroes. 30 con tips, counters y sinergias curados a mano; el resto con ficha básica (rol y carril) lista para completar. Buscá por nombre o tocá uno para ver la ficha.</p>
+    <div class="fila-busqueda">
+      <input class="buscador" id="buscador-heroes" type="search" placeholder="Buscar héroe: nombre, rol o carril…"
+        aria-label="Buscar héroe por nombre, rol o carril">
+      <span class="meta" id="conteo-heroes" aria-live="polite">134 héroes</span>
+    </div>
     <div class="chips" id="chips-heroes" role="group" aria-label="Filtrar por rol"></div>
     <div class="grilla" id="grilla-heroes"></div>
   </section>

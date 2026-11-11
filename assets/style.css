@@ -127,6 +127,42 @@ h1 { font-size: clamp(1.6rem, 3.4vw, 2.3rem); letter-spacing: -0.03em; margin: 0
 .pool { margin-top: 6px; }
 .pool .tier-grid { max-height: 320px; overflow-y: auto; padding-right: 4px; }
 
+/* ---------- bans ---------- */
+.bans {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--borde);
+}
+.bans-rotulo { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--apagado); }
+.bans-lista { display: flex; gap: 5px; flex-wrap: wrap; align-items: center; }
+.ban {
+  display: inline-flex; align-items: center; gap: 5px; padding: 3px 5px 3px 3px;
+  border-radius: 999px; background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.35); font-size: 0.75rem; color: #ffb4b4;
+}
+.ban img { border-radius: 50%; filter: grayscale(0.5); }
+.ban .quitar-ban {
+  background: transparent; border: 0; color: inherit; cursor: pointer; font-size: 0.9rem;
+  line-height: 1; padding: 0 2px; touch-action: manipulation;
+}
+.ban .quitar-ban:hover { color: #fff; }
+.ban-vacio {
+  width: 26px; height: 26px; border-radius: 50%; display: inline-flex;
+  align-items: center; justify-content: center; border: 1px dashed var(--borde);
+  color: var(--apagado); font-size: 0.7rem;
+}
+.boton-ban {
+  margin-left: auto; background: transparent; border: 1px solid var(--borde);
+  color: var(--apagado); border-radius: 999px; padding: 4px 10px; font: inherit;
+  font-size: 0.72rem; cursor: pointer; touch-action: manipulation;
+}
+.boton-ban[aria-pressed="true"] { background: rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.5); color: #ffb4b4; }
+.heroe-mini .motivo {
+  margin-left: auto; font-size: 0.66rem; color: var(--apagado); max-width: 46%;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.fila-busqueda { display: flex; align-items: center; gap: 12px; margin: 0 0 12px; flex-wrap: wrap; }
+.fila-busqueda .buscador { flex: 1 1 320px; }
+
 .analisis { background: var(--panel); border: 1px solid var(--borde); border-radius: var(--radio); padding: 16px; margin-bottom: 18px; }
 .analisis h3 { margin: 0 0 10px; font-size: 0.95rem; }
 .analisis .bloque + .bloque { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--borde); }

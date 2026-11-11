@@ -99,27 +99,45 @@ function fichaDe(pagina) {
   };
 }
 
+// La API corta en 500 categorías por request (cllimit) y no avisa con un error:
+// devuelve `continue` y deja las últimas páginas del lote con categorías de menos
+// o vacías. Por eso, si aparece `continue`, se parte el lote al medio y se pide
+// de nuevo: así ningún héroe se pierde por venir atrás en la lista.
+async function fichasDeLote(titulos, fichas, descartados) {
+  if (!titulos.length) return;
+
+  const datos = await api({
+    action: "query",
+    prop: "categories|pageimages",
+    cllimit: "500",
+    piprop: "thumbnail",
+    pithumbsize: "250",
+    titles: titulos.join("|"),
+  });
+
+  if (datos.continue && titulos.length > 1) {
+    const mitad = Math.ceil(titulos.length / 2);
+    await fichasDeLote(titulos.slice(0, mitad), fichas, descartados);
+    await fichasDeLote(titulos.slice(mitad), fichas, descartados);
+    return;
+  }
+
+  for (const pagina of Object.values(datos.query?.pages ?? {})) {
+    const ficha = fichaDe(pagina);
+    if (ficha) fichas.push(ficha);
+    else descartados.push(pagina.title);
+  }
+}
+
 async function traerFichas(titulos) {
   const fichas = [];
   const descartados = [];
 
   for (let i = 0; i < titulos.length; i += LOTE) {
     const lote = titulos.slice(i, i + LOTE);
-    const datos = await api({
-      action: "query",
-      prop: "categories|pageimages",
-      cllimit: "500",
-      piprop: "thumbnail",
-      pithumbsize: "250",
-      titles: lote.join("|"),
-    });
-
-    for (const pagina of Object.values(datos.query?.pages ?? {})) {
-      const ficha = fichaDe(pagina);
-      if (ficha) fichas.push(ficha);
-      else descartados.push(pagina.title);
-    }
-
+    // Las categorías también listan blogs y sandboxes de usuarios ("User blog:…").
+    const paginas = lote.filter((t) => !/^(User|User blog|MLBB Wiki|Template|Category|File):/i.test(t) && !t.includes("/"));
+    await fichasDeLote(paginas, fichas, descartados);
     process.stdout.write(`  ${Math.min(i + LOTE, titulos.length)}/${titulos.length}\n`);
     await dormir(250);
   }
