@@ -21,9 +21,14 @@ const $ = (sel) => document.querySelector(sel);
 const escapar = (texto) =>
   String(texto ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
-function avatar(heroe, tamano = 26) {
-  // El retrato es un SVG propio (assets/heroes/<id>.svg), no arte oficial.
-  return `<img class="heroe-avatar" src="assets/heroes/${encodeURIComponent(heroe.id)}.svg" alt="" width="${tamano}" height="${tamano}" loading="lazy">`;
+function avatar(heroe, tamano = 40) {
+  // Retrato oficial desde la wiki (no se copia al repo) y, si no está o falla el
+  // CDN, el SVG propio que genera scripts/generar-arte.mjs.
+  const local = `assets/heroes/${encodeURIComponent(heroe.id)}.svg`;
+  const oficial = estado.iconos?.heroes?.[heroe.id];
+  const src = oficial || local;
+  const respaldo = oficial ? ` onerror="this.onerror=null;this.src='${local}'"` : "";
+  return `<img class="heroe-avatar" src="${escapar(src)}" alt="" width="${tamano}" height="${tamano}"${respaldo}>`;
 }
 
 function insignia(tier) {
@@ -76,7 +81,7 @@ function pintarTier() {
             ${grupo
               .map(
                 (h) => `<button class="heroe-mini" type="button" data-heroe="${escapar(h.id)}">
-                  ${avatar(h)}
+                  ${avatar(h, 40)}
                   <span><span class="nombre">${escapar(h.nombre)}</span><br><span class="rol">${escapar(h.rol)} · ${escapar(h.carril)}</span></span>
                 </button>`,
               )
@@ -101,7 +106,7 @@ function pintarHeroes() {
       (h) => `
       <button class="tarjeta" type="button" data-heroe="${escapar(h.id)}">
         <div style="display:flex;align-items:center;gap:8px">
-          ${avatar(h, 32)}
+          ${avatar(h, 64)}
           ${insignia(h.tier)}
           <span class="meta" style="margin-left:auto">${escapar(h.carril)}</span>
         </div>
@@ -133,7 +138,7 @@ function pintarSlots() {
       return `
         <div class="slot ${heroe ? "lleno" : ""}">
           <span class="carril">${carril}</span>
-          ${heroe ? `${avatar(heroe, 22)}<span>${escapar(heroe.nombre)}</span>` : `<span class="vacio">—</span>`}
+          ${heroe ? `${avatar(heroe, 30)}<span>${escapar(heroe.nombre)}</span>` : `<span class="vacio">—</span>`}
           ${heroe ? `<button class="quitar" type="button" data-quitar="${lado}" data-carril="${carril}" aria-label="Quitar ${escapar(heroe.nombre)}">×</button>` : ""}
         </div>`;
     }).join("");
@@ -181,7 +186,7 @@ function pintarPool() {
   pool.innerHTML = visibles
     .map(
       (h) => `<button class="heroe-mini" type="button" data-elegir="${escapar(h.id)}" title="Agregar al equipo activo">
-        ${avatar(h, 22)}<span class="nombre">${escapar(h.nombre)}</span>
+        ${avatar(h, 30)}<span class="nombre">${escapar(h.nombre)}</span>
         <span class="rol" style="margin-left:6px">${escapar(h.carril)}</span>
       </button>`,
     )
@@ -243,7 +248,7 @@ function pintarSugerencias(contenedor, heroes, vacio) {
   contenedor.innerHTML = libres
     .map(
       (h) => `<button class="heroe-mini" type="button" data-sugerido="${escapar(h.id)}">
-        ${avatar(h, 22)}<span class="nombre">${escapar(h.nombre)}</span>
+        ${avatar(h, 30)}<span class="nombre">${escapar(h.nombre)}</span>
         <span class="rol" style="margin-left:6px">${escapar(h.carril)}</span>
       </button>`,
     )
@@ -386,7 +391,16 @@ function pintarItems() {
         <div>
           <strong>${escapar(item.nombre)}</strong>
           <p class="meta">${escapar(item.cuando)}</p>
-          <p class="meta">Ejemplos: ${(item.ejemplos ?? []).map(escapar).join(", ")}</p>
+          <p class="ejemplos">${(item.ejemplos ?? [])
+            .map((nombre) => {
+              const icono = estado.iconos?.items?.[nombre];
+              return `<span class="ejemplo">${
+                icono
+                  ? `<img src="${escapar(icono)}" alt="" width="22" height="22" loading="lazy" onerror="this.remove()">`
+                  : ""
+              }${escapar(nombre)}</span>`;
+            })
+            .join("")}</p>
         </div>
       </article>`,
     )
@@ -451,7 +465,7 @@ function abrirFicha(id) {
   $("#modal-caja").innerHTML = `
     <button class="cerrar" type="button" aria-label="Cerrar">×</button>
     <div style="display:flex;align-items:center;gap:10px">
-      ${avatar(heroe, 40)}
+      ${avatar(heroe, 96)}
       ${insignia(heroe.tier)}
       <span class="meta">Tier ${escapar(heroe.tier)} · ${escapar(heroe.rol)} · ${escapar(heroe.carril)}</span>
     </div>
@@ -549,12 +563,20 @@ async function iniciar() {
   estado.porId = new Map(estado.heroes.map((h) => [h.id, h]));
   cargar();
 
-  // Los ítems son datos aparte: categorías, no builds cerradas.
+  // Los ítems y los retratos oficiales son datos aparte: si faltan, el sitio
+  // sigue con los glifos y los SVG propios.
   try {
     const respuesta = await fetch("data/items.json");
     if (respuesta.ok) estado.items = (await respuesta.json()).items ?? [];
   } catch {
     estado.items = [];
+  }
+
+  try {
+    const respuesta = await fetch("data/iconos.json");
+    if (respuesta.ok) estado.iconos = (await respuesta.json()) ?? {};
+  } catch {
+    estado.iconos = {};
   }
 
   // `?demo=1` carga un draft de ejemplo (sirve para la captura y para mostrar la

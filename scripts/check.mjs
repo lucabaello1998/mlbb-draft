@@ -74,6 +74,18 @@ const ATRIBUTOS = new Set(["sustain", "frontline", "fisico", "magico", "movilida
 ok("cada ítem apunta a un atributo conocido", items.every((i) => ATRIBUTOS.has(i.contra)),
   items.filter((i) => !ATRIBUTOS.has(i.contra)).map((i) => `${i.id}:${i.contra}`).join(", "));
 
+// Retratos oficiales: se referencian desde la wiki, no se copian al repo. El SVG
+// propio queda de respaldo, así que faltar alguno no rompe nada.
+const iconos = JSON.parse(leer("data/iconos.json"));
+const idsIconos = Object.keys(iconos.heroes ?? {});
+const idsDesconocidos = idsIconos.filter((id) => !ids.has(id));
+ok("los retratos oficiales apuntan a héroes del dataset", idsDesconocidos.length === 0, idsDesconocidos.join(", "));
+ok("la mayoría de los héroes tiene retrato oficial", idsIconos.length >= Math.ceil(heroes.length * 0.8),
+  `${idsIconos.length}/${heroes.length}`);
+const ejemplos = new Set(items.flatMap((i) => i.ejemplos ?? []));
+const itemsDesconocidos = Object.keys(iconos.items ?? {}).filter((nombre) => !ejemplos.has(nombre));
+ok("los íconos de ítem corresponden a ejemplos del dataset", itemsDesconocidos.length === 0, itemsDesconocidos.join(", "));
+
 console.log("\n== html ==");
 const html = leer("index.html");
 const css = leer("assets/style.css");

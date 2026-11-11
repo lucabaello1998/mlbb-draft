@@ -58,15 +58,23 @@ más para marcar una ventaja).
 
 ## Arte
 
-Los retratos y los íconos de ítem son **SVG propios** (`assets/heroes/*.svg`, `assets/items/*.svg`),
-generados a partir del dataset: color por rol, glifo del rol e iniciales. No hay arte oficial de
-Moonton en el repo, así que se puede publicar sin problemas de derechos.
+Los retratos que se ven son los **íconos oficiales** de cada héroe, referenciados desde el CDN de la
+wiki de Mobile Legends: no se copian al repo (el arte es de Moonton), y si una imagen no carga o el CDN
+cambia se usa el **SVG propio** como respaldo (`assets/heroes/*.svg`, generado con
+`node scripts/generar-arte.mjs`, con el color y el glifo del rol).
 
-Para regenerarlos después de tocar `data/heroes.json`:
+El mapa de URLs vive en `data/iconos.json` y se regenera con:
 
 ```bash
-node scripts/generar-arte.mjs
+node scripts/iconos-oficiales.mjs
 ```
+
+El script resuelve cada héroe por la API de la wiki y descarta los ítems cuyo archivo no coincide con
+el nombre pedido (mejor el glifo de categoría que el ícono de otro ítem). Los ítems de ejemplo muestran
+su ícono oficial cuando existe.
+
+> El arte y los nombres son de Moonton. Esta página es un proyecto personal sin relación con la
+> empresa; si Moonton pide sacar las imágenes, se borra `data/iconos.json` y quedan los SVG propios.
 
 ## Cómo se usa un counter
 
@@ -125,11 +133,13 @@ push.
 index.html              tres vistas (tier list, drafter, héroes) y el modal de ficha
 assets/app.js           estado, pintado, drafter y análisis (sin frameworks)
 assets/style.css        tema oscuro con acento dorado
-assets/heroes/*.svg     retratos propios, uno por héroe
+assets/heroes/*.svg     retratos de respaldo (si el CDN falla), uno por héroe
 assets/items/*.svg      íconos de categoría de ítem
 data/heroes.json        el dataset de héroes: la única fuente de verdad
 data/items.json         categorías de ítem y cuándo usarlas
-scripts/generar-arte.mjs  regenera los SVG de retratos e íconos
+data/iconos.json        URLs de los retratos e íconos oficiales (wiki)
+scripts/generar-arte.mjs      regenera los SVG de respaldo
+scripts/iconos-oficiales.mjs  resuelve los íconos oficiales por API
 scripts/check.mjs       validación del dataset, del arte y de la maqueta
 docs/                   capturas para el README
 ```
