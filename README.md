@@ -44,9 +44,16 @@ La ficha también trae lo que las fuentes midieron ("54.6% win rate in ranked"),
 ### Drafter
 
 - Dos equipos de 5 con los carriles reales (Oro, Medio, Exp, Jungla, Roam).
-- Elegís el equipo activo y vas tocando héroes del pool: cada uno cae en su carril.
-- **Bans**: 5 por equipo. Tocás *Banear* en un equipo y después el héroe en el pool; el baneado sale
-  del pool y se ve en la fila de bans con su retrato. Se saca con la ×.
+- **Arrastrar y soltar**: agarrás un héroe del pool y lo soltás en el carril que quieras, o en la fila de
+  bans. Mientras arrastrás, todas las zonas válidas se marcan; la que está debajo del dedo se resalta.
+  Se puede arrastrar también un héroe ya puesto, de un carril a otro.
+- **Tocar sigue funcionando** (es la alternativa accesible que pide WCAG 2.5.7): tocás un carril vacío y
+  después un héroe, y cae ahí; si no tocaste ningún carril, cae en el primero libre del equipo activo.
+- En el celular el arrastre arranca con una **pulsación sostenida de 220 ms**, para no pelearse con el
+  scroll; con el mouse arranca a los 6 px. `Escape` cancela, y el lector de pantalla anuncia cada
+  movimiento con una región `aria-live`.
+- **Bans**: 5 por equipo. Arrastrás el héroe a la fila de bans, o usás *Banear* y después lo tocás; el
+  baneado sale del pool y se ve con su retrato. Se saca con la ×.
 - **Bans sugeridos**: cinco candidatos para tu equipo, con el motivo escrito al lado. No es winrate ni
   una tier global: cruza tres cosas del dataset — el héroe tiene a alguno de tus picks en su lista de
   `counters` (3 puntos), es tier S o A y sigue libre (2 o 1), o sinergiza con lo que ya eligió el

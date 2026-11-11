@@ -263,10 +263,21 @@ function pintarSlots() {
       const id = equipo[carril];
       const heroe = id ? estado.porId.get(id) : null;
       return `
-        <div class="slot ${heroe ? "lleno" : ""}" title="${carril}">
-          ${heroe ? `${avatar(heroe, 30)}<span class="nombre-slot">${escapar(heroe.nombre)}</span>` : `<span class="vacio">—</span>`}
-          <span class="carril">${carril}</span>
-          ${heroe ? `<button class="quitar" type="button" data-quitar="${lado}" data-carril="${carril}" aria-label="Quitar ${escapar(heroe.nombre)}">×</button>` : ""}
+        <div class="slot ${heroe ? "lleno" : ""}" role="button" tabindex="0"
+          data-soltar="${lado}:${carril}" data-heroe-slot="${escapar(id ?? "")}"
+          aria-label="${escapar(carril)}: ${heroe ? escapar(heroe.nombre) : "vacío"}. Soltá un héroe acá.">
+          ${heroe ? `${avatar(heroe, 34)}
+            <span class="slot-texto">
+              <strong>${escapar(heroe.nombre)}</strong>
+              <span class="carril">${carril}</span>
+            </span>
+            <button class="quitar" type="button" data-quitar="${lado}" data-carril="${carril}"
+              aria-label="Sacar a ${escapar(heroe.nombre)}">×</button>`
+          : `<span class="slot-mas" aria-hidden="true">+</span>
+            <span class="slot-texto">
+              <span class="carril">${carril}</span>
+              <span class="slot-hint">Arrastrá o tocá</span>
+            </span>`}
         </div>`;
     }).join("");
     $(`#conteo-${lado}`).textContent = `${Object.keys(equipo).length}/5`;
@@ -299,7 +310,7 @@ function pintarBans() {
     lista.innerHTML = bans
       .map(
         (h) => `<span class="ban" title="Baneado: ${escapar(h.nombre)}">
-          ${avatar(h, 24)}<span>${escapar(h.nombre)}</span>
+          ${avatar(h, 24)}<span class="ban-nombre">${escapar(h.nombre)}</span>
           <button class="quitar-ban" type="button" data-quitar-ban="${lado}" data-id="${escapar(h.id)}"
             aria-label="Sacar el ban de ${escapar(h.nombre)}">×</button>
         </span>`,
@@ -307,6 +318,8 @@ function pintarBans() {
       .join("");
     for (let i = bans.length; i < MAX_BANS; i++) lista.insertAdjacentHTML("beforeend", '<span class="ban-vacio">—</span>');
 
+    lista.dataset.soltarBan = lado;
+    lista.setAttribute("aria-label", `Bans de ${lado === "alido" ? "mi equipo" : "el enemigo"}: ${bans.length} de ${MAX_BANS}`);
     $(`#conteo-bans-${lado}`).textContent = `${bans.length}/${MAX_BANS}`;
     const boton = document.querySelector(`[data-banear="${lado}"]`);
     if (boton) boton.setAttribute("aria-pressed", String(estado.banDe === lado));
@@ -324,26 +337,216 @@ function pintarBans() {
 function banear(lado, id) {
   const heroe = estado.porId.get(id);
   if (!heroe) return;
-  const bans = estado.bans[lado] ?? (estado.bans[lado] = []);
-  if (bans.includes(id)) return;
-  if (bans.length >= MAX_BANS) {
-    alert(`Ya hay ${MAX_BANS} bans para ese equipo. Sacá uno para cambiarlo.`);
+  // El límite se mira ANTES de sacarlo de su carril: si no, se perdía el pick.
+  if ((estado.bans[lado] ?? []).length >= MAX_BANS) {
+    anunciar(`Ya hay ${MAX_BANS} bans para ese equipo. Sacá uno para cambiarlo.`);
     return;
   }
-  bans.push(id);
-  if (estado.bans[lado].length >= MAX_BANS) estado.banDe = null;
+  quitarDeTodos(id);
+  // `quitarDeTodos` reemplaza el array: hay que volver a leerlo.
+  const bans = estado.bans[lado] ?? (estado.bans[lado] = []);
+  if (!bans.includes(id)) bans.push(id);
+  if (bans.length >= MAX_BANS) estado.banDe = null;
   guardar();
-  pintarSlots();
-  pintarAnalisis();
-  pintarPool();
+  refrescarDrafter();
+  anunciar(`${heroe.nombre}: ban para ${lado === "alido" ? "mi equipo" : "el enemigo"}.`);
 }
 
 function sacarBan(lado, id) {
   estado.bans[lado] = (estado.bans[lado] ?? []).filter((otro) => otro !== id);
   guardar();
+  refrescarDrafter();
+}
+
+// --- soltar héroes ----------------------------------------------------------
+
+function anunciar(texto) {
+  const region = $("#anuncio");
+  if (region) region.textContent = texto;
+}
+
+/** Un héroe no puede estar dos veces: sale de carriles y bans antes de entrar. */
+function quitarDeTodos(id) {
+  for (const lado of ["alido", "enemigo"]) {
+    for (const carril of CARRILES) {
+      if (estado[lado][carril] === id) delete estado[lado][carril];
+    }
+    estado.bans[lado] = (estado.bans[lado] ?? []).filter((otro) => otro !== id);
+  }
+}
+
+/** Destino que devuelve un punto de la pantalla: carril o zona de bans. */
+function destinoEn(x, y) {
+  const elemento = document.elementFromPoint(x, y);
+  if (!elemento) return null;
+  const slot = elemento.closest("[data-soltar]");
+  if (slot) {
+    const [lado, carril] = slot.dataset.soltar.split(":");
+    return { tipo: "carril", lado, carril };
+  }
+  const bans = elemento.closest("[data-soltar-ban]");
+  if (bans) return { tipo: "ban", lado: bans.dataset.soltarBan };
+  return null;
+}
+
+function soltar(id, destino) {
+  const heroe = estado.porId.get(id);
+  if (!heroe) return;
+
+  if (destino.tipo === "ban") {
+    banear(destino.lado, id);
+    return;
+  }
+
+  if (estado[destino.lado][destino.carril] === id) return; // soltar donde ya estaba
+  quitarDeTodos(id);
+  estado[destino.lado][destino.carril] = id;
+  estado.activo = destino.lado;
+  guardar();
+  refrescarDrafter();
+  anunciar(`${heroe.nombre} al carril ${destino.carril} de ${destino.lado === "alido" ? "mi equipo" : "el enemigo"}.`);
+}
+
+function refrescarDrafter() {
   pintarSlots();
   pintarAnalisis();
   pintarPool();
+}
+
+// --- arrastrar y soltar -----------------------------------------------------
+//
+// Pointer events y no HTML5 drag: el arrastre nativo no funciona parecido en
+// touch y no se puede estilar. En mouse arranca a los 6 px; en touch, con una
+// pulsación sostenida de 220 ms, para no pelear con el scroll de la página.
+// El toque sigue funcionando solo: es la alternativa accesible (WCAG 2.5.7).
+
+const arrastre = { activo: null, pendiente: null, suprimirClick: false, destino: null };
+
+function montarArrastre() {
+  const UMBRAL_MOUSE = 6;
+  const UMBRAL_TOUCH = 14;
+  const ESPERA_TOUCH = 220;
+
+  function limpiarPendiente() {
+    if (arrastre.pendiente?.temporizador) clearTimeout(arrastre.pendiente.temporizador);
+    arrastre.pendiente = null;
+  }
+
+  function comenzar(evento) {
+    const pendiente = arrastre.pendiente;
+    if (!pendiente) return;
+    const heroe = estado.porId.get(pendiente.id);
+    if (!heroe) return;
+    if (pendiente.temporizador) clearTimeout(pendiente.temporizador);
+
+    const fantasma = document.createElement("div");
+    fantasma.className = "fantasma";
+    fantasma.innerHTML = `${avatar(heroe, 44)}<span>${escapar(heroe.nombre)}</span>`;
+    document.body.appendChild(fantasma);
+
+    arrastre.activo = {
+      id: pendiente.id,
+      origen: pendiente.origen,
+      pointerId: pendiente.pointerId,
+      fantasma,
+      x: evento.clientX,
+      y: evento.clientY,
+    };
+    document.body.classList.add("arrastrando");
+    moverFantasma(evento.clientX, evento.clientY);
+    anunciar(`${heroe.nombre} levantado. Soltalo en un carril o en los bans.`);
+  }
+
+  function moverFantasma(x, y) {
+    const f = arrastre.activo?.fantasma;
+    if (!f) return;
+    f.style.transform = `translate(${Math.round(x - 44)}px, ${Math.round(y - 30)}px)`;
+  }
+
+  function marcarDestino(x, y) {
+    document.querySelectorAll(".sobre").forEach((el) => el.classList.remove("sobre"));
+    const destino = destinoEn(x, y);
+    arrastre.destino = destino;
+    if (!destino) return;
+    const selector = destino.tipo === "ban" ? `[data-soltar-ban="${destino.lado}"]` : `[data-soltar="${destino.lado}:${destino.carril}"]`;
+    document.querySelector(selector)?.classList.add("sobre");
+  }
+
+  function autoScroll(y) {
+    const lista = document.querySelector("#pool")?.closest(".tier-grid");
+    if (!lista) return;
+    const caja = lista.getBoundingClientRect();
+    if (y < caja.top + 48) lista.scrollBy({ top: -14, behavior: "auto" });
+    else if (y > caja.bottom - 48) lista.scrollBy({ top: 14, behavior: "auto" });
+  }
+
+  function terminar() {
+    arrastre.activo?.fantasma.remove();
+    arrastre.activo = null;
+    document.body.classList.remove("arrastrando");
+    document.querySelectorAll(".sobre").forEach((el) => el.classList.remove("sobre"));
+    limpiarPendiente();
+  }
+
+  document.addEventListener("pointerdown", (evento) => {
+    if (evento.button !== 0 && evento.pointerType === "mouse") return;
+    const tile = evento.target.closest("[data-elegir]");
+    const slot = evento.target.closest("[data-soltar]");
+    if (!tile && !slot) return;
+    if (slot && (evento.target.closest("[data-quitar]") || !slot.dataset.heroeSlot)) return;
+
+    const id = tile ? tile.dataset.elegir : slot.dataset.heroeSlot;
+    arrastre.pendiente = {
+      id,
+      origen: tile ? "pool" : "slot",
+      pointerId: evento.pointerId,
+      x0: evento.clientX,
+      y0: evento.clientY,
+      tipo: evento.pointerType,
+      temporizador: null,
+    };
+
+    if (evento.pointerType !== "mouse") {
+      arrastre.pendiente.temporizador = setTimeout(() => comenzar(evento), ESPERA_TOUCH);
+    }
+  });
+
+  document.addEventListener("pointermove", (evento) => {
+    const pendiente = arrastre.pendiente;
+    if (!pendiente || evento.pointerId !== pendiente.pointerId) return;
+
+    if (!arrastre.activo) {
+      const distancia = Math.hypot(evento.clientX - pendiente.x0, evento.clientY - pendiente.y0);
+      if (pendiente.tipo === "mouse" && distancia > UMBRAL_MOUSE) comenzar(evento);
+      else if (pendiente.tipo !== "mouse" && distancia > UMBRAL_TOUCH) limpiarPendiente(); // es scroll
+      return;
+    }
+
+    evento.preventDefault();
+    moverFantasma(evento.clientX, evento.clientY);
+    marcarDestino(evento.clientX, evento.clientY);
+    autoScroll(evento.clientY);
+  });
+
+  document.addEventListener("pointerup", (evento) => {
+    const pendiente = arrastre.pendiente;
+    if (!pendiente || evento.pointerId !== pendiente.pointerId) return;
+
+    if (arrastre.activo) {
+      const destino = destinoEn(evento.clientX, evento.clientY) ?? arrastre.destino;
+      const id = arrastre.activo.id;
+      arrastre.suprimirClick = true;
+      setTimeout(() => (arrastre.suprimirClick = false), 0);
+      terminar();
+      if (destino) soltar(id, destino);
+    }
+    limpiarPendiente();
+  });
+
+  document.addEventListener("pointercancel", terminar);
+  document.addEventListener("keydown", (evento) => {
+    if (evento.key === "Escape" && arrastre.activo) terminar();
+  });
 }
 
 // Bans sugeridos para MI equipo: no es winrate ni una tier global, son tres cosas
@@ -380,7 +583,9 @@ function bansSugeridos() {
     candidatos.push({ heroe, punto, motivos });
   }
 
-  return candidatos.sort((a, b) => b.punto - a.punto || a.heroe.nombre.localeCompare(b.heroe.nombre)).slice(0, MAX_BANS);
+  return candidatos
+    .sort((a, b) => b.punto - a.punto || a.heroe.nombre.localeCompare(b.heroe.nombre))
+    .slice(0, MAX_BANS);
 }
 
 function contenedorEventos() {
@@ -388,9 +593,7 @@ function contenedorEventos() {
     boton.addEventListener("click", () => {
       delete estado[boton.dataset.quitar][boton.dataset.carril];
       guardar();
-      pintarSlots();
-      pintarAnalisis();
-      pintarPool();
+      refrescarDrafter();
     });
   });
 
@@ -403,6 +606,30 @@ function contenedorEventos() {
       const lado = boton.dataset.banear;
       estado.banDe = estado.banDe === lado ? null : lado;
       pintarBans();
+    });
+  });
+
+  document.querySelectorAll("[data-soltar]").forEach((slot) => {
+    const activar = () => {
+      const [lado] = slot.dataset.soltar.split(":");
+      estado.activo = lado;
+      if (!slot.dataset.heroeSlot) {
+        pintarSlots();
+        $("#buscador-pool")?.focus();
+        anunciar(`Equipo activo: ${lado === "alido" ? "mi equipo" : "el enemigo"}. Elegí un héroe del pool.`);
+      } else {
+        pintarSlots();
+      }
+    };
+    slot.addEventListener("click", (evento) => {
+      if (evento.target.closest("[data-quitar]")) return;
+      activar();
+    });
+    slot.addEventListener("keydown", (evento) => {
+      if (evento.key === "Enter" || evento.key === " ") {
+        evento.preventDefault();
+        activar();
+      }
     });
   });
 }
@@ -434,19 +661,25 @@ function pintarPool() {
 
   pool.innerHTML = visibles
     .map(
-      (h) => `<button class="heroe-mini" type="button" data-elegir="${escapar(h.id)}" title="Agregar al equipo activo">
-        ${avatar(h, 30)}<span class="nombre">${escapar(h.nombre)}</span>
-        <span class="rol" style="margin-left:6px">${escapar(h.carril)}</span>
+      (h) => `<button class="heroe-mini" type="button" data-elegir="${escapar(h.id)}"
+        title="${escapar(h.nombre)} · ${escapar(h.rol)} · ${escapar(h.carril)}. Arrastralo a un carril o tocalo.">
+        ${avatar(h, 30)}
+        <span class="nombre">${escapar(h.nombre)}</span>
+        ${insignia(h.tier)}
+        <span class="rol">${escapar(h.carril)}</span>
       </button>`,
     )
     .join("");
 
   pool.querySelectorAll("[data-elegir]").forEach((boton) => {
-    boton.addEventListener("click", () => elegir(boton.dataset.elegir));
+    boton.addEventListener("click", () => {
+      if (arrastre.suprimirClick) return;
+      elegir(boton.dataset.elegir);
+    });
   });
 }
 
-function elegir(id) {
+function elegir(id, lado = estado.activo) {
   const heroe = estado.porId.get(id);
   if (!heroe) return;
 
@@ -455,19 +688,14 @@ function elegir(id) {
     return;
   }
 
-  const equipo = equipoActual();
+  const equipo = estado[lado];
   // Si su carril está ocupado, cae en el primero libre; si el equipo está lleno, avisa.
-  const carrilLibre = equipo[heroe.carril] ? CARRILES.find((c) => !equipo[c]) : heroe.carril;
-  if (!carrilLibre) {
-    alert("El equipo ya tiene 5 héroes. Quitá uno para cambiarlo.");
+  const carril = !equipo[heroe.carril] ? heroe.carril : CARRILES.find((c) => !equipo[c]);
+  if (!carril) {
+    anunciar(`El equipo ya tiene 5 héroes. Quitá uno para cambiarlo.`);
     return;
   }
-
-  equipo[carrilLibre] = heroe.id;
-  guardar();
-  pintarSlots();
-  pintarAnalisis();
-  pintarPool();
+  soltar(id, { tipo: "carril", lado, carril });
 }
 
 function counterDe(enemigos) {
@@ -999,6 +1227,7 @@ async function iniciar() {
 
   cargarVistaTier();
   montarModoTier();
+  montarArrastre();
   montarChips($("#chips-rol"), () => estado.rol, (rol) => (estado.rol = rol), pintarTier);
   montarChips($("#chips-pool"), () => estado.rolPool, (rol) => (estado.rolPool = rol), pintarPool);
   montarChips($("#chips-heroes"), () => estado.rolHeroes, (rol) => (estado.rolHeroes = rol), pintarHeroes);
