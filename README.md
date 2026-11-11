@@ -147,6 +147,16 @@ scripts/check.mjs       validación del dataset, del arte y de la maqueta
 docs/                   capturas para el README
 ```
 
+## Tests
+
+```bash
+node scripts/check.mjs
+```
+
+Valida el dataset (ids únicos, roles y carriles del juego, tiers S/A/B/C/?, tips sólo en los curados,
+counters y sinergias que existan), que cada héroe tenga su retrato y que el JS escape todo lo que
+viene del JSON. Lo corre el CI en cada push; no hay dependencias ni build.
+
 ## Límites y aviso
 
 - **No es una herramienta oficial**: Mobile Legends: Bang Bang es una marca de Moonton. Proyecto
