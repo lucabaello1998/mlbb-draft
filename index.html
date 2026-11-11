@@ -34,7 +34,7 @@
       <div>
         <h1>Tier list</h1>
         <p class="sub">Tier medida con winrate y banrate (MLBB Hub + MLCounters, nov. 2026), contrastada con
-          tres listas más. La ficha muestra la letra de cada fuente.</p>
+          tres listas más. Tocá la cabecera de un tier para plegarlo.</p>
       </div>
       <span class="meta" id="conteo-tier" aria-live="polite"></span>
     </div>
@@ -43,6 +43,13 @@
       <input class="buscador" id="buscador-tier" type="search" placeholder="Buscar héroe por nombre, rol o carril…"
         aria-label="Buscar héroe en la tier list">
       <div class="chips" id="chips-rol" role="group" aria-label="Filtrar por rol"></div>
+      <div class="vista-controles">
+        <div class="segmentado" role="group" aria-label="Cómo ver la tier list">
+          <button type="button" id="modo-cuadro" aria-pressed="true">Cuadro</button>
+          <button type="button" id="modo-lista" aria-pressed="false">Lista</button>
+        </div>
+        <button class="boton secundario chico" type="button" id="abrir-todo">Abrir todo</button>
+      </div>
     </div>
 
     <div id="tiers"></div>

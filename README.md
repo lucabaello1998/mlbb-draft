@@ -32,6 +32,13 @@ S+ se muestra como S y D como C, para no abrir seis filas. Los 30 héroes curado
 tier. **Un héroe que ninguna fuente lista queda en "?" con el motivo escrito** (hoy: Dori, que salió
 después de las listas). Preferimos eso a inventarle una letra.
 
+La vista arranca en **modo cuadro** (retratos en grilla, nombre abajo) y se puede cambiar a **lista** con
+rol y carril. Cada tier se **pliega** con un toque en su cabecera: por defecto abren S y A, y B/C/? quedan
+cerrados para que la página no sea un scroll eterno. El modo y los tiers abiertos se recuerdan en el
+navegador. En el celular la grilla pasa a 4 columnas y el encabezado queda fijo.
+
+![Tier list en el celular](docs/tierlist-mobile.png)
+
 La ficha también trae lo que las fuentes midieron ("54.6% win rate in ranked"), con el texto original.
 
 ### Drafter

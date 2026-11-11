@@ -12,6 +12,8 @@ const estado = {
   rolPool: "",
   rolHeroes: "",
   busqueda: "",
+  tierModo: "cuadro", // "cuadro" (retratos) | "lista" (chips con rol)
+  tierAbiertos: new Set(["S", "A"]),
   busquedaPool: "",
   busquedaHeroes: "",
   activo: "alido", // qué equipo recibe el próximo pick
@@ -93,40 +95,117 @@ function pintarTier() {
   const visibles = estado.heroes.filter((h) => (!estado.rol || h.rol === estado.rol) && coincide(h));
   const contenedor = $("#tiers");
 
-  if (!visibles.length) {
-    contenedor.innerHTML = `<p class="vacio">Ningún héroe coincide con el filtro.</p>`;
-    return;
-  }
-
   const conteo = $("#conteo-tier");
   if (conteo) {
     conteo.textContent = `${visibles.length} ${visibles.length === 1 ? "héroe" : "héroes"}`;
   }
 
+  if (!visibles.length) {
+    contenedor.innerHTML = `<p class="vacio">Ningún héroe coincide con el filtro. Probá con otro nombre o
+      limpiá el buscador.</p>`;
+    return;
+  }
+
+  const ficha = (h) =>
+    estado.tierModo === "cuadro"
+      ? `<button class="ficha" type="button" data-heroe="${escapar(h.id)}"
+           title="${escapar(h.nombre)} · ${escapar(h.rol)} · ${escapar(h.carril)}">
+           ${avatar(h, 64)}
+           <span class="nombre">${escapar(h.nombre)}</span>
+         </button>`
+      : `<button class="heroe-mini" type="button" data-heroe="${escapar(h.id)}">
+           ${avatar(h, 28)}
+           <span><span class="nombre">${escapar(h.nombre)}</span><br>
+           <span class="rol">${escapar(h.rol)} · ${escapar(h.carril)}</span></span>
+         </button>`;
+
   contenedor.innerHTML = TIERS.map((tier) => {
     const grupo = visibles.filter((h) => h.tier === tier).sort((a, b) => a.nombre.localeCompare(b.nombre));
     if (!grupo.length) return "";
+    const abierto = estado.tierAbiertos.has(tier);
+    const etiqueta = tier === "?" ? "Sin fuente" : `Tier ${tier}`;
     return `
-      <div class="tier tier-${tier === "?" ? "sin" : tier.toLowerCase()}">
-        <div class="tier-letra">${tier === "?" ? "?" : tier}</div>
-        <div class="tier-cuerpo">
-          <div class="tier-grid">
-            ${grupo
-              .map(
-                (h) => `<button class="heroe-mini" type="button" data-heroe="${escapar(h.id)}">
-                  ${avatar(h, 40)}
-                  <span><span class="nombre">${escapar(h.nombre)}</span><br><span class="rol">${escapar(h.rol)} · ${escapar(h.carril)}</span></span>
-                </button>`,
-              )
-              .join("")}
+      <section class="tier tier-${tier === "?" ? "sin" : tier.toLowerCase()}" data-tier="${escapar(tier)}">
+        <button class="tier-cabecera" type="button" data-tier-toggle="${escapar(tier)}"
+          aria-expanded="${abierto}" aria-controls="tier-${escapar(tier)}">
+          <span class="tier-letra">${tier === "?" ? "?" : tier}</span>
+          <span class="tier-nombre">${etiqueta}</span>
+          <span class="meta">${grupo.length} ${grupo.length === 1 ? "héroe" : "héroes"}</span>
+          <span class="tier-flecha" aria-hidden="true">${abierto ? "▾" : "▸"}</span>
+        </button>
+        <div class="tier-cuerpo" id="tier-${escapar(tier)}" ${abierto ? "" : "hidden"}>
+          <div class="${estado.tierModo === "cuadro" ? "cuadricula" : "tier-grid"}">
+            ${grupo.map(ficha).join("")}
           </div>
         </div>
-      </div>`;
+      </section>`;
   }).join("");
 
   contenedor.querySelectorAll("[data-heroe]").forEach((boton) => {
     boton.addEventListener("click", () => abrirFicha(boton.dataset.heroe));
   });
+
+  contenedor.querySelectorAll("[data-tier-toggle]").forEach((boton) => {
+    boton.addEventListener("click", () => {
+      const tier = boton.dataset.tierToggle;
+      if (estado.tierAbiertos.has(tier)) estado.tierAbiertos.delete(tier);
+      else estado.tierAbiertos.add(tier);
+      guardarVistaTier();
+      pintarTier();
+    });
+  });
+}
+
+// El modo y los tiers abiertos se recuerdan: quien ya cerró C no quiere volver a
+// cerrarlo cada vez que entra.
+function guardarVistaTier() {
+  try {
+    localStorage.setItem(
+      "mlbb-tier",
+      JSON.stringify({ modo: estado.tierModo, abiertos: [...estado.tierAbiertos] }),
+    );
+  } catch {
+    // Sin storage queda en memoria.
+  }
+}
+
+function cargarVistaTier() {
+  try {
+    const guardado = JSON.parse(localStorage.getItem("mlbb-tier") ?? "{}");
+    if (guardado.modo === "lista" || guardado.modo === "cuadro") estado.tierModo = guardado.modo;
+    if (Array.isArray(guardado.abiertos)) estado.tierAbiertos = new Set(guardado.abiertos);
+  } catch {
+    // Un JSON viejo no rompe la vista.
+  }
+}
+
+function montarModoTier() {
+  const botones = { cuadro: $("#modo-cuadro"), lista: $("#modo-lista") };
+  const pintarModo = () => {
+    for (const [modo, boton] of Object.entries(botones)) {
+      if (boton) boton.setAttribute("aria-pressed", String(estado.tierModo === modo));
+    }
+  };
+  for (const [modo, boton] of Object.entries(botones)) {
+    if (!boton) continue;
+    boton.addEventListener("click", () => {
+      estado.tierModo = modo;
+      guardarVistaTier();
+      pintarModo();
+      pintarTier();
+    });
+  }
+  const abrirTodo = $("#abrir-todo");
+  if (abrirTodo) {
+    abrirTodo.addEventListener("click", () => {
+      const todosAbiertos = estado.tierAbiertos.size >= TIERS.length;
+      estado.tierAbiertos = todosAbiertos ? new Set() : new Set(TIERS);
+      abrirTodo.textContent = todosAbiertos ? "Abrir todo" : "Cerrar todo";
+      guardarVistaTier();
+      pintarTier();
+    });
+  }
+  pintarModo();
 }
 
 function pintarHeroes() {
@@ -918,6 +997,8 @@ async function iniciar() {
     mostrarVista(vistaInicial);
   }
 
+  cargarVistaTier();
+  montarModoTier();
   montarChips($("#chips-rol"), () => estado.rol, (rol) => (estado.rol = rol), pintarTier);
   montarChips($("#chips-pool"), () => estado.rolPool, (rol) => (estado.rolPool = rol), pintarPool);
   montarChips($("#chips-heroes"), () => estado.rolHeroes, (rol) => (estado.rolHeroes = rol), pintarHeroes);

@@ -303,3 +303,94 @@ h1 { font-size: clamp(1.6rem, 3.4vw, 2.3rem); letter-spacing: -0.03em; margin: 0
 .barra-filtros { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
 .barra-filtros .buscador { flex: 1 1 240px; max-width: 380px; }
 .barra-filtros .chips { margin: 0; }
+/* ---------- tier list v2: cabecera plegable y modo cuadro ---------- */
+.tier {
+  display: block; background: var(--panel); border: 1px solid var(--borde);
+  border-radius: 14px; margin-bottom: 10px; overflow: hidden;
+}
+.tier-cabecera {
+  display: flex; align-items: center; gap: 10px; width: 100%; padding: 9px 12px;
+  background: transparent; border: 0; color: inherit; font: inherit; text-align: left;
+  cursor: pointer; touch-action: manipulation;
+}
+.tier-cabecera:hover { background: rgba(255, 255, 255, 0.03); }
+.tier-letra {
+  width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center;
+  font-weight: 900; font-size: 0.95rem; color: #12151d; flex: none;
+}
+.tier-nombre { font-weight: 700; font-size: 0.9rem; }
+.tier-cabecera .meta { margin-left: auto; font-size: 0.75rem; }
+.tier-flecha { width: 16px; text-align: center; color: var(--apagado); }
+.tier-cuerpo { padding: 2px 12px 14px; }
+
+.cuadricula { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 8px; }
+.ficha {
+  display: flex; flex-direction: column; align-items: center; gap: 5px; width: 100%;
+  background: var(--panel-2); border: 1px solid var(--borde); border-radius: 12px;
+  padding: 6px; color: inherit; font: inherit; cursor: pointer; touch-action: manipulation;
+}
+.ficha .heroe-avatar {
+  width: 100%; height: auto; aspect-ratio: 1; border-radius: 9px;
+  object-fit: cover; object-position: center 15%;
+}
+.ficha .nombre {
+  font-size: 0.7rem; line-height: 1.2; width: 100%; text-align: center;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.ficha:hover { border-color: rgba(212, 175, 55, 0.5); }
+.ficha:focus-visible { outline: 2px solid var(--oro); outline-offset: 2px; }
+
+/* Chips de la barra: sin wrap en mobile, scroll horizontal */
+.vista-controles { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+.segmentado {
+  display: inline-flex; background: var(--panel); border: 1px solid var(--borde);
+  border-radius: 999px; padding: 3px;
+}
+.segmentado button {
+  border: 0; background: transparent; color: var(--apagado); font: inherit;
+  font-size: 0.78rem; padding: 5px 12px; border-radius: 999px; cursor: pointer;
+  touch-action: manipulation;
+}
+.segmentado button[aria-pressed="true"] { background: var(--oro-suave); color: var(--oro); }
+
+@media (max-width: 680px) {
+  .envoltura { padding: 16px 12px 60px; }
+  .encabezado {
+    position: sticky; top: 0; z-index: 20; background: var(--fondo);
+    padding: 10px 0 8px; margin-bottom: 14px; border-bottom: 1px solid var(--borde);
+  }
+  .marca { font-size: 1rem; }
+  .nav { width: 100%; order: 3; }
+  .nav button { flex: 1; }
+
+  h1 { font-size: 1.45rem; }
+  .sub { font-size: 0.86rem; margin-bottom: 12px; }
+
+  .barra-filtros { gap: 8px; }
+  .barra-filtros .buscador { flex: 1 1 100%; max-width: none; }
+  .vista-controles { margin-left: 0; width: 100%; justify-content: space-between; }
+
+  .chips {
+    flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; margin-bottom: 0;
+    scrollbar-width: none;
+  }
+  .chips::-webkit-scrollbar { display: none; }
+  .chip { flex: 0 0 auto; }
+
+  .cuadricula { grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); gap: 6px; }
+  .ficha { padding: 5px; border-radius: 10px; }
+  .ficha .nombre { font-size: 0.64rem; }
+
+  .tier-cabecera { padding: 8px 10px; }
+  .tier-cuerpo { padding: 2px 10px 10px; }
+  .tier-nombre { font-size: 0.84rem; }
+
+  .grilla { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+  .tarjeta { padding: 10px; }
+  .tarjeta h3 { font-size: 0.9rem; }
+}
+
+@media (max-width: 380px) {
+  .cuadricula { grid-template-columns: repeat(auto-fill, minmax(64px, 1fr)); }
+}
+
