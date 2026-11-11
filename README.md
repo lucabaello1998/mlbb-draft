@@ -1,5 +1,7 @@
 # MLBB Draft
 
+[![Release](https://img.shields.io/github/v/release/lucabaello1998/mlbb-draft?label=release)](https://github.com/lucabaello1998/mlbb-draft/releases/latest)
+
 **Tier list, drafter de 5v5 y tips por héroe para Mobile Legends: Bang Bang.** Sin cuenta, sin app y
 sin instalar nada: abre en el celular o en la compu y arma la composición.
 
