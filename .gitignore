@@ -1,0 +1,6 @@
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Capturas temporales
+*.tmp

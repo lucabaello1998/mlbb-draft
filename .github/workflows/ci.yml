@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Validar dataset y maqueta
+        run: node scripts/check.mjs
+
+      - name: Servir el sitio y comprobar que carga
+        run: |
+          python3 -m http.server 8000 &
+          sleep 2
+          curl -fsS http://127.0.0.1:8000/ > /tmp/index.html
+          curl -fsS http://127.0.0.1:8000/data/heroes.json > /tmp/heroes.json
+          grep -q "MLBB Draft" /tmp/index.html
+          node -e "const d=require('/tmp/heroes.json'); if(!d.heroes.length) process.exit(1)"

@@ -1,0 +1,760 @@
+{
+  "actualizado": "2026-11-11",
+  "nota": "Tier list curada a mano: ordena por facilidad para ganar ranked con equipo aleatorio, no por winrate de torneo. Cambia con cada parche. Los counters son contra héroes de esta lista.",
+  "heroes": [
+    {
+      "id": "layla",
+      "nombre": "Layla",
+      "rol": "Marksman",
+      "carril": "Oro",
+      "dificultad": 1,
+      "tier": "C",
+      "tags": [
+        "rango",
+        "sin escape"
+      ],
+      "tips": [
+        "Su rango es su defensa: pega desde el borde, nunca desde el centro de la pelea.",
+        "No tiene dash ni escape. Si el enemigo tiene asesinos, jugá detrás del tanque o cambiá de pick.",
+        "Empujá torre solo cuando tengas visión del río: sin escape, una rotación te mata."
+      ],
+      "counters": [
+        "fanny",
+        "ling",
+        "gusion"
+      ],
+      "sinergias": [
+        "angela",
+        "estes"
+      ]
+    },
+    {
+      "id": "miya",
+      "nombre": "Miya",
+      "rol": "Marksman",
+      "carril": "Oro",
+      "dificultad": 1,
+      "tier": "B",
+      "tags": [
+        "late game",
+        "split push"
+      ],
+      "tips": [
+        "Es de late: no pelees por nada hasta tener dos ítems completos.",
+        "Su ultimate te da invisibilidad corta: usala para reposicionarte, no para entrar.",
+        "Con ventaja, dividí carriles: obliga a que el enemigo rote y tu equipo tome objetivos."
+      ],
+      "counters": [
+        "fanny",
+        "chou"
+      ],
+      "sinergias": [
+        "angela",
+        "diggie"
+      ]
+    },
+    {
+      "id": "bruno",
+      "nombre": "Bruno",
+      "rol": "Marksman",
+      "carril": "Oro",
+      "dificultad": 2,
+      "tier": "B",
+      "tags": [
+        "burst",
+        "rango"
+      ],
+      "tips": [
+        "Su daño viene de la pasiva: no cortes el ritmo de ataques, movete entre autoataques.",
+        "La segunda habilidad empuja y stunea: es tu escape, no la gastes para farmear.",
+        "Contra tanques cambiá a ítems de penetración antes de la tercera ronda."
+      ],
+      "counters": [
+        "lancelot",
+        "joy"
+      ],
+      "sinergias": [
+        "khufra",
+        "angela"
+      ]
+    },
+    {
+      "id": "claude",
+      "nombre": "Claude",
+      "rol": "Marksman",
+      "carril": "Oro",
+      "dificultad": 3,
+      "tier": "A",
+      "tags": [
+        "robo de stats",
+        "movilidad"
+      ],
+      "tips": [
+        "Su ultimate roba estadísticas del enemigo: entrá cuando el tanque ya gastó el control.",
+        "El dash te deja fuera de alcance: usalo para esquivar la habilidad que te mata, no para iniciar.",
+        "Necesita un equipo que aguante la primera línea; sin frontline, no lo elijas."
+      ],
+      "counters": [
+        "khufra",
+        "franco"
+      ],
+      "sinergias": [
+        "angela",
+        "diggie"
+      ]
+    },
+    {
+      "id": "wanwan",
+      "nombre": "Wanwan",
+      "rol": "Marksman",
+      "carril": "Oro",
+      "dificultad": 3,
+      "tier": "A",
+      "tags": [
+        "debilidades",
+        "kiting"
+      ],
+      "tips": [
+        "Rompe las debilidades del enemigo antes de pelear: sin eso, su daño es bajo.",
+        "Su ultimate es la mejor herramienta anti-tanque del juego: guardala para el que se te viene encima.",
+        "Contra héroes con dash largo, kiteá en círculos y no corras en línea recta."
+      ],
+      "counters": [
+        "khufra",
+        "chou"
+      ],
+      "sinergias": [
+        "diggie",
+        "angela"
+      ]
+    },
+    {
+      "id": "beatrix",
+      "nombre": "Beatrix",
+      "rol": "Marksman",
+      "carril": "Oro",
+      "dificultad": 2,
+      "tier": "A",
+      "tags": [
+        "versátil",
+        "burst"
+      ],
+      "tips": [
+        "Cambiá de arma según la pelea: la de ráfaga para torres, la de un tiro para pickear.",
+        "Su daño es de ráfaga: esperá que el enemigo gaste el escape y recién ahí entrá.",
+        "Sin frontline es frágil; pide un tanque que absorba el engage."
+      ],
+      "counters": [
+        "lancelot",
+        "joy"
+      ],
+      "sinergias": [
+        "khufra",
+        "atlas"
+      ]
+    },
+    {
+      "id": "eudora",
+      "nombre": "Eudora",
+      "rol": "Mage",
+      "carril": "Medio",
+      "dificultad": 1,
+      "tier": "C",
+      "tags": [
+        "burst",
+        "cc puntual"
+      ],
+      "tips": [
+        "Su combo es uno solo: stun y ráfaga. Si el stun falla, te quedás sin nada.",
+        "Jugá desde arbustos con visión: es la forma de que el stun conecte.",
+        "Contra equipos con mucha vida, su daño se queda corto: no la estires a late."
+      ],
+      "counters": [
+        "fanny",
+        "ling"
+      ],
+      "sinergias": [
+        "khufra",
+        "franco"
+      ]
+    },
+    {
+      "id": "valir",
+      "nombre": "Valir",
+      "rol": "Mage",
+      "carril": "Medio",
+      "dificultad": 2,
+      "tier": "S",
+      "tags": [
+        "poke",
+        "anti-dash"
+      ],
+      "tips": [
+        "Su fuego empuja y quema: es el mejor freno contra héroes que entran con dash.",
+        "Pokeá desde atrás del tanque y guardá la ultimate para cuando el enemigo ya está adentro.",
+        "No necesita matar: con zona y presión, el equipo gana las peleas solas."
+      ],
+      "counters": [
+        "fanny",
+        "ling"
+      ],
+      "sinergias": [
+        "khufra",
+        "atlas"
+      ]
+    },
+    {
+      "id": "kagura",
+      "nombre": "Kagura",
+      "rol": "Mage",
+      "carril": "Medio",
+      "dificultad": 3,
+      "tier": "A",
+      "tags": [
+        "movilidad",
+        "cc"
+      ],
+      "tips": [
+        "El paraguas es la mitad del héroe: dejalo en el arbusto y volvé a él para escapar.",
+        "Encadená el stun con el equipo; sola no mata, pero abre peleas.",
+        "Si no dominás el cambio de posición del paraguas, elegí otro mage para ranked."
+      ],
+      "counters": [
+        "gusion",
+        "joy"
+      ],
+      "sinergias": [
+        "atlas",
+        "khufra"
+      ]
+    },
+    {
+      "id": "lunox",
+      "nombre": "Lunox",
+      "rol": "Mage",
+      "carril": "Medio",
+      "dificultad": 3,
+      "tier": "A",
+      "tags": [
+        "sustain",
+        "burst"
+      ],
+      "tips": [
+        "Alterná entre las dos formas: la de daño para pegar, la de sustain para sobrevivir.",
+        "Su ultimate la vuelve casi inmune un instante: usala para esquivar la habilidad que te mata.",
+        "Es independiente del tanque, pero sufre contra control en cadena."
+      ],
+      "counters": [
+        "khufra",
+        "franco"
+      ],
+      "sinergias": [
+        "estes",
+        "angela"
+      ]
+    },
+    {
+      "id": "xavier",
+      "nombre": "Xavier",
+      "rol": "Mage",
+      "carril": "Medio",
+      "dificultad": 2,
+      "tier": "A",
+      "tags": [
+        "rango global",
+        "poke"
+      ],
+      "tips": [
+        "Su ultimate cruza el mapa: mirá el minimapa antes de tirarla, no sólo tu pantalla.",
+        "Cargá las habilidades antes de la pelea: el daño escala con la carga.",
+        "Necesita estar atrás; si te alcanzan, no tenés escape."
+      ],
+      "counters": [
+        "fanny",
+        "ling"
+      ],
+      "sinergias": [
+        "khufra",
+        "grock"
+      ]
+    },
+    {
+      "id": "valentina",
+      "nombre": "Valentina",
+      "rol": "Mage",
+      "carril": "Medio",
+      "dificultad": 3,
+      "tier": "A",
+      "tags": [
+        "robo de ulti",
+        "flex"
+      ],
+      "tips": [
+        "Su valor depende de robar una buena ultimate: mirá el equipo enemigo antes de elegirla.",
+        "Contra equipos sin ultis fuertes, pierde muchísimo: pensá el draft.",
+        "Es flexible: puede ir a medio o de soporte de daño si el equipo lo necesita."
+      ],
+      "counters": [
+        "khufra",
+        "chou"
+      ],
+      "sinergias": [
+        "atlas",
+        "angela"
+      ]
+    },
+    {
+      "id": "gusion",
+      "nombre": "Gusion",
+      "rol": "Assassin",
+      "carril": "Jungla",
+      "dificultad": 3,
+      "tier": "A",
+      "tags": [
+        "burst",
+        "movilidad"
+      ],
+      "tips": [
+        "Su combo tiene orden: marcá, dash y recogé las dagas. Practicá el orden antes de ranked.",
+        "Entrá después del engage del tanque, nunca primero.",
+        "Contra tanques con control en área, esperá a que gasten el cc."
+      ],
+      "counters": [
+        "khufra",
+        "franco",
+        "chou"
+      ],
+      "sinergias": [
+        "atlas",
+        "angela"
+      ]
+    },
+    {
+      "id": "lancelot",
+      "nombre": "Lancelot",
+      "rol": "Assassin",
+      "carril": "Jungla",
+      "dificultad": 2,
+      "tier": "A",
+      "tags": [
+        "burst",
+        "invulnerabilidad"
+      ],
+      "tips": [
+        "El dash tiene un instante de invulnerabilidad: es tu herramienta para esquivar ultis.",
+        "Farmea rápido y roba campamentos enemigos cuando el jungla rival aparece en el mapa.",
+        "No seas el primero en entrar: sin ulti, sos frágil."
+      ],
+      "counters": [
+        "khufra",
+        "atlas"
+      ],
+      "sinergias": [
+        "chou",
+        "atlas"
+      ]
+    },
+    {
+      "id": "fanny",
+      "nombre": "Fanny",
+      "rol": "Assassin",
+      "carril": "Jungla",
+      "dificultad": 3,
+      "tier": "S",
+      "tags": [
+        "movilidad extrema",
+        "difícil"
+      ],
+      "tips": [
+        "Su techo es altísimo y su piso también: requiere horas de práctica con las cuerdas.",
+        "Contra equipos con mucho control en área (Khufra, Franco, Chou) no la fuerces.",
+        "Su trabajo no es matar al tanque: es borrar al tirador y al mage."
+      ],
+      "counters": [
+        "khufra",
+        "franco",
+        "chou"
+      ],
+      "sinergias": [
+        "diggie",
+        "angela"
+      ]
+    },
+    {
+      "id": "ling",
+      "nombre": "Ling",
+      "rol": "Assassin",
+      "carril": "Jungla",
+      "dificultad": 3,
+      "tier": "A",
+      "tags": [
+        "muros",
+        "burst"
+      ],
+      "tips": [
+        "Depende de los muros: en campo abierto pierde la mitad de su movilidad.",
+        "Sus espadas se recuperan al cruzar muros; contá cuántas te quedan antes de entrar.",
+        "Es de snowball: si no tiene ventaja temprano, se apaga."
+      ],
+      "counters": [
+        "khufra",
+        "chou"
+      ],
+      "sinergias": [
+        "angela",
+        "diggie"
+      ]
+    },
+    {
+      "id": "joy",
+      "nombre": "Joy",
+      "rol": "Assassin",
+      "carril": "Jungla",
+      "dificultad": 3,
+      "tier": "A",
+      "tags": [
+        "dash",
+        "inmunidad"
+      ],
+      "tips": [
+        "Sus dashes encadenados dan inmunidad: es para atravesar el control enemigo, no para iniciar.",
+        "Necesita ritmo: si te cortan la cadena, quedás parada en el peor lugar.",
+        "Contra tanques con anti-dash, cambiá de objetivo: buscá al tirador."
+      ],
+      "counters": [
+        "khufra",
+        "atlas"
+      ],
+      "sinergias": [
+        "atlas",
+        "angela"
+      ]
+    },
+    {
+      "id": "chou",
+      "nombre": "Chou",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 3,
+      "tier": "S",
+      "tags": [
+        "cc",
+        "flex"
+      ],
+      "tips": [
+        "Su patada saca a un héroe de la pelea: apuntá al tirador o al mage, no al tanque.",
+        "Es flex: puede jugar exp o roam según lo que falte en el equipo.",
+        "Su inmunidad en el dash es la clave para sobrevivir al engage enemigo."
+      ],
+      "counters": [
+        "fanny",
+        "ling"
+      ],
+      "sinergias": [
+        "gusion",
+        "lancelot"
+      ]
+    },
+    {
+      "id": "paquito",
+      "nombre": "Paquito",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 3,
+      "tier": "A",
+      "tags": [
+        "combos",
+        "sustain"
+      ],
+      "tips": [
+        "Cada golpe cambia el siguiente: memorizá el orden y no improvises en pelea.",
+        "Su sustain en línea es alto: cambiate golpes y salí con más vida que el rival.",
+        "En peleas de equipo entra después del engage: no es un iniciador."
+      ],
+      "counters": [
+        "chou",
+        "khufra"
+      ],
+      "sinergias": [
+        "atlas",
+        "angela"
+      ]
+    },
+    {
+      "id": "yu-zhong",
+      "nombre": "Yu Zhong",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "B",
+      "tags": [
+        "sustain",
+        "área"
+      ],
+      "tips": [
+        "Su forma de dragón es para peleas de área: no la gastes en un 1v1 perdido.",
+        "Sustaina en línea y rota al río cuando tengas la ulti.",
+        "Contra héroes con anti-tanque (Karrie, Valir) sufre: no te estires."
+      ],
+      "counters": [
+        "valir",
+        "wanwan"
+      ],
+      "sinergias": [
+        "atlas",
+        "estes"
+      ]
+    },
+    {
+      "id": "esmeralda",
+      "nombre": "Esmeralda",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "B",
+      "tags": [
+        "escudo",
+        "sustain"
+      ],
+      "tips": [
+        "Su escudo absorbe daño: entrá con escudo lleno, no con la barra vacía.",
+        "Contra daño porcentual (Karrie) pierde la ventaja: cambiate el plan.",
+        "En late se vuelve un tanque con daño; empujá con el equipo."
+      ],
+      "counters": [
+        "valir",
+        "wanwan"
+      ],
+      "sinergias": [
+        "angela",
+        "estes"
+      ]
+    },
+    {
+      "id": "arlott",
+      "nombre": "Arlott",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "A",
+      "tags": [
+        "cc",
+        "flex"
+      ],
+      "tips": [
+        "Su control encadenado abre peleas: es un iniciador de segunda línea, no un tanque.",
+        "Puede jugar exp o roam; en roam aporta más al equipo.",
+        "Su daño cae en late: aprovechá el mid game."
+      ],
+      "counters": [
+        "khufra",
+        "atlas"
+      ],
+      "sinergias": [
+        "gusion",
+        "lancelot"
+      ]
+    },
+    {
+      "id": "ruby",
+      "nombre": "Ruby",
+      "rol": "Fighter",
+      "carril": "Exp",
+      "dificultad": 2,
+      "tier": "B",
+      "tags": [
+        "cc en cadena",
+        "sustain"
+      ],
+      "tips": [
+        "Sus habilidades se encadenan: usá una para acercarte y la otra para stunear.",
+        "Su sustain la hace difícil de sacar de línea; aguantá y rotá.",
+        "No es una tanque: no inicies peleas de 5v5 sola."
+      ],
+      "counters": [
+        "valir",
+        "wanwan"
+      ],
+      "sinergias": [
+        "atlas",
+        "angela"
+      ]
+    },
+    {
+      "id": "khufra",
+      "nombre": "Khufra",
+      "rol": "Tank",
+      "carril": "Roam",
+      "dificultad": 2,
+      "tier": "S",
+      "tags": [
+        "anti-dash",
+        "engage"
+      ],
+      "tips": [
+        "Su campo cancela los dashes: es el counter directo de Fanny, Ling, Gusion y Joy.",
+        "Iniciá con la ulti cuando el equipo enemigo está agrupado, no cuando están dispersos.",
+        "Antes de entrar, mirá que tu equipo pueda seguirte: sin daño atrás, tu engage es una muerte."
+      ],
+      "counters": [
+        "fanny",
+        "ling",
+        "gusion",
+        "joy"
+      ],
+      "sinergias": [
+        "valir",
+        "beatrix"
+      ]
+    },
+    {
+      "id": "atlas",
+      "nombre": "Atlas",
+      "rol": "Tank",
+      "carril": "Roam",
+      "dificultad": 2,
+      "tier": "S",
+      "tags": [
+        "engage en área",
+        "teamfight"
+      ],
+      "tips": [
+        "Su ulti junta a todo el equipo enemigo: es la mejor engage del juego en espacio cerrado.",
+        "Cargá la ulti fuera de la vista enemiga y entrá con flash si hace falta.",
+        "Diggie es su counter: si lo ves, pensá dos veces el engage."
+      ],
+      "counters": [
+        "diggie"
+      ],
+      "sinergias": [
+        "valir",
+        "gusion"
+      ]
+    },
+    {
+      "id": "franco",
+      "nombre": "Franco",
+      "rol": "Tank",
+      "carril": "Roam",
+      "dificultad": 2,
+      "tier": "A",
+      "tags": [
+        "pick",
+        "cc largo"
+      ],
+      "tips": [
+        "Su gancho gana partidas: pegá uno por minuto y el equipo enemigo juega con miedo.",
+        "Gancho desde arbusto con visión: el ángulo importa más que la distancia.",
+        "Si no conectás ganchos, no sirve: es el héroe más dependiente de la puntería."
+      ],
+      "counters": [
+        "fanny",
+        "ling"
+      ],
+      "sinergias": [
+        "eudora",
+        "gusion"
+      ]
+    },
+    {
+      "id": "grock",
+      "nombre": "Grock",
+      "rol": "Tank",
+      "carril": "Roam",
+      "dificultad": 2,
+      "tier": "A",
+      "tags": [
+        "engage",
+        "zona"
+      ],
+      "tips": [
+        "Su muro corta el mapa: usalo para separar al tirador enemigo de su equipo.",
+        "Es el tanque más móvil: rota y ayuda en línea cuando el rival esté lejos.",
+        "Su engage es directo: necesita que el equipo llegue en los dos segundos siguientes."
+      ],
+      "counters": [
+        "fanny",
+        "ling"
+      ],
+      "sinergias": [
+        "xavier",
+        "beatrix"
+      ]
+    },
+    {
+      "id": "angela",
+      "nombre": "Angela",
+      "rol": "Support",
+      "carril": "Roam",
+      "dificultad": 1,
+      "tier": "A",
+      "tags": [
+        "sustain",
+        "global"
+      ],
+      "tips": [
+        "Se pega a un carry y lo hace inmortal: elegí bien a quién seguir.",
+        "Su ulti cruza el mapa: podés salvar a un aliado del otro lado sin estar ahí.",
+        "Si el carry muere, Angela se queda sin héroe: jugá cerca pero no encima."
+      ],
+      "counters": [
+        "khufra",
+        "franco"
+      ],
+      "sinergias": [
+        "miya",
+        "claude",
+        "wanwan"
+      ]
+    },
+    {
+      "id": "diggie",
+      "nombre": "Diggie",
+      "rol": "Support",
+      "carril": "Roam",
+      "dificultad": 2,
+      "tier": "A",
+      "tags": [
+        "anti-cc",
+        "anti-engage"
+      ],
+      "tips": [
+        "Su ulti limpia el control enemigo: guardala para el engage de Atlas o Khufra.",
+        "Sus bombas dan visión: usalas en arbustos antes de que el equipo entre.",
+        "No cura tanto como Estes: su valor es evitar la pelea perdida."
+      ],
+      "counters": [
+        "atlas",
+        "khufra"
+      ],
+      "sinergias": [
+        "fanny",
+        "lancelot"
+      ]
+    },
+    {
+      "id": "estes",
+      "nombre": "Estes",
+      "rol": "Support",
+      "carril": "Roam",
+      "dificultad": 1,
+      "tier": "B",
+      "tags": [
+        "heal en área"
+      ],
+      "tips": [
+        "Su curación es de área: el equipo tiene que pelear cerca tuyo, no cada uno por su lado.",
+        "Posicionate atrás y curá; no persigas kills.",
+        "Contra burst alto, la cura llega tarde: pedí un tanque que absorba el primer golpe."
+      ],
+      "counters": [
+        "khufra",
+        "franco"
+      ],
+      "sinergias": [
+        "lunox",
+        "yu-zhong"
+      ]
+    }
+  ]
+}

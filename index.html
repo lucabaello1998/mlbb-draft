@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MLBB Draft — tier list, drafter y tips por héroe</title>
+<meta name="description" content="Tier list, drafter de 5v5 y consejos por héroe para Mobile Legends: Bang Bang. Sin cuenta, sin app.">
+<meta property="og:title" content="MLBB Draft — tier list, drafter y tips">
+<meta property="og:description" content="Armá tu composición, mirá qué héroe contrarresta a quién y leé tips por héroe.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23d4af37'/><text x='16' y='23' font-size='18' font-family='system-ui' font-weight='900' text-anchor='middle' fill='%231a1405'>M</text></svg>">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="envoltura">
+
+  <header class="encabezado">
+    <div class="marca"><span class="marca-punto">M</span> MLBB Draft</div>
+    <nav class="nav" role="tablist" aria-label="Secciones">
+      <button role="tab" id="tab-tier" aria-selected="true" aria-controls="vista-tier" data-vista="tier">Tier list</button>
+      <button role="tab" id="tab-drafter" aria-selected="false" aria-controls="vista-drafter" data-vista="drafter">Drafter</button>
+      <button role="tab" id="tab-heroes" aria-selected="false" aria-controls="vista-heroes" data-vista="heroes">Héroes</button>
+    </nav>
+    <input class="buscador" id="buscador" type="search" placeholder="Buscar héroe…" aria-label="Buscar héroe">
+  </header>
+
+  <p class="aviso" id="aviso-datos" hidden>
+    No se pudo cargar <code>data/heroes.json</code>. Si abriste el archivo con doble clic, probá con un
+    servidor local: <code>python -m http.server</code>.
+  </p>
+
+  <!-- ===================== TIER LIST ===================== -->
+  <section id="vista-tier" role="tabpanel" aria-labelledby="tab-tier">
+    <h1>Tier list</h1>
+    <p class="sub">
+      Ordena por <strong>facilidad para ganar ranked con equipo aleatorio</strong>, no por winrate de torneo.
+      Cambia con cada parche: la fecha de la curación está abajo. Tocá un héroe para ver sus tips.
+    </p>
+    <div class="chips" id="chips-rol" role="group" aria-label="Filtrar por rol"></div>
+    <div id="tiers"></div>
+  </section>
+
+  <!-- ===================== DRAFTER ===================== -->
+  <section id="vista-drafter" role="tabpanel" aria-labelledby="tab-drafter" hidden>
+    <h1>Drafter</h1>
+    <p class="sub">
+      Elegí el equipo activo y tocá héroes del pool. El panel de abajo te dice qué counters te faltan,
+      qué sinergias tenés y qué carril queda vacío.
+    </p>
+
+    <div class="drafter">
+      <article class="equipo activo" id="equipo-alido">
+        <h3>Mi equipo <span class="meta" id="conteo-alido">0/5</span></h3>
+        <div class="slots" id="slots-alido"></div>
+      </article>
+
+      <article class="equipo" id="equipo-enemigo">
+        <h3>Enemigo <span class="meta" id="conteo-enemigo">0/5</span></h3>
+        <div class="slots" id="slots-enemigo"></div>
+      </article>
+    </div>
+
+    <div class="analisis">
+      <h3>Análisis</h3>
+      <div class="bloque">
+        <div class="rotulo">Counters sugeridos contra el enemigo</div>
+        <div id="sugerencias-counter" class="tier-grid"></div>
+      </div>
+      <div class="bloque">
+        <div class="rotulo">Sinergias con tus picks</div>
+        <div id="sugerencias-sinergia" class="tier-grid"></div>
+      </div>
+      <div class="bloque">
+        <div class="rotulo">Cobertura</div>
+        <div id="cobertura" class="vacio"></div>
+      </div>
+      <div class="botones">
+        <button class="boton" id="copiar">Copiar composición</button>
+        <button class="boton secundario" id="limpiar">Limpiar</button>
+      </div>
+    </div>
+
+    <div class="chips" id="chips-pool" role="group" aria-label="Filtrar el pool por rol"></div>
+    <div class="pool">
+      <div class="tier-grid" id="pool"></div>
+    </div>
+  </section>
+
+  <!-- ===================== HÉROES ===================== -->
+  <section id="vista-heroes" role="tabpanel" aria-labelledby="tab-heroes" hidden>
+    <h1>Héroes</h1>
+    <p class="sub">Treinta héroes curados con tips, counters y sinergias. Tocá uno para ver la ficha completa.</p>
+    <div class="chips" id="chips-heroes" role="group" aria-label="Filtrar por rol"></div>
+    <div class="grilla" id="grilla-heroes"></div>
+  </section>
+
+  <p class="pie" id="pie"></p>
+</div>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+  <div class="modal-caja" id="modal-caja"></div>
+</div>
+
+<script type="module" src="assets/app.js"></script>
+</body>
+</html>
