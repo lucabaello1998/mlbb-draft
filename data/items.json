@@ -1,0 +1,53 @@
+{
+  "nota": "Categorías de ítem, no builds cerradas: una build exacta envejece con cada parche. Los ejemplos son ítems reales del juego que cubren esa función.",
+  "items": [
+    {
+      "id": "antiheal",
+      "nombre": "Anti-curación",
+      "icono": "antiheal",
+      "cuando": "El enemigo cura mucho: Estes, Angela, Floryn, o héroes con sustain propio.",
+      "ejemplos": ["Sea Halberd", "Necklace of Durance", "Dominance Ice"],
+      "contra": "sustain"
+    },
+    {
+      "id": "armor",
+      "nombre": "Armadura",
+      "icono": "armor",
+      "cuando": "El daño enemigo es físico: tiradores, asesinos y peleadores.",
+      "ejemplos": ["Antique Cuirass", "Blade Armor", "Dominance Ice"],
+      "contra": "fisico"
+    },
+    {
+      "id": "magia",
+      "nombre": "Resistencia mágica",
+      "icono": "magia",
+      "cuando": "El enemigo pega con magia: dos o más mages o un mage con burst.",
+      "ejemplos": ["Athena's Shield", "Radiant Armor", "Oracle"],
+      "contra": "magico"
+    },
+    {
+      "id": "penetracion",
+      "nombre": "Penetración",
+      "icono": "penetracion",
+      "cuando": "El enemigo tiene dos o más tanques o peleadores con mucha vida.",
+      "ejemplos": ["Malefic Roar", "Divine Glaive", "Genius Wand"],
+      "contra": "frontline"
+    },
+    {
+      "id": "velocidad",
+      "nombre": "Control y movilidad",
+      "icono": "velocidad",
+      "cuando": "El enemigo entra con dash: Fanny, Ling, Gusion, Joy. Ralentizar corta su combo.",
+      "ejemplos": ["Ice Queen Wand", "Dominance Ice", "Tough Boots"],
+      "contra": "movilidad"
+    },
+    {
+      "id": "burst",
+      "nombre": "Cerrar temprano",
+      "icono": "burst",
+      "cuando": "El enemigo escala a late game: hay que ganar antes de los 12 minutos.",
+      "ejemplos": ["Blade of Despair", "Holy Crystal", "Berserker's Fury"],
+      "contra": "late"
+    }
+  ]
+}

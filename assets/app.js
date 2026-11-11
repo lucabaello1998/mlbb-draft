@@ -3,14 +3,6 @@
 
 const CARRILES = ["Oro", "Medio", "Exp", "Jungla", "Roam"];
 const TIERS = ["S", "A", "B", "C"];
-const COLOR_ROL = {
-  Marksman: "#e0a13a",
-  Mage: "#7c8cff",
-  Assassin: "#ff6b6b",
-  Fighter: "#e07a5f",
-  Tank: "#4cc9a0",
-  Support: "#c084fc",
-};
 
 const estado = {
   heroes: [],
@@ -29,19 +21,9 @@ const $ = (sel) => document.querySelector(sel);
 const escapar = (texto) =>
   String(texto ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
-const iniciales = (nombre) =>
-  nombre
-    .split(/[\s-]+/)
-    .map((parte) => parte[0])
-    .join("")
-    .slice(0, 2)
-    .toUpperCase();
-
 function avatar(heroe, tamano = 26) {
-  const color = COLOR_ROL[heroe.rol] ?? "#8b93a7";
-  return `<span class="heroe-avatar" style="background:${color};width:${tamano}px;height:${tamano}px">${escapar(
-    iniciales(heroe.nombre),
-  )}</span>`;
+  // El retrato es un SVG propio (assets/heroes/<id>.svg), no arte oficial.
+  return `<img class="heroe-avatar" src="assets/heroes/${encodeURIComponent(heroe.id)}.svg" alt="" width="${tamano}" height="${tamano}" loading="lazy">`;
 }
 
 function insignia(tier) {
@@ -271,6 +253,146 @@ function pintarSugerencias(contenedor, heroes, vacio) {
   });
 }
 
+const ATRIBUTOS = [
+  { clave: "frontline", nombre: "Frontline" },
+  { clave: "engage", nombre: "Engage / CC" },
+  { clave: "sustain", nombre: "Sustain" },
+  { clave: "poke", nombre: "Poke" },
+  { clave: "movilidad", nombre: "Movilidad" },
+  { clave: "late", nombre: "Late game" },
+];
+
+/**
+ * Perfil de un héroe derivado de su rol y sus tags (no hay stats inventados).
+ * El mapeo está documentado en el README para poder ajustarlo.
+ */
+function atributos(heroe) {
+  const tags = (heroe.tags ?? []).map((t) => t.toLowerCase());
+  const tiene = (...claves) => claves.some((clave) => tags.some((t) => t.includes(clave)));
+  const a = { frontline: 0, engage: 0, sustain: 0, poke: 0, movilidad: 0, late: 1 };
+
+  if (heroe.rol === "Tank") a.frontline = 3;
+  else if (heroe.rol === "Fighter") a.frontline = 2;
+  else if (heroe.rol === "Support") a.frontline = 1;
+
+  if (heroe.rol === "Tank") a.engage = tiene("engage") ? 3 : 2;
+  else if (heroe.rol === "Fighter") a.engage = tiene("cc") ? 2 : 1;
+  else if ((heroe.rol === "Support" || heroe.rol === "Assassin") && tiene("cc", "engage", "anti-dash")) a.engage = 1;
+
+  if (heroe.rol === "Support") a.sustain = tiene("heal", "sustain") ? 3 : 2;
+  else if (tiene("sustain", "escudo")) a.sustain = 2;
+
+  if (heroe.rol === "Mage") a.poke = tiene("poke", "rango") ? 3 : 2;
+  else if (heroe.rol === "Marksman") a.poke = 1;
+
+  if (heroe.rol === "Assassin") a.movilidad = 2;
+  if (tiene("movilidad", "dash", "muros")) a.movilidad += 2;
+  a.movilidad = Math.min(5, a.movilidad);
+
+  if (tiene("late game")) a.late = 3;
+  else if (heroe.rol === "Marksman") a.late = 2;
+
+  return a;
+}
+
+function perfil(heroes) {
+  const totales = Object.fromEntries(ATRIBUTOS.map((a) => [a.clave, 0]));
+  let fisico = 0;
+  let magico = 0;
+
+  for (const heroe of heroes) {
+    const props = atributos(heroe);
+    for (const { clave } of ATRIBUTOS) totales[clave] += props[clave];
+    if (heroe.rol === "Marksman" || heroe.rol === "Assassin" || heroe.rol === "Fighter") fisico++;
+    if (heroe.rol === "Mage" || heroe.rol === "Support") magico++;
+  }
+
+  return { totales, fisico, magico, heroes: heroes.length };
+}
+
+function pintarVentajas() {
+  const mio = perfil(elegidos("alido"));
+  const suyo = perfil(elegidos("enemigo"));
+  const contenedor = $("#ventajas");
+
+  if (!mio.heroes && !suyo.heroes) {
+    contenedor.innerHTML = `<span class="vacio">Elegí héroes para ver la comparación.</span>`;
+    $("#resumen-ventajas").textContent = "";
+    return;
+  }
+
+  // La barra se escala al máximo de las dos, así la diferencia se ve en todas
+  // las filas (si no, 5 contra 5 se ve igual de corto que 1 contra 1).
+  contenedor.innerHTML = ATRIBUTOS.map(({ clave, nombre }) => {
+    const a = mio.totales[clave];
+    const b = suyo.totales[clave];
+    const maximo = Math.max(a, b, 1);
+    const ventaja = a > b ? "a" : b > a ? "b" : "";
+    return `
+      <div class="fila-comp">
+        <span class="nombre">${nombre}</span>
+        <div class="barras">
+          <i class="barra propio ${ventaja === "a" ? "gana" : ""}" style="width:${(a / maximo) * 100}%"></i>
+          <i class="barra rival ${ventaja === "b" ? "gana" : ""}" style="width:${(b / maximo) * 100}%"></i>
+        </div>
+        <span class="valores">${a} · ${b}</span>
+      </div>`;
+  }).join("");
+
+  const difs = ATRIBUTOS.map(({ clave, nombre }) => ({ nombre, dif: mio.totales[clave] - suyo.totales[clave] }));
+  const aFavor = difs.filter((d) => d.dif >= 2).sort((x, y) => y.dif - x.dif).slice(0, 2);
+  const enContra = difs.filter((d) => d.dif <= -2).sort((x, y) => x.dif - y.dif).slice(0, 2);
+
+  const partes = [];
+  if (aFavor.length) partes.push(`Tu equipo gana en ${aFavor.map((d) => d.nombre.toLowerCase()).join(" y ")}`);
+  if (enContra.length) partes.push(`el enemigo gana en ${enContra.map((d) => d.nombre.toLowerCase()).join(" y ")}`);
+  if (!partes.length) partes.push("Composiciones parejas: definí por ejecución, no por draft");
+
+  const total = mio.fisico + mio.magico;
+  const reparto = total ? ` Tu daño: ${Math.round((mio.fisico / total) * 100)}% físico / ${Math.round((mio.magico / total) * 100)}% mágico.` : "";
+  $("#resumen-ventajas").textContent = partes.join("; ") + "." + reparto;
+}
+
+function pintarItems() {
+  const suyo = perfil(elegidos("enemigo"));
+  const contenedor = $("#items");
+
+  if (!suyo.heroes) {
+    contenedor.innerHTML = `<span class="vacio">Cargá el equipo enemigo para ver qué ítems pide la partida.</span>`;
+    return;
+  }
+
+  const total = suyo.fisico + suyo.magico || 1;
+  const umbrales = {
+    sustain: suyo.totales.sustain >= 4,
+    frontline: suyo.totales.frontline >= 5,
+    fisico: suyo.fisico / total >= 0.6,
+    magico: suyo.magico / total >= 0.6,
+    movilidad: suyo.totales.movilidad >= 5,
+    late: suyo.totales.late >= 5,
+  };
+
+  const recomendados = (estado.items ?? []).filter((item) => umbrales[item.contra]);
+  if (!recomendados.length) {
+    contenedor.innerHTML = `<span class="vacio">Composición enemiga equilibrada: no hay un ítem que cambie la partida por sí solo.</span>`;
+    return;
+  }
+
+  contenedor.innerHTML = recomendados
+    .map(
+      (item) => `
+      <article class="item">
+        <img src="assets/items/${encodeURIComponent(item.icono)}.svg" alt="" width="40" height="40" loading="lazy">
+        <div>
+          <strong>${escapar(item.nombre)}</strong>
+          <p class="meta">${escapar(item.cuando)}</p>
+          <p class="meta">Ejemplos: ${(item.ejemplos ?? []).map(escapar).join(", ")}</p>
+        </div>
+      </article>`,
+    )
+    .join("");
+}
+
 function pintarAnalisis() {
   const mios = elegidos("alido");
   const enemigos = elegidos("enemigo");
@@ -290,10 +412,12 @@ function pintarAnalisis() {
   $("#cobertura").textContent = faltan.length
     ? `Te falta cubrir: ${faltan.join(", ")}.`
     : "Carriles completos: 5/5.";
+
+  pintarVentajas();
+  pintarItems();
 }
 
-function composicionTexto() {
-  const lineas = ["MI EQUIPO"];
+function composicionTexto() {  const lineas = ["MI EQUIPO"];
   for (const carril of CARRILES) {
     const heroe = estado.alido[carril] ? estado.porId.get(estado.alido[carril]) : null;
     lineas.push(`${carril}: ${heroe ? heroe.nombre : "—"}`);
@@ -424,6 +548,14 @@ async function iniciar() {
 
   estado.porId = new Map(estado.heroes.map((h) => [h.id, h]));
   cargar();
+
+  // Los ítems son datos aparte: categorías, no builds cerradas.
+  try {
+    const respuesta = await fetch("data/items.json");
+    if (respuesta.ok) estado.items = (await respuesta.json()).items ?? [];
+  } catch {
+    estado.items = [];
+  }
 
   // `?demo=1` carga un draft de ejemplo (sirve para la captura y para mostrar la
   // herramienta) y `?vista=drafter` abre esa pestaña: links que se comparten ya

@@ -60,6 +60,20 @@ for (const heroe of heroes) {
 }
 if (sinReciproco.length) console.log(`  info   counters sin vuelta (normal): ${sinReciproco.length}`);
 
+console.log("\n== arte y ítems ==");
+const sinRetrato = heroes.filter((h) => !existsSync(join(raiz, "assets", "heroes", `${h.id}.svg`)));
+ok("cada héroe tiene su retrato SVG", sinRetrato.length === 0, sinRetrato.map((h) => h.id).join(", "));
+
+const items = JSON.parse(leer("data/items.json")).items ?? [];
+ok("hay categorías de ítem", items.length >= 5, String(items.length));
+ok("cada ítem tiene ícono, cuándo usarlo y ejemplos",
+  items.every((i) => i.icono && i.cuando && (i.ejemplos ?? []).length > 0));
+const sinIcono = items.filter((i) => !existsSync(join(raiz, "assets", "items", `${i.icono}.svg`)));
+ok("cada ícono de ítem existe", sinIcono.length === 0, sinIcono.map((i) => i.icono).join(", "));
+const ATRIBUTOS = new Set(["sustain", "frontline", "fisico", "magico", "movilidad", "late"]);
+ok("cada ítem apunta a un atributo conocido", items.every((i) => ATRIBUTOS.has(i.contra)),
+  items.filter((i) => !ATRIBUTOS.has(i.contra)).map((i) => `${i.id}:${i.contra}`).join(", "));
+
 console.log("\n== html ==");
 const html = leer("index.html");
 const css = leer("assets/style.css");
