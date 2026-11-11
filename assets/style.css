@@ -451,3 +451,18 @@ body.arrastrando .bans-lista { border-color: rgba(212, 175, 55, 0.4); background
   .slot .slot-texto strong { font-size: 0.68rem; }
   .slot .slot-hint { display: none; }
 }
+
+/* Foco visible y movimiento reducido */
+.slot:focus-visible,
+.heroe-mini:focus-visible,
+.chip:focus-visible,
+.tier-cabecera:focus-visible {
+  outline: 2px solid var(--oro);
+  outline-offset: 2px;
+}
+.slot { transition: transform 120ms ease, background 120ms ease, border-color 120ms ease; }
+@media (prefers-reduced-motion: reduce) {
+  .slot { transition: none; }
+  .slot.sobre { transform: none; }
+  .ficha:hover { transform: none; }
+}
