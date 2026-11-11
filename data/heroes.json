@@ -11,7 +11,11 @@
       "tier": "C",
       "tags": [
         "rango",
-        "sin escape"
+        "sin escape",
+        "físico",
+        "ranged",
+        "rematador",
+        "daño"
       ],
       "tips": [
         "Su rango es su defensa: pega desde el borde, nunca desde el centro de la pelea.",
@@ -27,7 +31,32 @@
         "angela",
         "estes"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "A",
+        "zathong": "A",
+        "esportsnet": "C"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "Balanced 49.2% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "ranged",
+        "especialidad": [
+          "finisher",
+          "damage"
+        ],
+        "durabilidad": 1,
+        "ofensiva": 8,
+        "control": 1,
+        "dificultadOficial": 2,
+        "recurso": "mana"
+      }
     },
     {
       "id": "miya",
@@ -38,7 +67,11 @@
       "tier": "B",
       "tags": [
         "late game",
-        "split push"
+        "split push",
+        "físico",
+        "ranged",
+        "rematador",
+        "daño"
       ],
       "tips": [
         "Es de late: no pelees por nada hasta tener dos ítems completos.",
@@ -53,7 +86,31 @@
         "angela",
         "diggie"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "S",
+        "zathong": "S"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "Balanced 49.7% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "ranged",
+        "especialidad": [
+          "finisher",
+          "damage"
+        ],
+        "durabilidad": 1,
+        "ofensiva": 7,
+        "control": 4,
+        "dificultadOficial": 1,
+        "recurso": "mana"
+      }
     },
     {
       "id": "bruno",
@@ -64,7 +121,10 @@
       "tier": "B",
       "tags": [
         "burst",
-        "rango"
+        "rango",
+        "físico",
+        "ranged",
+        "rematador"
       ],
       "tips": [
         "Su daño viene de la pasiva: no cortes el ritmo de ataques, movete entre autoataques.",
@@ -79,18 +139,46 @@
         "khufra",
         "angela"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "S",
+        "zathong": "S"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "53.7% win rate in ranked (MLBB Hub, patch 2.2.16a)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "ranged",
+        "especialidad": [
+          "finisher",
+          "burst"
+        ],
+        "durabilidad": 2,
+        "ofensiva": 6,
+        "control": 2,
+        "dificultadOficial": 4,
+        "recurso": "mana"
+      }
     },
     {
       "id": "claude",
       "nombre": "Claude",
       "rol": "Marksman",
       "carril": "Oro",
-      "dificultad": 3,
+      "dificultad": 2,
       "tier": "A",
       "tags": [
         "robo de stats",
-        "movilidad"
+        "movilidad",
+        "físico",
+        "ranged",
+        "burst",
+        "persecución"
       ],
       "tips": [
         "Su ultimate roba estadísticas del enemigo: entrá cuando el tanque ya gastó el control.",
@@ -105,7 +193,29 @@
         "angela",
         "diggie"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "C",
+        "pocketgamer": "A",
+        "zathong": "A",
+        "esportsnet": "S"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "ranged",
+        "especialidad": [
+          "burst",
+          "chase"
+        ],
+        "durabilidad": 3,
+        "ofensiva": 6,
+        "control": 1,
+        "dificultadOficial": 6,
+        "recurso": "mana"
+      }
     },
     {
       "id": "wanwan",
@@ -116,7 +226,11 @@
       "tier": "A",
       "tags": [
         "debilidades",
-        "kiting"
+        "kiting",
+        "físico",
+        "ranged",
+        "rematador",
+        "burst"
       ],
       "tips": [
         "Rompe las debilidades del enemigo antes de pelear: sin eso, su daño es bajo.",
@@ -131,18 +245,44 @@
         "diggie",
         "angela"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "C",
+        "pocketgamer": "S",
+        "zathong": "A",
+        "esportsnet": "S"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "ranged",
+        "especialidad": [
+          "finisher",
+          "burst"
+        ],
+        "durabilidad": 2,
+        "ofensiva": 6,
+        "control": 3,
+        "dificultadOficial": 8,
+        "recurso": "mana"
+      }
     },
     {
       "id": "beatrix",
       "nombre": "Beatrix",
       "rol": "Marksman",
       "carril": "Oro",
-      "dificultad": 2,
+      "dificultad": 3,
       "tier": "A",
       "tags": [
         "versátil",
-        "burst"
+        "burst",
+        "físico",
+        "ranged",
+        "rematador",
+        "daño"
       ],
       "tips": [
         "Cambiá de arma según la pelea: la de ráfaga para torres, la de un tiro para pickear.",
@@ -157,7 +297,32 @@
         "khufra",
         "atlas"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "S+",
+        "zathong": "A",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 50.3% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "ranged",
+        "especialidad": [
+          "finisher",
+          "damage"
+        ],
+        "durabilidad": 3,
+        "ofensiva": 8,
+        "control": 1,
+        "dificultadOficial": 7,
+        "recurso": "none"
+      }
     },
     {
       "id": "eudora",
@@ -168,7 +333,10 @@
       "tier": "C",
       "tags": [
         "burst",
-        "cc puntual"
+        "cc puntual",
+        "mágico",
+        "ranged",
+        "control"
       ],
       "tips": [
         "Su combo es uno solo: stun y ráfaga. Si el stun falla, te quedás sin nada.",
@@ -183,18 +351,47 @@
         "khufra",
         "franco"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "S",
+        "pocketgamer": "S",
+        "zathong": "B"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 50.5% win rate in ranked",
+        "Top 15 in the MLCounters meta ranking (#4)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "control",
+          "burst"
+        ],
+        "durabilidad": 1,
+        "ofensiva": 8,
+        "control": 8,
+        "dificultadOficial": 2,
+        "recurso": "mana"
+      }
     },
     {
       "id": "valir",
       "nombre": "Valir",
       "rol": "Mage",
       "carril": "Medio",
-      "dificultad": 2,
+      "dificultad": 1,
       "tier": "S",
       "tags": [
         "poke",
-        "anti-dash"
+        "anti-dash",
+        "mágico",
+        "ranged",
+        "daño",
+        "protección"
       ],
       "tips": [
         "Su fuego empuja y quema: es el mejor freno contra héroes que entran con dash.",
@@ -209,7 +406,31 @@
         "khufra",
         "atlas"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "S",
+        "pocketgamer": "B",
+        "zathong": "C"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "54.3% win rate in ranked (MLBB Hub, patch 2.2.16a)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "damage",
+          "guard"
+        ],
+        "durabilidad": 2,
+        "ofensiva": 7,
+        "control": 7,
+        "dificultadOficial": 2,
+        "recurso": "mana"
+      }
     },
     {
       "id": "kagura",
@@ -220,7 +441,11 @@
       "tier": "A",
       "tags": [
         "movilidad",
-        "cc"
+        "cc",
+        "mágico",
+        "ranged",
+        "poke",
+        "rematador"
       ],
       "tips": [
         "El paraguas es la mitad del héroe: dejalo en el arbusto y volvé a él para escapar.",
@@ -235,7 +460,32 @@
         "atlas",
         "khufra"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "S",
+        "zathong": "S",
+        "esportsnet": "C"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "Balanced 51.8% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "poke",
+          "finisher"
+        ],
+        "durabilidad": 4,
+        "ofensiva": 9,
+        "control": 5,
+        "dificultadOficial": 9,
+        "recurso": "mana"
+      }
     },
     {
       "id": "lunox",
@@ -246,7 +496,10 @@
       "tier": "A",
       "tags": [
         "sustain",
-        "burst"
+        "burst",
+        "mágico",
+        "ranged",
+        "daño"
       ],
       "tips": [
         "Alterná entre las dos formas: la de daño para pegar, la de sustain para sobrevivir.",
@@ -261,7 +514,29 @@
         "estes",
         "angela"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "B",
+        "zathong": "C",
+        "esportsnet": "B"
+      },
+      "tierDisparidad": false,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "burst",
+          "damage"
+        ],
+        "durabilidad": 4,
+        "ofensiva": 9,
+        "control": 3,
+        "dificultadOficial": 9,
+        "recurso": "mana"
+      }
     },
     {
       "id": "xavier",
@@ -272,7 +547,11 @@
       "tier": "A",
       "tags": [
         "rango global",
-        "poke"
+        "poke",
+        "mágico",
+        "ranged",
+        "daño",
+        "protección"
       ],
       "tips": [
         "Su ultimate cruza el mapa: mirá el minimapa antes de tirarla, no sólo tu pantalla.",
@@ -287,7 +566,32 @@
         "khufra",
         "grock"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "S",
+        "zathong": "A",
+        "esportsnet": "B"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 49.5% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "damage",
+          "guard"
+        ],
+        "durabilidad": 3,
+        "ofensiva": 10,
+        "control": 8,
+        "dificultadOficial": 5,
+        "recurso": "mana"
+      }
     },
     {
       "id": "valentina",
@@ -298,7 +602,11 @@
       "tier": "A",
       "tags": [
         "robo de ulti",
-        "flex"
+        "flex",
+        "mágico",
+        "ranged",
+        "burst",
+        "rematador"
       ],
       "tips": [
         "Su valor depende de robar una buena ultimate: mirá el equipo enemigo antes de elegirla.",
@@ -313,7 +621,29 @@
         "atlas",
         "angela"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "D",
+        "pocketgamer": "S",
+        "zathong": "A",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "burst",
+          "finisher"
+        ],
+        "durabilidad": 5,
+        "ofensiva": 4,
+        "control": 4,
+        "dificultadOficial": 8,
+        "recurso": "mana"
+      }
     },
     {
       "id": "gusion",
@@ -324,7 +654,9 @@
       "tier": "A",
       "tags": [
         "burst",
-        "movilidad"
+        "movilidad",
+        "mágico",
+        "melee"
       ],
       "tips": [
         "Su combo tiene orden: marcá, dash y recogé las dagas. Practicá el orden antes de ranked.",
@@ -340,7 +672,29 @@
         "atlas",
         "angela"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "B",
+        "zathong": "A",
+        "esportsnet": "B"
+      },
+      "tierDisparidad": false,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "melee",
+        "especialidad": [
+          "burst",
+          "magic damage"
+        ],
+        "durabilidad": 3,
+        "ofensiva": 9,
+        "control": 1,
+        "dificultadOficial": 8,
+        "recurso": "mana"
+      }
     },
     {
       "id": "lancelot",
@@ -351,7 +705,10 @@
       "tier": "A",
       "tags": [
         "burst",
-        "invulnerabilidad"
+        "invulnerabilidad",
+        "físico",
+        "melee",
+        "persecución"
       ],
       "tips": [
         "El dash tiene un instante de invulnerabilidad: es tu herramienta para esquivar ultis.",
@@ -366,7 +723,28 @@
         "chou",
         "atlas"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "D",
+        "pocketgamer": "S",
+        "zathong": "S"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "chase",
+          "burst"
+        ],
+        "durabilidad": 4,
+        "ofensiva": 5,
+        "control": 1,
+        "dificultadOficial": 5,
+        "recurso": "mana"
+      }
     },
     {
       "id": "fanny",
@@ -377,7 +755,11 @@
       "tier": "S",
       "tags": [
         "movilidad extrema",
-        "difícil"
+        "difícil",
+        "físico",
+        "melee",
+        "persecución",
+        "rematador"
       ],
       "tips": [
         "Su techo es altísimo y su piso también: requiere horas de práctica con las cuerdas.",
@@ -393,7 +775,29 @@
         "diggie",
         "angela"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "D",
+        "pocketgamer": "C",
+        "zathong": "S+",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "chase",
+          "finisher"
+        ],
+        "durabilidad": 6,
+        "ofensiva": 7,
+        "control": null,
+        "dificultadOficial": 10,
+        "recurso": "energy"
+      }
     },
     {
       "id": "ling",
@@ -404,7 +808,10 @@
       "tier": "A",
       "tags": [
         "muros",
-        "burst"
+        "burst",
+        "físico",
+        "melee",
+        "persecución"
       ],
       "tips": [
         "Depende de los muros: en campo abierto pierde la mitad de su movilidad.",
@@ -419,7 +826,32 @@
         "angela",
         "diggie"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "B",
+        "zathong": "S+",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "52.7% win rate in ranked (MLBB Hub, patch 2.2.16a)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "chase",
+          "burst"
+        ],
+        "durabilidad": 4,
+        "ofensiva": 6,
+        "control": 3,
+        "dificultadOficial": 7,
+        "recurso": "energy"
+      }
     },
     {
       "id": "joy",
@@ -430,7 +862,11 @@
       "tier": "A",
       "tags": [
         "dash",
-        "inmunidad"
+        "inmunidad",
+        "mágico",
+        "melee",
+        "persecución",
+        "daño"
       ],
       "tips": [
         "Sus dashes encadenados dan inmunidad: es para atravesar el control enemigo, no para iniciar.",
@@ -445,7 +881,28 @@
         "atlas",
         "angela"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "C",
+        "pocketgamer": "S+",
+        "zathong": "A"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "melee",
+        "especialidad": [
+          "chase",
+          "damage"
+        ],
+        "durabilidad": 3,
+        "ofensiva": 7,
+        "control": 1,
+        "dificultadOficial": 9,
+        "recurso": "none"
+      }
     },
     {
       "id": "chou",
@@ -456,7 +913,11 @@
       "tier": "S",
       "tags": [
         "cc",
-        "flex"
+        "flex",
+        "físico",
+        "melee",
+        "persecución",
+        "control"
       ],
       "tips": [
         "Su patada saca a un héroe de la pelea: apuntá al tirador o al mage, no al tanque.",
@@ -471,7 +932,28 @@
         "gusion",
         "lancelot"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "C",
+        "pocketgamer": "S",
+        "zathong": "S"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "chase",
+          "control"
+        ],
+        "durabilidad": 5,
+        "ofensiva": 3,
+        "control": 8,
+        "dificultadOficial": 7,
+        "recurso": "none"
+      }
     },
     {
       "id": "paquito",
@@ -482,7 +964,11 @@
       "tier": "A",
       "tags": [
         "combos",
-        "sustain"
+        "sustain",
+        "físico",
+        "melee",
+        "persecución",
+        "daño"
       ],
       "tips": [
         "Cada golpe cambia el siguiente: memorizá el orden y no improvises en pelea.",
@@ -497,18 +983,47 @@
         "atlas",
         "angela"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "S+",
+        "zathong": "A",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "Balanced 50.1% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "chase",
+          "damage"
+        ],
+        "durabilidad": 6,
+        "ofensiva": 5,
+        "control": 4,
+        "dificultadOficial": 9,
+        "recurso": "none"
+      }
     },
     {
       "id": "yu-zhong",
       "nombre": "Yu Zhong",
       "rol": "Fighter",
       "carril": "Exp",
-      "dificultad": 2,
+      "dificultad": 3,
       "tier": "B",
       "tags": [
         "sustain",
-        "área"
+        "área",
+        "físico",
+        "melee",
+        "regeneración",
+        "daño"
       ],
       "tips": [
         "Su forma de dragón es para peleas de área: no la gastes en un 1v1 perdido.",
@@ -523,18 +1038,47 @@
         "atlas",
         "estes"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "A",
+        "zathong": "B",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "Balanced 49.0% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "regen",
+          "damage"
+        ],
+        "durabilidad": 7,
+        "ofensiva": 4,
+        "control": 7,
+        "dificultadOficial": 7,
+        "recurso": "none"
+      }
     },
     {
       "id": "esmeralda",
       "nombre": "Esmeralda",
       "rol": "Fighter",
       "carril": "Exp",
-      "dificultad": 2,
+      "dificultad": 3,
       "tier": "B",
       "tags": [
         "escudo",
-        "sustain"
+        "sustain",
+        "mixto",
+        "melee",
+        "regeneración",
+        "mixed damage"
       ],
       "tips": [
         "Su escudo absorbe daño: entrá con escudo lleno, no con la barra vacía.",
@@ -549,18 +1093,43 @@
         "angela",
         "estes"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "C",
+        "pocketgamer": "S+",
+        "zathong": "A"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mixto",
+        "alcance": "melee",
+        "especialidad": [
+          "regen",
+          "mixed damage"
+        ],
+        "durabilidad": 9,
+        "ofensiva": 3,
+        "control": 6,
+        "dificultadOficial": 7,
+        "recurso": "mana"
+      }
     },
     {
       "id": "arlott",
       "nombre": "Arlott",
       "rol": "Fighter",
       "carril": "Exp",
-      "dificultad": 2,
+      "dificultad": 3,
       "tier": "A",
       "tags": [
         "cc",
-        "flex"
+        "flex",
+        "físico",
+        "melee",
+        "charge",
+        "burst"
       ],
       "tips": [
         "Su control encadenado abre peleas: es un iniciador de segunda línea, no un tanque.",
@@ -575,7 +1144,29 @@
         "gusion",
         "lancelot"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "C",
+        "pocketgamer": "S+",
+        "zathong": "A",
+        "esportsnet": "S"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "charge",
+          "burst"
+        ],
+        "durabilidad": 6,
+        "ofensiva": 6,
+        "control": 5,
+        "dificultadOficial": 7,
+        "recurso": "none"
+      }
     },
     {
       "id": "ruby",
@@ -586,7 +1177,11 @@
       "tier": "B",
       "tags": [
         "cc en cadena",
-        "sustain"
+        "sustain",
+        "físico",
+        "melee",
+        "control",
+        "regeneración"
       ],
       "tips": [
         "Sus habilidades se encadenan: usá una para acercarte y la otra para stunear.",
@@ -601,7 +1196,32 @@
         "atlas",
         "angela"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "C",
+        "pocketgamer": "A",
+        "zathong": "B",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 49.2% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "crowd control",
+          "regen"
+        ],
+        "durabilidad": 9,
+        "ofensiva": 2,
+        "control": 9,
+        "dificultadOficial": 4,
+        "recurso": "mana"
+      }
     },
     {
       "id": "khufra",
@@ -612,7 +1232,10 @@
       "tier": "S",
       "tags": [
         "anti-dash",
-        "engage"
+        "engage",
+        "mixto",
+        "iniciador",
+        "control"
       ],
       "tips": [
         "Su campo cancela los dashes: es el counter directo de Fanny, Ling, Gusion y Joy.",
@@ -629,7 +1252,32 @@
         "valir",
         "beatrix"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "S",
+        "pocketgamer": "S+",
+        "zathong": "S",
+        "esportsnet": "C"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "54.6% win rate in ranked (MLBB Hub, patch 2.2.16a)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mixto",
+        "alcance": null,
+        "especialidad": [
+          "initiator",
+          "crowd control"
+        ],
+        "durabilidad": 9,
+        "ofensiva": 2,
+        "control": 10,
+        "dificultadOficial": 5,
+        "recurso": "mana"
+      }
     },
     {
       "id": "atlas",
@@ -640,7 +1288,11 @@
       "tier": "S",
       "tags": [
         "engage en área",
-        "teamfight"
+        "teamfight",
+        "mágico",
+        "melee",
+        "control",
+        "iniciador"
       ],
       "tips": [
         "Su ulti junta a todo el equipo enemigo: es la mejor engage del juego en espacio cerrado.",
@@ -654,18 +1306,47 @@
         "valir",
         "gusion"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "S",
+        "zathong": "A",
+        "esportsnet": "B"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "52.4% win rate in ranked (MLBB Hub, patch 2.2.16a)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "melee",
+        "especialidad": [
+          "crowd control",
+          "initiator"
+        ],
+        "durabilidad": 8,
+        "ofensiva": 1,
+        "control": 9,
+        "dificultadOficial": 5,
+        "recurso": "mana"
+      }
     },
     {
       "id": "franco",
       "nombre": "Franco",
       "rol": "Tank",
       "carril": "Roam",
-      "dificultad": 2,
+      "dificultad": 1,
       "tier": "A",
       "tags": [
         "pick",
-        "cc largo"
+        "cc largo",
+        "físico",
+        "melee",
+        "iniciador",
+        "control"
       ],
       "tips": [
         "Su gancho gana partidas: pegá uno por minuto y el equipo enemigo juega con miedo.",
@@ -680,7 +1361,29 @@
         "eudora",
         "gusion"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "D",
+        "pocketgamer": "S",
+        "zathong": "B",
+        "esportsnet": "C"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "initiator",
+          "control"
+        ],
+        "durabilidad": 8,
+        "ofensiva": 1,
+        "control": 10,
+        "dificultadOficial": 2,
+        "recurso": "mana"
+      }
     },
     {
       "id": "grock",
@@ -691,7 +1394,11 @@
       "tier": "A",
       "tags": [
         "engage",
-        "zona"
+        "zona",
+        "físico",
+        "melee",
+        "control",
+        "iniciador"
       ],
       "tips": [
         "Su muro corta el mapa: usalo para separar al tirador enemigo de su equipo.",
@@ -706,18 +1413,44 @@
         "xavier",
         "beatrix"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "C",
+        "pocketgamer": "A",
+        "zathong": "C",
+        "esportsnet": "S"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "crowd control",
+          "initiator"
+        ],
+        "durabilidad": 9,
+        "ofensiva": 4,
+        "control": 8,
+        "dificultadOficial": 6,
+        "recurso": "none"
+      }
     },
     {
       "id": "angela",
       "nombre": "Angela",
       "rol": "Support",
       "carril": "Roam",
-      "dificultad": 1,
+      "dificultad": 2,
       "tier": "A",
       "tags": [
         "sustain",
-        "global"
+        "global",
+        "mágico",
+        "ranged",
+        "protección",
+        "soporte"
       ],
       "tips": [
         "Se pega a un carry y lo hace inmortal: elegí bien a quién seguir.",
@@ -733,18 +1466,47 @@
         "claude",
         "wanwan"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "A",
+        "zathong": "A",
+        "esportsnet": "S"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "Balanced 49.8% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "guard",
+          "support"
+        ],
+        "durabilidad": 3,
+        "ofensiva": 2,
+        "control": 5,
+        "dificultadOficial": 6,
+        "recurso": "mana"
+      }
     },
     {
       "id": "diggie",
       "nombre": "Diggie",
       "rol": "Support",
       "carril": "Roam",
-      "dificultad": 2,
+      "dificultad": 1,
       "tier": "A",
       "tags": [
         "anti-cc",
-        "anti-engage"
+        "anti-engage",
+        "mágico",
+        "ranged",
+        "protección",
+        "poke"
       ],
       "tips": [
         "Su ulti limpia el control enemigo: guardala para el engage de Atlas o Khufra.",
@@ -759,7 +1521,32 @@
         "fanny",
         "lancelot"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "S",
+        "zathong": "A",
+        "esportsnet": "S"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "54.0% win rate in ranked (MLBB Hub, patch 2.2.16a)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "guard",
+          "poke"
+        ],
+        "durabilidad": 4,
+        "ofensiva": 4,
+        "control": 2,
+        "dificultadOficial": 3,
+        "recurso": "mana"
+      }
     },
     {
       "id": "estes",
@@ -769,7 +1556,11 @@
       "dificultad": 1,
       "tier": "B",
       "tags": [
-        "heal en área"
+        "heal en área",
+        "mágico",
+        "ranged",
+        "regeneración",
+        "protección"
       ],
       "tips": [
         "Su curación es de área: el equipo tiene que pelear cerca tuyo, no cada uno por su lado.",
@@ -784,35 +1575,130 @@
         "lunox",
         "yu-zhong"
       ],
-      "curado": true
+      "curado": true,
+      "tierOrigen": "curado a mano",
+      "tierFuentes": {
+        "axeetech": "S",
+        "pocketgamer": "C",
+        "zathong": "A",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "52.8% win rate in ranked (MLBB Hub, patch 2.2.16a)",
+        "Top 15 in the MLCounters meta ranking (#11)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "regen",
+          "guard"
+        ],
+        "durabilidad": 7,
+        "ofensiva": 1,
+        "control": 2,
+        "dificultadOficial": 3,
+        "recurso": "mana"
+      }
     },
     {
       "id": "akai",
       "nombre": "Akai",
       "rol": "Tank",
       "carril": "Roam",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "protección",
+        "control"
+      ],
+      "tips": [
+        "Iniciá vos y quedate adelante: tu trabajo es abrir la pelea y cubrir la retirada.",
+        "De roam comprá visión y acompañá la rotación; tu oro sale de asistencias.",
+        "Protegé al carry con tu control y tu escudo, no con daño."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Akai"
+      "wiki": "Akai",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "A",
+        "zathong": "C",
+        "esportsnet": "C"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 50.1% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "guard",
+          "crowd control"
+        ],
+        "durabilidad": 9,
+        "ofensiva": 3,
+        "control": 9,
+        "dificultadOficial": 3,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "aldous",
       "nombre": "Aldous",
       "rol": "Fighter",
       "carril": "Exp",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 3,
+      "tier": "A",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "burst",
+        "soporte"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Buscá peleas cortas: entrás, matás y salís, sin quedarte a pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Aldous"
+      "wiki": "Aldous",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "A",
+        "zathong": "A"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "Balanced 50.6% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "burst",
+          "support"
+        ],
+        "durabilidad": 7,
+        "ofensiva": 3,
+        "control": 5,
+        "dificultadOficial": 7,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "alice",
@@ -820,27 +1706,93 @@
       "rol": "Mage",
       "carril": "Exp",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "A",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "melee",
+        "charge",
+        "regeneración"
+      ],
+      "tips": [
+        "Zoned con tus habilidades y rotá al río antes de que se arme la pelea.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Aguantá el desgaste: tu sustain gana las líneas largas."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Alice"
+      "wiki": "Alice",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "S+",
+        "zathong": "A",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "Balanced 50.9% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "melee",
+        "especialidad": [
+          "charge",
+          "regen"
+        ],
+        "durabilidad": 5,
+        "ofensiva": 5,
+        "control": 7,
+        "dificultadOficial": 4,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "alpha",
       "nombre": "Alpha",
       "rol": "Fighter",
       "carril": "Exp",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "charge",
+        "daño"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Sos daño puro: pedí frontline antes de pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Alpha"
+      "wiki": "Alpha",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "B",
+        "zathong": "B"
+      },
+      "tierDisparidad": false,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "charge",
+          "damage"
+        ],
+        "durabilidad": 6,
+        "ofensiva": 4,
+        "control": 7,
+        "dificultadOficial": 1,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "alucard",
@@ -848,69 +1800,236 @@
       "rol": "Assassin",
       "carril": "Jungla",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "persecución",
+        "daño"
+      ],
+      "tips": [
+        "Entrá después del engage y por el flanco: abrir vos es regalar la pelea.",
+        "En jungla marcá el ritmo: río y objetivos antes que kills.",
+        "Servís para perseguir: no lo sueltes después del primer impacto."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Alucard"
+      "wiki": "Alucard",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "B",
+        "zathong": "A",
+        "esportsnet": "C"
+      },
+      "tierDisparidad": false,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "chase",
+          "damage"
+        ],
+        "durabilidad": 5,
+        "ofensiva": 5,
+        "control": 1,
+        "dificultadOficial": 4,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "argus",
       "nombre": "Argus",
       "rol": "Fighter",
       "carril": "Exp",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 3,
+      "tier": "S",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "charge",
+        "burst"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Buscá peleas cortas: entrás, matás y salís, sin quedarte a pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Argus"
+      "wiki": "Argus",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "S+",
+        "pocketgamer": "A",
+        "zathong": "C"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "56.6% win rate in ranked (MLBB Hub, patch 2.2.16a)",
+        "Top 15 in the MLCounters meta ranking (#13)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "charge",
+          "burst"
+        ],
+        "durabilidad": 8,
+        "ofensiva": 6,
+        "control": 6,
+        "dificultadOficial": 7,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "aurora",
       "nombre": "Aurora",
       "rol": "Mage",
       "carril": "Medio",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "ranged",
+        "control",
+        "poke"
+      ],
+      "tips": [
+        "Zoned con tus habilidades y rotá al río antes de que se arme la pelea.",
+        "En medio limpiá la ola rápido y movete antes que el rival.",
+        "Tu CC abre peleas: avisá el orden y que el equipo entre detrás."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Aurora"
+      "wiki": "Aurora",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "C",
+        "zathong": "D"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 49.1% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "crowd control",
+          "poke"
+        ],
+        "durabilidad": 4,
+        "ofensiva": 7,
+        "control": 10,
+        "dificultadOficial": 1,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "badang",
       "nombre": "Badang",
       "rol": "Fighter",
       "carril": "Exp",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "charge",
+        "burst"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Buscá peleas cortas: entrás, matás y salís, sin quedarte a pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Badang"
+      "wiki": "Badang",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "C",
+        "zathong": "C",
+        "esportsnet": "B"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "Balanced 50.2% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "charge",
+          "burst"
+        ],
+        "durabilidad": 4,
+        "ofensiva": 7,
+        "control": 5,
+        "dificultadOficial": 3,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "balmond",
       "nombre": "Balmond",
       "rol": "Fighter",
       "carril": "Exp",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "C",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "daño",
+        "regeneración"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Sos daño puro: pedí frontline antes de pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Balmond"
+      "wiki": "Balmond",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "C",
+        "pocketgamer": "A",
+        "zathong": "B"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "damage",
+          "regen"
+        ],
+        "durabilidad": 8,
+        "ofensiva": 3,
+        "control": 2,
+        "dificultadOficial": 2,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "bane",
@@ -918,13 +2037,47 @@
       "rol": "Fighter",
       "carril": "Exp",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mixto",
+        "melee",
+        "empuje",
+        "burst"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Aprovechá los huecos para empujar torres; no todo es pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Bane"
+      "wiki": "Bane",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "B",
+        "zathong": "B"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "Balanced 51.6% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mixto",
+        "alcance": "melee",
+        "especialidad": [
+          "push",
+          "burst"
+        ],
+        "durabilidad": 5,
+        "ofensiva": 6,
+        "control": 4,
+        "dificultadOficial": 4,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "barats",
@@ -932,55 +2085,192 @@
       "rol": "Fighter",
       "carril": "Exp",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "A",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "daño",
+        "control"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Sos daño puro: pedí frontline antes de pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Barats"
+      "wiki": "Barats",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "A",
+        "zathong": "B",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "Balanced 51.9% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "damage",
+          "crowd control"
+        ],
+        "durabilidad": 10,
+        "ofensiva": 3,
+        "control": 9,
+        "dificultadOficial": 4,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "baxia",
       "nombre": "Baxia",
       "rol": "Tank",
       "carril": "Roam",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "C",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "melee",
+        "soporte",
+        "daño"
+      ],
+      "tips": [
+        "Iniciá vos y quedate adelante: tu trabajo es abrir la pelea y cubrir la retirada.",
+        "De roam comprá visión y acompañá la rotación; tu oro sale de asistencias.",
+        "Tu valor es el otro: acompañá al carry y no te separes."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Baxia"
+      "wiki": "Baxia",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "D",
+        "pocketgamer": "C",
+        "zathong": "C",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": false,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "melee",
+        "especialidad": [
+          "support",
+          "damage"
+        ],
+        "durabilidad": 10,
+        "ofensiva": 3,
+        "control": 6,
+        "dificultadOficial": 3,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "belerick",
       "nombre": "Belerick",
       "rol": "Tank",
       "carril": "Roam",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "S",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "melee",
+        "control",
+        "regeneración"
+      ],
+      "tips": [
+        "Iniciá vos y quedate adelante: tu trabajo es abrir la pelea y cubrir la retirada.",
+        "De roam comprá visión y acompañá la rotación; tu oro sale de asistencias.",
+        "Tu CC abre peleas: avisá el orden y que el equipo entre detrás."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Belerick"
+      "wiki": "Belerick",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "S",
+        "pocketgamer": "C",
+        "zathong": "B"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 51.9% win rate in ranked",
+        "Top 15 in the MLCounters meta ranking (#1)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "melee",
+        "especialidad": [
+          "crowd control",
+          "regen"
+        ],
+        "durabilidad": 9,
+        "ofensiva": 4,
+        "control": 10,
+        "dificultadOficial": 1,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "benedetta",
       "nombre": "Benedetta",
       "rol": "Assassin",
       "carril": "Exp",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 3,
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "persecución",
+        "burst"
+      ],
+      "tips": [
+        "Entrá después del engage y por el flanco: abrir vos es regalar la pelea.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Servís para perseguir: no lo sueltes después del primer impacto."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Benedetta"
+      "wiki": "Benedetta",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "S+",
+        "zathong": "A",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "52.2% win rate in ranked (MLBB Hub, patch 2.2.16a)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "chase",
+          "burst"
+        ],
+        "durabilidad": 6,
+        "ofensiva": 5,
+        "control": 2,
+        "dificultadOficial": 8,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "brody",
@@ -988,27 +2278,98 @@
       "rol": "Marksman",
       "carril": "Oro",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "C",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "ranged",
+        "burst",
+        "rematador"
+      ],
+      "tips": [
+        "Pegá desde atrás y no te adelantes; esperá el CC del equipo para disparar tranquilo.",
+        "En oro priorizá farmear seguro: tu pico llega con dos ítems.",
+        "Buscá peleas cortas: entrás, matás y salís, sin quedarte a pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Brody"
+      "wiki": "Brody",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "C",
+        "pocketgamer": "S",
+        "zathong": "A",
+        "esportsnet": "B"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 50.0% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "ranged",
+        "especialidad": [
+          "burst",
+          "finisher"
+        ],
+        "durabilidad": 4,
+        "ofensiva": 7,
+        "control": 5,
+        "dificultadOficial": 5,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "carmilla",
       "nombre": "Carmilla",
       "rol": "Support",
       "carril": "Roam",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "S",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "melee",
+        "control",
+        "daño"
+      ],
+      "tips": [
+        "Cubrí al carry y guardá tu habilidad defensiva para el momento en que lo ataquen.",
+        "De roam comprá visión y acompañá la rotación; tu oro sale de asistencias.",
+        "Tu CC abre peleas: avisá el orden y que el equipo entre detrás."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Carmilla"
+      "wiki": "Carmilla",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "S+",
+        "pocketgamer": "D",
+        "zathong": "B",
+        "esportsnet": "B"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "53.5% win rate in ranked (MLBB Hub, patch 2.2.16a)",
+        "Top 15 in the MLCounters meta ranking (#12)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "melee",
+        "especialidad": [
+          "crowd control",
+          "damage"
+        ],
+        "durabilidad": 9,
+        "ofensiva": 2,
+        "control": 8,
+        "dificultadOficial": 1,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "cecilion",
@@ -1016,13 +2377,47 @@
       "rol": "Mage",
       "carril": "Medio",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "ranged",
+        "poke",
+        "burst"
+      ],
+      "tips": [
+        "Zoned con tus habilidades y rotá al río antes de que se arme la pelea.",
+        "En medio limpiá la ola rápido y movete antes que el rival.",
+        "Pegá de lejos y retrocedé; el daño gratis antes de la pelea vale oro."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Cecilion"
+      "wiki": "Cecilion",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "D",
+        "zathong": "B"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 51.1% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "poke",
+          "burst"
+        ],
+        "durabilidad": 4,
+        "ofensiva": 10,
+        "control": 5,
+        "dificultadOficial": 4,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "change",
@@ -1030,13 +2425,45 @@
       "rol": "Mage",
       "carril": "Medio",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "ranged",
+        "poke",
+        "burst"
+      ],
+      "tips": [
+        "Zoned con tus habilidades y rotá al río antes de que se arme la pelea.",
+        "En medio limpiá la ola rápido y movete antes que el rival.",
+        "Pegá de lejos y retrocedé; el daño gratis antes de la pelea vale oro."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Chang'e"
+      "wiki": "Chang'e",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "A",
+        "zathong": "S",
+        "esportsnet": "C"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "poke",
+          "burst"
+        ],
+        "durabilidad": 4,
+        "ofensiva": 8,
+        "control": 2,
+        "dificultadOficial": 4,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "clint",
@@ -1044,13 +2471,48 @@
       "rol": "Marksman",
       "carril": "Oro",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "C",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "ranged",
+        "rematador",
+        "burst"
+      ],
+      "tips": [
+        "Pegá desde atrás y no te adelantes; esperá el CC del equipo para disparar tranquilo.",
+        "En oro priorizá farmear seguro: tu pico llega con dos ítems.",
+        "Tu fuerte es cerrar: entrá cuando el enemigo ya gastó el escape."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Clint"
+      "wiki": "Clint",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "C",
+        "pocketgamer": "A",
+        "zathong": "B",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 50.5% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "ranged",
+        "especialidad": [
+          "finisher",
+          "burst"
+        ],
+        "durabilidad": 3,
+        "ofensiva": 7,
+        "control": 4,
+        "dificultadOficial": 6,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "cyclops",
@@ -1058,13 +2520,47 @@
       "rol": "Mage",
       "carril": "Medio",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "A",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "ranged",
+        "poke",
+        "control"
+      ],
+      "tips": [
+        "Zoned con tus habilidades y rotá al río antes de que se arme la pelea.",
+        "En medio limpiá la ola rápido y movete antes que el rival.",
+        "Pegá de lejos y retrocedé; el daño gratis antes de la pelea vale oro."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Cyclops"
+      "wiki": "Cyclops",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "A",
+        "zathong": "B"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "Balanced 51.5% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "poke",
+          "control"
+        ],
+        "durabilidad": 3,
+        "ofensiva": 10,
+        "control": 7,
+        "dificultadOficial": 4,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "dyrroth",
@@ -1072,13 +2568,47 @@
       "rol": "Fighter",
       "carril": "Exp",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "charge",
+        "burst"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Buscá peleas cortas: entrás, matás y salís, sin quedarte a pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Dyrroth"
+      "wiki": "Dyrroth",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "D",
+        "zathong": "D"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 49.2% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "charge",
+          "burst"
+        ],
+        "durabilidad": 5,
+        "ofensiva": 5,
+        "control": 2,
+        "dificultadOficial": 5,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "faramis",
@@ -1086,13 +2616,48 @@
       "rol": "Mage",
       "carril": "Medio",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "ranged",
+        "protección",
+        "charge"
+      ],
+      "tips": [
+        "Zoned con tus habilidades y rotá al río antes de que se arme la pelea.",
+        "En medio limpiá la ola rápido y movete antes que el rival.",
+        "Protegé al carry con tu control y tu escudo, no con daño."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Faramis"
+      "wiki": "Faramis",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "D",
+        "zathong": "S",
+        "esportsnet": "B"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 51.2% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "guard",
+          "charge"
+        ],
+        "durabilidad": 4,
+        "ofensiva": 6,
+        "control": 1,
+        "dificultadOficial": 4,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "freya",
@@ -1100,13 +2665,45 @@
       "rol": "Fighter",
       "carril": "Exp",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "C",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "persecución",
+        "daño"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Servís para perseguir: no lo sueltes después del primer impacto."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Freya"
+      "wiki": "Freya",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "C",
+        "pocketgamer": "A",
+        "zathong": "B",
+        "esportsnet": "S"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "chase",
+          "damage"
+        ],
+        "durabilidad": 6,
+        "ofensiva": 5,
+        "control": 5,
+        "dificultadOficial": 5,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "gatotkaca",
@@ -1114,27 +2711,93 @@
       "rol": "Fighter",
       "carril": "Exp",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "C",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "melee",
+        "control",
+        "burst"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Tu CC abre peleas: avisá el orden y que el equipo entre detrás."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Gatotkaca"
+      "wiki": "Gatotkaca",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "C",
+        "pocketgamer": "S",
+        "zathong": "S+",
+        "esportsnet": "B"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "melee",
+        "especialidad": [
+          "crowd control",
+          "burst"
+        ],
+        "durabilidad": 9,
+        "ofensiva": 3,
+        "control": 9,
+        "dificultadOficial": 4,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "gord",
       "nombre": "Gord",
       "rol": "Mage",
       "carril": "Medio",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "A",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "ranged",
+        "poke",
+        "burst"
+      ],
+      "tips": [
+        "Zoned con tus habilidades y rotá al río antes de que se arme la pelea.",
+        "En medio limpiá la ola rápido y movete antes que el rival.",
+        "Pegá de lejos y retrocedé; el daño gratis antes de la pelea vale oro."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Gord"
+      "wiki": "Gord",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "D",
+        "zathong": "D"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "52.8% win rate in ranked (MLBB Hub, patch 2.2.16a)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "poke",
+          "burst"
+        ],
+        "durabilidad": 1,
+        "ofensiva": 7,
+        "control": 8,
+        "dificultadOficial": 3,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "granger",
@@ -1142,13 +2805,45 @@
       "rol": "Marksman",
       "carril": "Oro",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "C",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "ranged",
+        "burst",
+        "rematador"
+      ],
+      "tips": [
+        "Pegá desde atrás y no te adelantes; esperá el CC del equipo para disparar tranquilo.",
+        "En oro priorizá farmear seguro: tu pico llega con dos ítems.",
+        "Buscá peleas cortas: entrás, matás y salís, sin quedarte a pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Granger"
+      "wiki": "Granger",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "D",
+        "pocketgamer": "S+",
+        "zathong": "A",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "ranged",
+        "especialidad": [
+          "burst",
+          "finisher"
+        ],
+        "durabilidad": 3,
+        "ofensiva": 7,
+        "control": 1,
+        "dificultadOficial": 4,
+        "recurso": "energy"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "guinevere",
@@ -1156,27 +2851,96 @@
       "rol": "Fighter",
       "carril": "Exp",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "A",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "melee",
+        "burst"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Buscá peleas cortas: entrás, matás y salís, sin quedarte a pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Guinevere"
+      "wiki": "Guinevere",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "S",
+        "zathong": "S",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "Balanced 51.3% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "melee",
+        "especialidad": [
+          "burst",
+          "magic damage"
+        ],
+        "durabilidad": 4,
+        "ofensiva": 6,
+        "control": 8,
+        "dificultadOficial": 4,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "hanabi",
       "nombre": "Hanabi",
       "rol": "Marksman",
       "carril": "Oro",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "A",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "ranged",
+        "rematador",
+        "daño"
+      ],
+      "tips": [
+        "Pegá desde atrás y no te adelantes; esperá el CC del equipo para disparar tranquilo.",
+        "En oro priorizá farmear seguro: tu pico llega con dos ítems.",
+        "Tu fuerte es cerrar: entrá cuando el enemigo ya gastó el escape."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Hanabi"
+      "wiki": "Hanabi",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "S",
+        "zathong": "S",
+        "esportsnet": "C"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "52.6% win rate in ranked (MLBB Hub, patch 2.2.16a)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "ranged",
+        "especialidad": [
+          "finisher",
+          "damage"
+        ],
+        "durabilidad": 2,
+        "ofensiva": 7,
+        "control": 8,
+        "dificultadOficial": 1,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "hanzo",
@@ -1184,13 +2948,47 @@
       "rol": "Assassin",
       "carril": "Jungla",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "burst",
+        "poke"
+      ],
+      "tips": [
+        "Entrá después del engage y por el flanco: abrir vos es regalar la pelea.",
+        "En jungla marcá el ritmo: río y objetivos antes que kills.",
+        "Buscá peleas cortas: entrás, matás y salís, sin quedarte a pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Hanzo"
+      "wiki": "Hanzo",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "D",
+        "zathong": "C"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 49.9% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "burst",
+          "poke"
+        ],
+        "durabilidad": 7,
+        "ofensiva": 8,
+        "control": 2,
+        "dificultadOficial": 5,
+        "recurso": "energy"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "harith",
@@ -1198,13 +2996,45 @@
       "rol": "Mage",
       "carril": "Oro",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "C",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "ranged",
+        "persecución",
+        "daño"
+      ],
+      "tips": [
+        "Zoned con tus habilidades y rotá al río antes de que se arme la pelea.",
+        "En oro priorizá farmear seguro: tu pico llega con dos ítems.",
+        "Servís para perseguir: no lo sueltes después del primer impacto."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Harith"
+      "wiki": "Harith",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "D",
+        "pocketgamer": "B",
+        "zathong": "C",
+        "esportsnet": "S"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "chase",
+          "damage"
+        ],
+        "durabilidad": 4,
+        "ofensiva": 5,
+        "control": 1,
+        "dificultadOficial": 6,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "harley",
@@ -1212,13 +3042,44 @@
       "rol": "Assassin",
       "carril": "Jungla",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "ranged",
+        "burst",
+        "poke"
+      ],
+      "tips": [
+        "Entrá después del engage y por el flanco: abrir vos es regalar la pelea.",
+        "En jungla marcá el ritmo: río y objetivos antes que kills.",
+        "Buscá peleas cortas: entrás, matás y salís, sin quedarte a pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Harley"
+      "wiki": "Harley",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "S",
+        "zathong": "A"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "burst",
+          "poke"
+        ],
+        "durabilidad": 3,
+        "ofensiva": 9,
+        "control": 1,
+        "dificultadOficial": 4,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "hayabusa",
@@ -1226,13 +3087,45 @@
       "rol": "Assassin",
       "carril": "Jungla",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "C",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "persecución",
+        "burst"
+      ],
+      "tips": [
+        "Entrá después del engage y por el flanco: abrir vos es regalar la pelea.",
+        "En jungla marcá el ritmo: río y objetivos antes que kills.",
+        "Servís para perseguir: no lo sueltes después del primer impacto."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Hayabusa"
+      "wiki": "Hayabusa",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "C",
+        "pocketgamer": "S",
+        "zathong": "S+",
+        "esportsnet": "S"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "chase",
+          "burst"
+        ],
+        "durabilidad": 4,
+        "ofensiva": 5,
+        "control": 1,
+        "dificultadOficial": 6,
+        "recurso": "energy"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "helcurt",
@@ -1240,13 +3133,45 @@
       "rol": "Assassin",
       "carril": "Jungla",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "empuje",
+        "burst"
+      ],
+      "tips": [
+        "Entrá después del engage y por el flanco: abrir vos es regalar la pelea.",
+        "En jungla marcá el ritmo: río y objetivos antes que kills.",
+        "Aprovechá los huecos para empujar torres; no todo es pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Helcurt"
+      "wiki": "Helcurt",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "S+",
+        "zathong": "S+",
+        "esportsnet": "B"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "push",
+          "burst"
+        ],
+        "durabilidad": 3,
+        "ofensiva": 5,
+        "control": 5,
+        "dificultadOficial": 4,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "hilda",
@@ -1254,13 +3179,49 @@
       "rol": "Fighter",
       "carril": "Exp",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "A",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "daño",
+        "regeneración"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Sos daño puro: pedí frontline antes de pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Hilda"
+      "wiki": "Hilda",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "D",
+        "zathong": "D",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 51.1% win rate in ranked",
+        "Top 15 in the MLCounters meta ranking (#15)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "damage",
+          "regen"
+        ],
+        "durabilidad": 9,
+        "ofensiva": 4,
+        "control": 4,
+        "dificultadOficial": 4,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "hylos",
@@ -1268,27 +3229,94 @@
       "rol": "Tank",
       "carril": "Roam",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "melee",
+        "protección",
+        "iniciador"
+      ],
+      "tips": [
+        "Iniciá vos y quedate adelante: tu trabajo es abrir la pelea y cubrir la retirada.",
+        "De roam comprá visión y acompañá la rotación; tu oro sale de asistencias.",
+        "Protegé al carry con tu control y tu escudo, no con daño."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Hylos"
+      "wiki": "Hylos",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "S",
+        "zathong": "A",
+        "esportsnet": "B"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "melee",
+        "especialidad": [
+          "guard",
+          "initiator"
+        ],
+        "durabilidad": 10,
+        "ofensiva": 2,
+        "control": 8,
+        "dificultadOficial": 5,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "irithel",
       "nombre": "Irithel",
       "rol": "Marksman",
       "carril": "Oro",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "A",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "ranged",
+        "rematador",
+        "burst"
+      ],
+      "tips": [
+        "Pegá desde atrás y no te adelantes; esperá el CC del equipo para disparar tranquilo.",
+        "En oro priorizá farmear seguro: tu pico llega con dos ítems.",
+        "Tu fuerte es cerrar: entrá cuando el enemigo ya gastó el escape."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Irithel"
+      "wiki": "Irithel",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "B",
+        "zathong": "C",
+        "esportsnet": "B"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "52.7% win rate in ranked (MLBB Hub, patch 2.2.16a)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "ranged",
+        "especialidad": [
+          "finisher",
+          "burst"
+        ],
+        "durabilidad": 1,
+        "ofensiva": 8,
+        "control": 1,
+        "dificultadOficial": 3,
+        "recurso": "energy"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "jawhead",
@@ -1296,13 +3324,44 @@
       "rol": "Fighter",
       "carril": "Exp",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "C",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "charge",
+        "burst"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Buscá peleas cortas: entrás, matás y salís, sin quedarte a pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Jawhead"
+      "wiki": "Jawhead",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "C",
+        "pocketgamer": "S",
+        "zathong": "S"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "charge",
+          "burst"
+        ],
+        "durabilidad": 6,
+        "ofensiva": 3,
+        "control": 6,
+        "dificultadOficial": 6,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "johnson",
@@ -1310,13 +3369,44 @@
       "rol": "Support",
       "carril": "Roam",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "melee",
+        "soporte",
+        "control"
+      ],
+      "tips": [
+        "Cubrí al carry y guardá tu habilidad defensiva para el momento en que lo ataquen.",
+        "De roam comprá visión y acompañá la rotación; tu oro sale de asistencias.",
+        "Tu valor es el otro: acompañá al carry y no te separes."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Johnson"
+      "wiki": "Johnson",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "B",
+        "zathong": "S"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "melee",
+        "especialidad": [
+          "support",
+          "crowd control"
+        ],
+        "durabilidad": 8,
+        "ofensiva": 3,
+        "control": 9,
+        "dificultadOficial": 6,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "kadita",
@@ -1324,13 +3414,47 @@
       "rol": "Assassin",
       "carril": "Medio",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "A",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "ranged",
+        "burst",
+        "charge"
+      ],
+      "tips": [
+        "Entrá después del engage y por el flanco: abrir vos es regalar la pelea.",
+        "En medio limpiá la ola rápido y movete antes que el rival.",
+        "Buscá peleas cortas: entrás, matás y salís, sin quedarte a pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Kadita"
+      "wiki": "Kadita",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "B",
+        "zathong": "C"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 51.6% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "burst",
+          "charge"
+        ],
+        "durabilidad": 4,
+        "ofensiva": 8,
+        "control": 8,
+        "dificultadOficial": 6,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "kaja",
@@ -1338,13 +3462,48 @@
       "rol": "Support",
       "carril": "Roam",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "A",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "melee",
+        "iniciador",
+        "charge"
+      ],
+      "tips": [
+        "Cubrí al carry y guardá tu habilidad defensiva para el momento en que lo ataquen.",
+        "De roam comprá visión y acompañá la rotación; tu oro sale de asistencias.",
+        "Sos el que abre: elegí el ángulo y entrá con el equipo cerca."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Kaja"
+      "wiki": "Kaja",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "S+",
+        "zathong": "S",
+        "esportsnet": "C"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "Balanced 50.0% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "melee",
+        "especialidad": [
+          "initiator",
+          "charge"
+        ],
+        "durabilidad": 8,
+        "ofensiva": 2,
+        "control": 7,
+        "dificultadOficial": 6,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "karina",
@@ -1352,13 +3511,44 @@
       "rol": "Assassin",
       "carril": "Jungla",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "melee",
+        "rematador"
+      ],
+      "tips": [
+        "Entrá después del engage y por el flanco: abrir vos es regalar la pelea.",
+        "En jungla marcá el ritmo: río y objetivos antes que kills.",
+        "Tu fuerte es cerrar: entrá cuando el enemigo ya gastó el escape."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Karina"
+      "wiki": "Karina",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "A",
+        "zathong": "B",
+        "esportsnet": "B"
+      },
+      "tierDisparidad": false,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "melee",
+        "especialidad": [
+          "finisher",
+          "magic damage"
+        ],
+        "durabilidad": 5,
+        "ofensiva": 7,
+        "control": 1,
+        "dificultadOficial": 5,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "karrie",
@@ -1366,13 +3556,45 @@
       "rol": "Marksman",
       "carril": "Oro",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "ranged",
+        "rematador",
+        "daño"
+      ],
+      "tips": [
+        "Pegá desde atrás y no te adelantes; esperá el CC del equipo para disparar tranquilo.",
+        "En oro priorizá farmear seguro: tu pico llega con dos ítems.",
+        "Tu fuerte es cerrar: entrá cuando el enemigo ya gastó el escape."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Karrie"
+      "wiki": "Karrie",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "C",
+        "zathong": "D",
+        "esportsnet": "S"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "ranged",
+        "especialidad": [
+          "finisher",
+          "damage"
+        ],
+        "durabilidad": 3,
+        "ofensiva": 8,
+        "control": 1,
+        "dificultadOficial": 4,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "khaleed",
@@ -1380,13 +3602,48 @@
       "rol": "Fighter",
       "carril": "Exp",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "daño",
+        "regeneración"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Sos daño puro: pedí frontline antes de pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Khaleed"
+      "wiki": "Khaleed",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "A",
+        "zathong": "C",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 50.5% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "damage",
+          "regen"
+        ],
+        "durabilidad": 8,
+        "ofensiva": 5,
+        "control": 5,
+        "dificultadOficial": 5,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "kimmy",
@@ -1394,13 +3651,47 @@
       "rol": "Mage",
       "carril": "Medio",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "ranged",
+        "daño"
+      ],
+      "tips": [
+        "Zoned con tus habilidades y rotá al río antes de que se arme la pelea.",
+        "En medio limpiá la ola rápido y movete antes que el rival.",
+        "Sos daño puro: pedí frontline antes de pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Kimmy"
+      "wiki": "Kimmy",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "D",
+        "zathong": "D",
+        "esportsnet": "S"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 49.1% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "damage",
+          "magic damage"
+        ],
+        "durabilidad": 3,
+        "ofensiva": 8,
+        "control": 5,
+        "dificultadOficial": 6,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "lapu-lapu",
@@ -1408,27 +3699,94 @@
       "rol": "Fighter",
       "carril": "Exp",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "C",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "persecución",
+        "burst"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Servís para perseguir: no lo sueltes después del primer impacto."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Lapu-Lapu"
+      "wiki": "Lapu-Lapu",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "C",
+        "pocketgamer": "A",
+        "zathong": "B",
+        "esportsnet": "S"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "chase",
+          "burst"
+        ],
+        "durabilidad": 8,
+        "ofensiva": 4,
+        "control": 4,
+        "dificultadOficial": 5,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "leomord",
       "nombre": "Leomord",
       "rol": "Fighter",
       "carril": "Jungla",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "persecución",
+        "burst"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En jungla marcá el ritmo: río y objetivos antes que kills.",
+        "Servís para perseguir: no lo sueltes después del primer impacto."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Leomord"
+      "wiki": "Leomord",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "B",
+        "zathong": "C",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "Balanced 50.4% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "chase",
+          "burst"
+        ],
+        "durabilidad": 7,
+        "ofensiva": 5,
+        "control": 3,
+        "dificultadOficial": 3,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "lesley",
@@ -1436,13 +3794,45 @@
       "rol": "Assassin",
       "carril": "Oro",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "A",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "ranged",
+        "rematador",
+        "burst"
+      ],
+      "tips": [
+        "Entrá después del engage y por el flanco: abrir vos es regalar la pelea.",
+        "En oro priorizá farmear seguro: tu pico llega con dos ítems.",
+        "Tu fuerte es cerrar: entrá cuando el enemigo ya gastó el escape."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Lesley"
+      "wiki": "Lesley",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "D",
+        "zathong": "S+",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "ranged",
+        "especialidad": [
+          "finisher",
+          "burst"
+        ],
+        "durabilidad": 1,
+        "ofensiva": 7,
+        "control": 2,
+        "dificultadOficial": 5,
+        "recurso": "energy"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "lolita",
@@ -1450,27 +3840,94 @@
       "rol": "Support",
       "carril": "Roam",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "A",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "protección",
+        "control"
+      ],
+      "tips": [
+        "Cubrí al carry y guardá tu habilidad defensiva para el momento en que lo ataquen.",
+        "De roam comprá visión y acompañá la rotación; tu oro sale de asistencias.",
+        "Protegé al carry con tu control y tu escudo, no con daño."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Lolita"
+      "wiki": "Lolita",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "C",
+        "zathong": "B",
+        "esportsnet": "C"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "53.4% win rate in ranked (MLBB Hub, patch 2.2.16a)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "guard",
+          "crowd control"
+        ],
+        "durabilidad": 10,
+        "ofensiva": 1,
+        "control": 9,
+        "dificultadOficial": 5,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "luo-yi",
       "nombre": "Luo Yi",
       "rol": "Mage",
       "carril": "Medio",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 3,
+      "tier": "C",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "ranged",
+        "soporte",
+        "control"
+      ],
+      "tips": [
+        "Zoned con tus habilidades y rotá al río antes de que se arme la pelea.",
+        "En medio limpiá la ola rápido y movete antes que el rival.",
+        "Tu valor es el otro: acompañá al carry y no te separes."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Luo Yi"
+      "wiki": "Luo Yi",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "C",
+        "pocketgamer": "S",
+        "zathong": "A",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "support",
+          "crowd control"
+        ],
+        "durabilidad": 2,
+        "ofensiva": 10,
+        "control": 4,
+        "dificultadOficial": 8,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "lylia",
@@ -1478,13 +3935,47 @@
       "rol": "Mage",
       "carril": "Medio",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "ranged",
+        "empuje",
+        "daño"
+      ],
+      "tips": [
+        "Zoned con tus habilidades y rotá al río antes de que se arme la pelea.",
+        "En medio limpiá la ola rápido y movete antes que el rival.",
+        "Aprovechá los huecos para empujar torres; no todo es pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Lylia"
+      "wiki": "Lylia",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "B",
+        "zathong": "C"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "Balanced 49.7% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "push",
+          "damage"
+        ],
+        "durabilidad": 5,
+        "ofensiva": 10,
+        "control": 2,
+        "dificultadOficial": 6,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "martis",
@@ -1492,13 +3983,45 @@
       "rol": "Fighter",
       "carril": "Exp",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "C",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "rematador",
+        "charge"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Tu fuerte es cerrar: entrá cuando el enemigo ya gastó el escape."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Martis"
+      "wiki": "Martis",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "C",
+        "pocketgamer": "D",
+        "zathong": "D",
+        "esportsnet": "C"
+      },
+      "tierDisparidad": false,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "finisher",
+          "charge"
+        ],
+        "durabilidad": 6,
+        "ofensiva": 3,
+        "control": 5,
+        "dificultadOficial": 6,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "masha",
@@ -1506,27 +4029,94 @@
       "rol": "Fighter",
       "carril": "Exp",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "S",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "empuje",
+        "daño"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Aprovechá los huecos para empujar torres; no todo es pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Masha"
+      "wiki": "Masha",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "S+",
+        "pocketgamer": "D",
+        "zathong": "D"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "61.3% win rate in ranked (MLBB Hub, patch 2.2.16a)",
+        "Top 15 in the MLCounters meta ranking (#3)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "push",
+          "damage"
+        ],
+        "durabilidad": 5,
+        "ofensiva": 7,
+        "control": 3,
+        "dificultadOficial": 6,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "mathilda",
       "nombre": "Mathilda",
       "rol": "Assassin",
       "carril": "Roam",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 3,
+      "tier": "C",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "ranged",
+        "iniciador",
+        "protección"
+      ],
+      "tips": [
+        "Entrá después del engage y por el flanco: abrir vos es regalar la pelea.",
+        "De roam comprá visión y acompañá la rotación; tu oro sale de asistencias.",
+        "Sos el que abre: elegí el ángulo y entrá con el equipo cerca."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Mathilda"
+      "wiki": "Mathilda",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "D",
+        "pocketgamer": "S+",
+        "zathong": "S",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "initiator",
+          "guard"
+        ],
+        "durabilidad": 8,
+        "ofensiva": 2,
+        "control": 4,
+        "dificultadOficial": 7,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "melissa",
@@ -1534,13 +4124,43 @@
       "rol": "Marksman",
       "carril": "Oro",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mixto",
+        "ranged",
+        "rematador",
+        "daño"
+      ],
+      "tips": [
+        "Pegá desde atrás y no te adelantes; esperá el CC del equipo para disparar tranquilo.",
+        "En oro priorizá farmear seguro: tu pico llega con dos ítems.",
+        "Tu fuerte es cerrar: entrá cuando el enemigo ya gastó el escape."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Melissa"
+      "wiki": "Melissa",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "S+"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mixto",
+        "alcance": "ranged",
+        "especialidad": [
+          "finisher",
+          "damage"
+        ],
+        "durabilidad": 2,
+        "ofensiva": 9,
+        "control": 4,
+        "dificultadOficial": 5,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "minotaur",
@@ -1548,27 +4168,94 @@
       "rol": "Support",
       "carril": "Roam",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "S",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "control"
+      ],
+      "tips": [
+        "Cubrí al carry y guardá tu habilidad defensiva para el momento en que lo ataquen.",
+        "De roam comprá visión y acompañá la rotación; tu oro sale de asistencias.",
+        "Tu CC abre peleas: avisá el orden y que el equipo entre detrás."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Minotaur"
+      "wiki": "Minotaur",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "S",
+        "pocketgamer": "B",
+        "zathong": "C",
+        "esportsnet": "S"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "53.7% win rate in ranked (MLBB Hub, patch 2.2.16a)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "crowd control"
+        ],
+        "durabilidad": 10,
+        "ofensiva": 1,
+        "control": 8,
+        "dificultadOficial": 4,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "minsitthar",
       "nombre": "Minsitthar",
       "rol": "Fighter",
       "carril": "Exp",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "A",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "iniciador",
+        "control"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Sos el que abre: elegí el ángulo y entrá con el equipo cerca."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Minsitthar"
+      "wiki": "Minsitthar",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "D",
+        "zathong": "D"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 51.8% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "initiator",
+          "crowd control"
+        ],
+        "durabilidad": 6,
+        "ofensiva": 4,
+        "control": 8,
+        "dificultadOficial": 3,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "moskov",
@@ -1576,13 +4263,48 @@
       "rol": "Marksman",
       "carril": "Oro",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "ranged",
+        "rematador",
+        "persecución"
+      ],
+      "tips": [
+        "Pegá desde atrás y no te adelantes; esperá el CC del equipo para disparar tranquilo.",
+        "En oro priorizá farmear seguro: tu pico llega con dos ítems.",
+        "Tu fuerte es cerrar: entrá cuando el enemigo ya gastó el escape."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Moskov"
+      "wiki": "Moskov",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "C",
+        "zathong": "C",
+        "esportsnet": "C"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "Balanced 50.3% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "ranged",
+        "especialidad": [
+          "finisher",
+          "chase"
+        ],
+        "durabilidad": 2,
+        "ofensiva": 6,
+        "control": 6,
+        "dificultadOficial": 4,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "nana",
@@ -1590,41 +4312,142 @@
       "rol": "Mage",
       "carril": "Medio",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "ranged",
+        "poke",
+        "burst"
+      ],
+      "tips": [
+        "Zoned con tus habilidades y rotá al río antes de que se arme la pelea.",
+        "En medio limpiá la ola rápido y movete antes que el rival.",
+        "Pegá de lejos y retrocedé; el daño gratis antes de la pelea vale oro."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Nana"
+      "wiki": "Nana",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "C",
+        "zathong": "C",
+        "esportsnet": "C"
+      },
+      "tierDisparidad": false,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "poke",
+          "burst"
+        ],
+        "durabilidad": 5,
+        "ofensiva": 6,
+        "control": 10,
+        "dificultadOficial": null,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "natalia",
       "nombre": "Natalia",
       "rol": "Assassin",
       "carril": "Jungla",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 3,
+      "tier": "A",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "persecución",
+        "rematador"
+      ],
+      "tips": [
+        "Entrá después del engage y por el flanco: abrir vos es regalar la pelea.",
+        "En jungla marcá el ritmo: río y objetivos antes que kills.",
+        "Servís para perseguir: no lo sueltes después del primer impacto."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Natalia"
+      "wiki": "Natalia",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "A",
+        "zathong": "A",
+        "esportsnet": "C"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "Balanced 51.0% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "chase",
+          "finisher"
+        ],
+        "durabilidad": 1,
+        "ofensiva": 6,
+        "control": 6,
+        "dificultadOficial": 9,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "natan",
       "nombre": "Natan",
       "rol": "Marksman",
       "carril": "Oro",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "C",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "ranged",
+        "burst"
+      ],
+      "tips": [
+        "Pegá desde atrás y no te adelantes; esperá el CC del equipo para disparar tranquilo.",
+        "En oro priorizá farmear seguro: tu pico llega con dos ítems.",
+        "Buscá peleas cortas: entrás, matás y salís, sin quedarte a pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Natan"
+      "wiki": "Natan",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "C",
+        "pocketgamer": "S+",
+        "zathong": "S",
+        "esportsnet": "B"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 51.2% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "burst",
+          "magic damage"
+        ],
+        "durabilidad": 2,
+        "ofensiva": 6,
+        "control": 2,
+        "dificultadOficial": 2,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "nolan",
@@ -1632,41 +4455,145 @@
       "rol": "Assassin",
       "carril": "Jungla",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "persecución",
+        "burst"
+      ],
+      "tips": [
+        "Entrá después del engage y por el flanco: abrir vos es regalar la pelea.",
+        "En jungla marcá el ritmo: río y objetivos antes que kills.",
+        "Servís para perseguir: no lo sueltes después del primer impacto."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Nolan"
+      "wiki": "Nolan",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "A",
+        "zathong": "S",
+        "esportsnet": "B"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 49.6% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "chase",
+          "burst"
+        ],
+        "durabilidad": 3,
+        "ofensiva": 6,
+        "control": 2,
+        "dificultadOficial": 6,
+        "recurso": "energy"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "novaria",
       "nombre": "Novaria",
       "rol": "Mage",
       "carril": "Medio",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 3,
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "ranged",
+        "burst",
+        "poke"
+      ],
+      "tips": [
+        "Zoned con tus habilidades y rotá al río antes de que se arme la pelea.",
+        "En medio limpiá la ola rápido y movete antes que el rival.",
+        "Buscá peleas cortas: entrás, matás y salís, sin quedarte a pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Novaria"
+      "wiki": "Novaria",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "S+",
+        "zathong": "S"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 49.8% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "burst",
+          "poke"
+        ],
+        "durabilidad": 3,
+        "ofensiva": 9,
+        "control": 3,
+        "dificultadOficial": 7,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "odette",
       "nombre": "Odette",
       "rol": "Mage",
       "carril": "Medio",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "ranged",
+        "burst",
+        "poke"
+      ],
+      "tips": [
+        "Zoned con tus habilidades y rotá al río antes de que se arme la pelea.",
+        "En medio limpiá la ola rápido y movete antes que el rival.",
+        "Buscá peleas cortas: entrás, matás y salís, sin quedarte a pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Odette"
+      "wiki": "Odette",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "D",
+        "zathong": "C",
+        "esportsnet": "B"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 49.5% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "burst",
+          "poke"
+        ],
+        "durabilidad": 4,
+        "ofensiva": 10,
+        "control": 5,
+        "dificultadOficial": 3,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "pharsa",
@@ -1674,13 +4601,45 @@
       "rol": "Mage",
       "carril": "Medio",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "C",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "ranged",
+        "burst",
+        "poke"
+      ],
+      "tips": [
+        "Zoned con tus habilidades y rotá al río antes de que se arme la pelea.",
+        "En medio limpiá la ola rápido y movete antes que el rival.",
+        "Buscá peleas cortas: entrás, matás y salís, sin quedarte a pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Pharsa"
+      "wiki": "Pharsa",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "C",
+        "pocketgamer": "A",
+        "zathong": "B",
+        "esportsnet": "S"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "burst",
+          "poke"
+        ],
+        "durabilidad": 2,
+        "ofensiva": 9,
+        "control": 5,
+        "dificultadOficial": 5,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "phoveus",
@@ -1688,13 +4647,45 @@
       "rol": "Fighter",
       "carril": "Exp",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mixto",
+        "melee",
+        "regeneración",
+        "daño"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Aguantá el desgaste: tu sustain gana las líneas largas."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Phoveus"
+      "wiki": "Phoveus",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "S+",
+        "zathong": "S",
+        "esportsnet": "S"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mixto",
+        "alcance": "melee",
+        "especialidad": [
+          "regen",
+          "damage"
+        ],
+        "durabilidad": 7,
+        "ofensiva": 8,
+        "control": 5,
+        "dificultadOficial": 4,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "popol-and-kupa",
@@ -1702,13 +4693,47 @@
       "rol": "Marksman",
       "carril": "Oro",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "A",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mixto",
+        "ranged",
+        "empuje",
+        "burst"
+      ],
+      "tips": [
+        "Pegá desde atrás y no te adelantes; esperá el CC del equipo para disparar tranquilo.",
+        "En oro priorizá farmear seguro: tu pico llega con dos ítems.",
+        "Aprovechá los huecos para empujar torres; no todo es pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Popol and Kupa"
+      "wiki": "Popol and Kupa",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "B",
+        "zathong": "B"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "54.7% win rate in ranked (MLBB Hub, patch 2.2.16a)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mixto",
+        "alcance": "ranged",
+        "especialidad": [
+          "push",
+          "burst"
+        ],
+        "durabilidad": 3,
+        "ofensiva": 7,
+        "control": 7,
+        "dificultadOficial": 6,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "rafaela",
@@ -1716,13 +4741,47 @@
       "rol": "Support",
       "carril": "Roam",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "S",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "ranged",
+        "regeneración",
+        "protección"
+      ],
+      "tips": [
+        "Cubrí al carry y guardá tu habilidad defensiva para el momento en que lo ataquen.",
+        "De roam comprá visión y acompañá la rotación; tu oro sale de asistencias.",
+        "Aguantá el desgaste: tu sustain gana las líneas largas."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Rafaela"
+      "wiki": "Rafaela",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "S",
+        "pocketgamer": "B",
+        "zathong": "S"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "54.9% win rate in ranked (MLBB Hub, patch 2.2.16a)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "regen",
+          "guard"
+        ],
+        "durabilidad": 6,
+        "ofensiva": 2,
+        "control": 7,
+        "dificultadOficial": 4,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "roger",
@@ -1730,55 +4789,185 @@
       "rol": "Fighter",
       "carril": "Jungla",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "C",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "rematador",
+        "burst"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En jungla marcá el ritmo: río y objetivos antes que kills.",
+        "Tu fuerte es cerrar: entrá cuando el enemigo ya gastó el escape."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Roger"
+      "wiki": "Roger",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "C",
+        "pocketgamer": "S",
+        "zathong": "S"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": null,
+        "especialidad": [
+          "finisher",
+          "burst"
+        ],
+        "durabilidad": 6,
+        "ofensiva": 4,
+        "control": 1,
+        "dificultadOficial": 6,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "saber",
       "nombre": "Saber",
       "rol": "Assassin",
       "carril": "Jungla",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "S",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "charge",
+        "rematador"
+      ],
+      "tips": [
+        "Entrá después del engage y por el flanco: abrir vos es regalar la pelea.",
+        "En jungla marcá el ritmo: río y objetivos antes que kills.",
+        "Tu fuerte es cerrar: entrá cuando el enemigo ya gastó el escape."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Saber"
+      "wiki": "Saber",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "S",
+        "pocketgamer": "S+",
+        "zathong": "S+",
+        "esportsnet": "C"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "Balanced 51.1% win rate in ranked",
+        "Top 15 in the MLCounters meta ranking (#14)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "charge",
+          "finisher"
+        ],
+        "durabilidad": 2,
+        "ofensiva": 6,
+        "control": 6,
+        "dificultadOficial": 3,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "selena",
       "nombre": "Selena",
       "rol": "Assassin",
       "carril": "Medio",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 3,
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "iniciador",
+        "rematador"
+      ],
+      "tips": [
+        "Entrá después del engage y por el flanco: abrir vos es regalar la pelea.",
+        "En medio limpiá la ola rápido y movete antes que el rival.",
+        "Sos el que abre: elegí el ángulo y entrá con el equipo cerca."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Selena"
+      "wiki": "Selena",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "S",
+        "zathong": "S",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": null,
+        "especialidad": [
+          "initiator",
+          "finisher"
+        ],
+        "durabilidad": 4,
+        "ofensiva": 7,
+        "control": 10,
+        "dificultadOficial": 8,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "silvanna",
       "nombre": "Silvanna",
       "rol": "Fighter",
       "carril": "Exp",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "A",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "melee",
+        "iniciador"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Sos el que abre: elegí el ángulo y entrá con el equipo cerca."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Silvanna"
+      "wiki": "Silvanna",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "C",
+        "zathong": "A"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 51.3% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "melee",
+        "especialidad": [
+          "initiator",
+          "magic damage"
+        ],
+        "durabilidad": 5,
+        "ofensiva": 4,
+        "control": 7,
+        "dificultadOficial": 3,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "sun",
@@ -1786,27 +4975,97 @@
       "rol": "Fighter",
       "carril": "Exp",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "S",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mixto",
+        "melee",
+        "empuje",
+        "daño"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Aprovechá los huecos para empujar torres; no todo es pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Sun"
+      "wiki": "Sun",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "S+",
+        "pocketgamer": "S",
+        "zathong": "B",
+        "esportsnet": "B"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "53.2% win rate in ranked (MLBB Hub, patch 2.2.16a)",
+        "Top 15 in the MLCounters meta ranking (#10)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mixto",
+        "alcance": "melee",
+        "especialidad": [
+          "push",
+          "damage"
+        ],
+        "durabilidad": 5,
+        "ofensiva": 5,
+        "control": 1,
+        "dificultadOficial": 5,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "terizla",
       "nombre": "Terizla",
       "rol": "Fighter",
       "carril": "Exp",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "burst",
+        "control"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Buscá peleas cortas: entrás, matás y salís, sin quedarte a pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Terizla"
+      "wiki": "Terizla",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "C",
+        "zathong": "D"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 50.6% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "burst",
+          "crowd control"
+        ],
+        "durabilidad": 9,
+        "ofensiva": 5,
+        "control": 7,
+        "dificultadOficial": 3,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "thamuz",
@@ -1814,69 +5073,232 @@
       "rol": "Fighter",
       "carril": "Exp",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "persecución",
+        "daño"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Servís para perseguir: no lo sueltes después del primer impacto."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Thamuz"
+      "wiki": "Thamuz",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "B",
+        "zathong": "D",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "chase",
+          "damage"
+        ],
+        "durabilidad": 7,
+        "ofensiva": 4,
+        "control": 2,
+        "dificultadOficial": 6,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "tigreal",
       "nombre": "Tigreal",
       "rol": "Tank",
       "carril": "Roam",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "C",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "control"
+      ],
+      "tips": [
+        "Iniciá vos y quedate adelante: tu trabajo es abrir la pelea y cubrir la retirada.",
+        "De roam comprá visión y acompañá la rotación; tu oro sale de asistencias.",
+        "Tu CC abre peleas: avisá el orden y que el equipo entre detrás."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Tigreal"
+      "wiki": "Tigreal",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "C",
+        "pocketgamer": "S+",
+        "zathong": "S",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "crowd control"
+        ],
+        "durabilidad": 8,
+        "ofensiva": 1,
+        "control": 10,
+        "dificultadOficial": 1,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "uranus",
       "nombre": "Uranus",
       "rol": "Tank",
       "carril": "Exp",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "C",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "melee",
+        "regeneración"
+      ],
+      "tips": [
+        "Iniciá vos y quedate adelante: tu trabajo es abrir la pelea y cubrir la retirada.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Aguantá el desgaste: tu sustain gana las líneas largas."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Uranus"
+      "wiki": "Uranus",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "C",
+        "pocketgamer": "A",
+        "zathong": "A",
+        "esportsnet": "S"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 49.1% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "melee",
+        "especialidad": [
+          "regen"
+        ],
+        "durabilidad": 10,
+        "ofensiva": 2,
+        "control": 2,
+        "dificultadOficial": 3,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "vale",
       "nombre": "Vale",
       "rol": "Mage",
       "carril": "Medio",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "A",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "ranged",
+        "burst",
+        "control"
+      ],
+      "tips": [
+        "Zoned con tus habilidades y rotá al río antes de que se arme la pelea.",
+        "En medio limpiá la ola rápido y movete antes que el rival.",
+        "Buscá peleas cortas: entrás, matás y salís, sin quedarte a pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Vale"
+      "wiki": "Vale",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "S",
+        "zathong": "B"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 50.2% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "burst",
+          "crowd control"
+        ],
+        "durabilidad": 2,
+        "ofensiva": 10,
+        "control": 6,
+        "dificultadOficial": 2,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "vexana",
       "nombre": "Vexana",
       "rol": "Mage",
       "carril": "Medio",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "ranged",
+        "poke",
+        "control"
+      ],
+      "tips": [
+        "Zoned con tus habilidades y rotá al río antes de que se arme la pelea.",
+        "En medio limpiá la ola rápido y movete antes que el rival.",
+        "Pegá de lejos y retrocedé; el daño gratis antes de la pelea vale oro."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Vexana"
+      "wiki": "Vexana",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "D",
+        "zathong": "D"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 49.5% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "poke",
+          "control"
+        ],
+        "durabilidad": 2,
+        "ofensiva": 9,
+        "control": 5,
+        "dificultadOficial": 1,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "x-borg",
@@ -1884,27 +5306,95 @@
       "rol": "Fighter",
       "carril": "Exp",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "regeneración",
+        "burst"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Aguantá el desgaste: tu sustain gana las líneas largas."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "X.Borg"
+      "wiki": "X.Borg",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "S+",
+        "zathong": "C",
+        "esportsnet": "B"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 50.0% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": null,
+        "especialidad": [
+          "regen",
+          "burst"
+        ],
+        "durabilidad": 8,
+        "ofensiva": 3,
+        "control": 1,
+        "dificultadOficial": 6,
+        "recurso": "energy"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "yi-sun-shin",
       "nombre": "Yi Sun-shin",
       "rol": "Assassin",
       "carril": "Jungla",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 3,
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "rematador",
+        "persecución"
+      ],
+      "tips": [
+        "Entrá después del engage y por el flanco: abrir vos es regalar la pelea.",
+        "En jungla marcá el ritmo: río y objetivos antes que kills.",
+        "Tu fuerte es cerrar: entrá cuando el enemigo ya gastó el escape."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Yi Sun-shin"
+      "wiki": "Yi Sun-shin",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "A",
+        "zathong": "B",
+        "esportsnet": "S"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "Balanced 49.2% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": null,
+        "especialidad": [
+          "finisher",
+          "chase"
+        ],
+        "durabilidad": 4,
+        "ofensiva": 9,
+        "control": 2,
+        "dificultadOficial": 7,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "yin",
@@ -1912,13 +5402,47 @@
       "rol": "Assassin",
       "carril": "Jungla",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "burst",
+        "control"
+      ],
+      "tips": [
+        "Entrá después del engage y por el flanco: abrir vos es regalar la pelea.",
+        "En jungla marcá el ritmo: río y objetivos antes que kills.",
+        "Buscá peleas cortas: entrás, matás y salís, sin quedarte a pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Yin"
+      "wiki": "Yin",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "S+",
+        "esportsnet": "C"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 49.6% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "burst",
+          "control"
+        ],
+        "durabilidad": 5,
+        "ofensiva": 6,
+        "control": 8,
+        "dificultadOficial": 4,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "yve",
@@ -1926,41 +5450,145 @@
       "rol": "Mage",
       "carril": "Medio",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "ranged",
+        "burst",
+        "poke"
+      ],
+      "tips": [
+        "Zoned con tus habilidades y rotá al río antes de que se arme la pelea.",
+        "En medio limpiá la ola rápido y movete antes que el rival.",
+        "Buscá peleas cortas: entrás, matás y salís, sin quedarte a pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Yve"
+      "wiki": "Yve",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "S",
+        "zathong": "A",
+        "esportsnet": "S"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "52.4% win rate in ranked (MLBB Hub, patch 2.2.16a)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "burst",
+          "poke"
+        ],
+        "durabilidad": 4,
+        "ofensiva": 8,
+        "control": 4,
+        "dificultadOficial": 5,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "zetian",
       "nombre": "Zetian",
       "rol": "Mage",
       "carril": "Medio",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "A",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "ranged",
+        "daño",
+        "control"
+      ],
+      "tips": [
+        "Zoned con tus habilidades y rotá al río antes de que se arme la pelea.",
+        "En medio limpiá la ola rápido y movete antes que el rival.",
+        "Sos daño puro: pedí frontline antes de pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Zetian"
+      "wiki": "Zetian",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "S",
+        "zathong": "A"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "Balanced 51.0% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "damage",
+          "crowd control"
+        ],
+        "durabilidad": 3,
+        "ofensiva": 8,
+        "control": 5,
+        "dificultadOficial": 2,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "zhask",
       "nombre": "Zhask",
       "rol": "Mage",
       "carril": "Medio",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 3,
+      "tier": "A",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "ranged",
+        "persecución",
+        "daño"
+      ],
+      "tips": [
+        "Zoned con tus habilidades y rotá al río antes de que se arme la pelea.",
+        "En medio limpiá la ola rápido y movete antes que el rival.",
+        "Servís para perseguir: no lo sueltes después del primer impacto."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Zhask"
+      "wiki": "Zhask",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "S",
+        "zathong": "S",
+        "esportsnet": "C"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "52.5% win rate in ranked (MLBB Hub, patch 2.2.16a)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "chase",
+          "damage"
+        ],
+        "durabilidad": 1,
+        "ofensiva": 10,
+        "control": 4,
+        "dificultadOficial": 7,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "zhuxin",
@@ -1968,27 +5596,94 @@
       "rol": "Mage",
       "carril": "Medio",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "ranged",
+        "daño",
+        "control"
+      ],
+      "tips": [
+        "Zoned con tus habilidades y rotá al río antes de que se arme la pelea.",
+        "En medio limpiá la ola rápido y movete antes que el rival.",
+        "Sos daño puro: pedí frontline antes de pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Zhuxin"
+      "wiki": "Zhuxin",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "S+",
+        "zathong": "S+",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 50.4% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "damage",
+          "crowd control"
+        ],
+        "durabilidad": 4,
+        "ofensiva": 8,
+        "control": 8,
+        "dificultadOficial": 4,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "zilong",
       "nombre": "Zilong",
       "rol": "Assassin",
       "carril": "Exp",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "C",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "persecución",
+        "daño"
+      ],
+      "tips": [
+        "Entrá después del engage y por el flanco: abrir vos es regalar la pelea.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Servís para perseguir: no lo sueltes después del primer impacto."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Zilong"
+      "wiki": "Zilong",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "C",
+        "pocketgamer": "A",
+        "zathong": "A",
+        "esportsnet": "B"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "chase",
+          "damage"
+        ],
+        "durabilidad": 2,
+        "ofensiva": 5,
+        "control": 6,
+        "dificultadOficial": 1,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "aamon",
@@ -1996,27 +5691,95 @@
       "rol": "Assassin",
       "carril": "Jungla",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "melee",
+        "persecución"
+      ],
+      "tips": [
+        "Entrá después del engage y por el flanco: abrir vos es regalar la pelea.",
+        "En jungla marcá el ritmo: río y objetivos antes que kills.",
+        "Servís para perseguir: no lo sueltes después del primer impacto."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Aamon"
+      "wiki": "Aamon",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "S",
+        "zathong": "A"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 50.2% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "melee",
+        "especialidad": [
+          "chase",
+          "magic damage"
+        ],
+        "durabilidad": 3,
+        "ofensiva": 7,
+        "control": 1,
+        "dificultadOficial": 6,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "aulus",
       "nombre": "Aulus",
       "rol": "Fighter",
       "carril": "Exp",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "S",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "daño",
+        "charge"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Sos daño puro: pedí frontline antes de pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Aulus"
+      "wiki": "Aulus",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "S+",
+        "pocketgamer": "S",
+        "zathong": "A"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "53.7% win rate in ranked (MLBB Hub, patch 2.2.16a)",
+        "Top 15 in the MLCounters meta ranking (#9)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "damage",
+          "charge"
+        ],
+        "durabilidad": 6,
+        "ofensiva": 6,
+        "control": 1,
+        "dificultadOficial": 2,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "chip",
@@ -2024,41 +5787,130 @@
       "rol": "Support",
       "carril": "Roam",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "C",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "soporte",
+        "control"
+      ],
+      "tips": [
+        "Cubrí al carry y guardá tu habilidad defensiva para el momento en que lo ataquen.",
+        "De roam comprá visión y acompañá la rotación; tu oro sale de asistencias.",
+        "Tu valor es el otro: acompañá al carry y no te separes."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Chip"
+      "wiki": "Chip",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "C",
+        "pocketgamer": "S+",
+        "zathong": "S",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": true,
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": null,
+        "especialidad": [
+          "support",
+          "crowd control"
+        ],
+        "durabilidad": 8,
+        "ofensiva": 2,
+        "control": 6,
+        "dificultadOficial": 5,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "cici",
       "nombre": "Cici",
       "rol": "Fighter",
       "carril": "Exp",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "daño",
+        "regeneración"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Sos daño puro: pedí frontline antes de pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Cici"
+      "wiki": "Cici",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "S+",
+        "zathong": "S"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 49.6% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "damage",
+          "regen"
+        ],
+        "durabilidad": 5,
+        "ofensiva": 6,
+        "control": 3,
+        "dificultadOficial": 2,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "dori",
       "nombre": "Dori",
       "rol": "Mage",
       "carril": "Medio",
-      "dificultad": 2,
+      "dificultad": 1,
       "tier": "?",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "ranged",
+        "poke",
+        "control"
+      ],
+      "tips": [
+        "Zoned con tus habilidades y rotá al río antes de que se arme la pelea.",
+        "En medio limpiá la ola rápido y movete antes que el rival.",
+        "Pegá de lejos y retrocedé; el daño gratis antes de la pelea vale oro."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Dori"
+      "wiki": "Dori",
+      "tierOrigen": "sin fuente",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "poke",
+          "control"
+        ],
+        "durabilidad": 1,
+        "ofensiva": 1,
+        "control": 1,
+        "dificultadOficial": 1,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "edith",
@@ -2066,27 +5918,96 @@
       "rol": "Marksman",
       "carril": "Exp",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "A",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mixto",
+        "control",
+        "burst"
+      ],
+      "tips": [
+        "Pegá desde atrás y no te adelantes; esperá el CC del equipo para disparar tranquilo.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Buscá peleas cortas: entrás, matás y salís, sin quedarte a pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Edith"
+      "wiki": "Edith",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "S+",
+        "zathong": "A",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "52.2% win rate in ranked (MLBB Hub, patch 2.2.16a)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mixto",
+        "alcance": null,
+        "especialidad": [
+          "control",
+          "burst"
+        ],
+        "durabilidad": 7,
+        "ofensiva": 3,
+        "control": 10,
+        "dificultadOficial": 4,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "floryn",
       "nombre": "Floryn",
       "rol": "Support",
       "carril": "Roam",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "S",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "ranged",
+        "poke",
+        "protección"
+      ],
+      "tips": [
+        "Cubrí al carry y guardá tu habilidad defensiva para el momento en que lo ataquen.",
+        "De roam comprá visión y acompañá la rotación; tu oro sale de asistencias.",
+        "Pegá de lejos y retrocedé; el daño gratis antes de la pelea vale oro."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Floryn"
+      "wiki": "Floryn",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "S",
+        "pocketgamer": "S+",
+        "zathong": "A",
+        "esportsnet": "S"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "54.1% win rate in ranked (MLBB Hub, patch 2.2.16a)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "ranged",
+        "especialidad": [
+          "poke",
+          "guard"
+        ],
+        "durabilidad": 6,
+        "ofensiva": 1,
+        "control": 7,
+        "dificultadOficial": 3,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "fredrinn",
@@ -2094,27 +6015,98 @@
       "rol": "Fighter",
       "carril": "Jungla",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "A",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "daño",
+        "persecución"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En jungla marcá el ritmo: río y objetivos antes que kills.",
+        "Sos daño puro: pedí frontline antes de pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Fredrinn"
+      "wiki": "Fredrinn",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "S+",
+        "zathong": "A",
+        "esportsnet": "S"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "Balanced 51.3% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "damage",
+          "chase"
+        ],
+        "durabilidad": 8,
+        "ofensiva": 5,
+        "control": 6,
+        "dificultadOficial": 6,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "gloo",
       "nombre": "Gloo",
       "rol": "Tank",
       "carril": "Roam",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 3,
+      "tier": "S",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "melee",
+        "regeneración",
+        "control"
+      ],
+      "tips": [
+        "Iniciá vos y quedate adelante: tu trabajo es abrir la pelea y cubrir la retirada.",
+        "De roam comprá visión y acompañá la rotación; tu oro sale de asistencias.",
+        "Aguantá el desgaste: tu sustain gana las líneas largas."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Gloo"
+      "wiki": "Gloo",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "S+",
+        "pocketgamer": "S",
+        "zathong": "A",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "54.5% win rate in ranked (MLBB Hub, patch 2.2.16a)",
+        "Top 15 in the MLCounters meta ranking (#6)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "melee",
+        "especialidad": [
+          "regen",
+          "control"
+        ],
+        "durabilidad": 10,
+        "ofensiva": 3,
+        "control": 10,
+        "dificultadOficial": 7,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "hirara",
@@ -2122,13 +6114,30 @@
       "rol": "Assassin",
       "carril": "Jungla",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "A",
       "curado": false,
       "tags": [],
-      "tips": [],
+      "tips": [
+        "Entrá después del engage y por el flanco: abrir vos es regalar la pelea.",
+        "En jungla marcá el ritmo: río y objetivos antes que kills.",
+        "Avisá tu pico de poder por chat: el equipo juega distinto si sabe cuándo escalás."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Hirara"
+      "wiki": "Hirara",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "A",
+        "pocketgamer": "S",
+        "zathong": "S"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "Balanced 50.0% win rate in ranked",
+        "Top 15 in the MLCounters meta ranking (#2)"
+      ],
+      "tierFecha": "2026-11-11",
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "ixia",
@@ -2136,13 +6145,48 @@
       "rol": "Marksman",
       "carril": "Oro",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "ranged",
+        "rematador",
+        "daño"
+      ],
+      "tips": [
+        "Pegá desde atrás y no te adelantes; esperá el CC del equipo para disparar tranquilo.",
+        "En oro priorizá farmear seguro: tu pico llega con dos ítems.",
+        "Tu fuerte es cerrar: entrá cuando el enemigo ya gastó el escape."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Ixia"
+      "wiki": "Ixia",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "S",
+        "zathong": "S",
+        "esportsnet": "A"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 50.0% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "ranged",
+        "especialidad": [
+          "finisher",
+          "damage"
+        ],
+        "durabilidad": 3,
+        "ofensiva": 7,
+        "control": 5,
+        "dificultadOficial": 4,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "julian",
@@ -2150,13 +6194,46 @@
       "rol": "Assassin",
       "carril": "Jungla",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "mágico",
+        "melee",
+        "persecución"
+      ],
+      "tips": [
+        "Entrá después del engage y por el flanco: abrir vos es regalar la pelea.",
+        "En jungla marcá el ritmo: río y objetivos antes que kills.",
+        "Servís para perseguir: no lo sueltes después del primer impacto."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Julian"
+      "wiki": "Julian",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "S+",
+        "esportsnet": "S"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 50.0% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "mágico",
+        "alcance": "melee",
+        "especialidad": [
+          "chase",
+          "magic damage"
+        ],
+        "durabilidad": 6,
+        "ofensiva": 6,
+        "control": 7,
+        "dificultadOficial": 5,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "kalea",
@@ -2164,41 +6241,144 @@
       "rol": "Fighter",
       "carril": "Roam",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "control",
+        "regeneración"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "De roam comprá visión y acompañá la rotación; tu oro sale de asistencias.",
+        "Aguantá el desgaste: tu sustain gana las líneas largas."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Kalea"
+      "wiki": "Kalea",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "S",
+        "zathong": "A"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 50.2% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "control",
+          "regen"
+        ],
+        "durabilidad": 6,
+        "ofensiva": 3,
+        "control": 9,
+        "dificultadOficial": 4,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "lukas",
       "nombre": "Lukas",
       "rol": "Fighter",
       "carril": "Exp",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "S",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "regeneración",
+        "daño"
+      ],
+      "tips": [
+        "Aguantá la línea y obligá al rival a gastar recursos; rotá recién con la ultimate lista.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Aguantá el desgaste: tu sustain gana las líneas largas."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Lukas"
+      "wiki": "Lukas",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "S",
+        "pocketgamer": "S+"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "52.6% win rate in ranked (MLBB Hub, patch 2.2.16a)",
+        "Top 15 in the MLCounters meta ranking (#8)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "regen",
+          "damage"
+        ],
+        "durabilidad": 8,
+        "ofensiva": 5,
+        "control": 6,
+        "dificultadOficial": 3,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "marcel",
       "nombre": "Marcel",
       "rol": "Support",
       "carril": "Roam",
-      "dificultad": 2,
-      "tier": "?",
+      "dificultad": 1,
+      "tier": "S",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "control",
+        "soporte"
+      ],
+      "tips": [
+        "Cubrí al carry y guardá tu habilidad defensiva para el momento en que lo ataquen.",
+        "De roam comprá visión y acompañá la rotación; tu oro sale de asistencias.",
+        "Tu CC abre peleas: avisá el orden y que el equipo entre detrás."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Marcel"
+      "wiki": "Marcel",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "S+",
+        "pocketgamer": "S",
+        "zathong": "C"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "57.6% win rate in ranked (MLBB Hub, patch 2.2.16a)",
+        "Top 15 in the MLCounters meta ranking (#7)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "crowd control",
+          "support"
+        ],
+        "durabilidad": 7,
+        "ofensiva": 3,
+        "control": 10,
+        "dificultadOficial": 3,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "obsidia",
@@ -2206,13 +6386,47 @@
       "rol": "Marksman",
       "carril": "Oro",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "S",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "ranged",
+        "rematador",
+        "daño"
+      ],
+      "tips": [
+        "Pegá desde atrás y no te adelantes; esperá el CC del equipo para disparar tranquilo.",
+        "En oro priorizá farmear seguro: tu pico llega con dos ítems.",
+        "Tu fuerte es cerrar: entrá cuando el enemigo ya gastó el escape."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Obsidia"
+      "wiki": "Obsidia",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "S+",
+        "pocketgamer": "S+"
+      },
+      "tierDisparidad": false,
+      "metaNotas": [
+        "53.4% win rate in ranked (MLBB Hub, patch 2.2.16a)",
+        "Top 15 in the MLCounters meta ranking (#5)"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "ranged",
+        "especialidad": [
+          "finisher",
+          "damage"
+        ],
+        "durabilidad": 2,
+        "ofensiva": 7,
+        "control": 1,
+        "dificultadOficial": 4,
+        "recurso": "mana"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "sora",
@@ -2220,13 +6434,48 @@
       "rol": "Assassin",
       "carril": "Exp",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "charge",
+        "burst"
+      ],
+      "tips": [
+        "Entrá después del engage y por el flanco: abrir vos es regalar la pelea.",
+        "En exp aguantá el 1v1 y no cruces sin visión.",
+        "Buscá peleas cortas: entrás, matás y salís, sin quedarte a pelear."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Sora"
+      "wiki": "Sora",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "S+",
+        "zathong": "S",
+        "esportsnet": "S"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 49.4% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "charge",
+          "burst"
+        ],
+        "durabilidad": 6,
+        "ofensiva": 6,
+        "control": 5,
+        "dificultadOficial": 5,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
       "id": "suyou",
@@ -2234,13 +6483,67 @@
       "rol": "Assassin",
       "carril": "Jungla",
       "dificultad": 2,
-      "tier": "?",
+      "tier": "B",
       "curado": false,
-      "tags": [],
-      "tips": [],
+      "tags": [
+        "físico",
+        "melee",
+        "persecución",
+        "burst"
+      ],
+      "tips": [
+        "Entrá después del engage y por el flanco: abrir vos es regalar la pelea.",
+        "En jungla marcá el ritmo: río y objetivos antes que kills.",
+        "Servís para perseguir: no lo sueltes después del primer impacto."
+      ],
       "counters": [],
       "sinergias": [],
-      "wiki": "Suyou"
+      "wiki": "Suyou",
+      "tierOrigen": "medido (MLBB Hub + MLCounters)",
+      "tierFuentes": {
+        "axeetech": "B",
+        "pocketgamer": "S"
+      },
+      "tierDisparidad": true,
+      "metaNotas": [
+        "Balanced 49.8% win rate in ranked"
+      ],
+      "tierFecha": "2026-11-11",
+      "atributos": {
+        "dano": "físico",
+        "alcance": "melee",
+        "especialidad": [
+          "chase",
+          "burst"
+        ],
+        "durabilidad": 6,
+        "ofensiva": 6,
+        "control": 5,
+        "dificultadOficial": 5,
+        "recurso": "none"
+      },
+      "tipsOrigen": "auto (rol + atributos oficiales)"
     }
-  ]
+  ],
+  "tierFuentes": [
+    {
+      "nombre": "AxeeTech (MLBB Hub + MLCounters)",
+      "url": "https://axeetech.com/mlbb-hero-tier-list/"
+    },
+    {
+      "nombre": "Pocket Gamer",
+      "url": "https://www.pocketgamer.com/mobile-legends-bang-bang/tier-list/"
+    },
+    {
+      "nombre": "Zathong",
+      "url": "https://zathong.com/mobile-legends-tier-list/"
+    },
+    {
+      "nombre": "Esports.net",
+      "url": "https://www.esports.net/wiki/guides/mlbb-tier-list/"
+    }
+  ],
+  "tierActualizado": "2026-11-11",
+  "atributosFuente": "mobile-legends.fandom.com (infobox de cada héroe)",
+  "tipsActualizado": "2026-11-11"
 }

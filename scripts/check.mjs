@@ -38,10 +38,12 @@ ok("todos tienen nombre, rol, carril, tier y dificultad", heroes.every((h) =>
 ok("los roles son los del juego", heroes.every((h) => ROLES.has(h.rol)));
 ok("los carriles son los del juego", heroes.every((h) => CARRILES.has(h.carril)));
 ok("los tiers son S/A/B/C/?", heroes.every((h) => TIERS.has(h.tier)));
+ok("un tier '?' siempre tiene motivo", heroes.filter((h) => h.tier === "?").every((h) => h.tierOrigen === "sin fuente"));
+ok("los heroes con consenso declaran sus fuentes", heroes.filter((h) => (h.tierOrigen ?? "").startsWith("consenso")).every((h) => Object.keys(h.tierFuentes ?? {}).length >= 2));
 ok("la dificultad va de 1 a 3", heroes.every((h) => [1, 2, 3].includes(h.dificultad)));
-ok("cada héroe curado tiene al menos 3 tips", curados.every((h) => (h.tips ?? []).length >= 3));
-ok("ningún tip está vacío", curados.every((h) => (h.tips ?? []).every((t) => typeof t === "string" && t.trim().length > 10)));
-ok("los héroes sin curar no tienen tips inventados", heroes.filter((h) => h.curado === false).every((h) => (h.tips ?? []).length === 0));
+ok("cada héroe tiene al menos 3 tips (curados o auto)", heroes.every((h) => (h.tips ?? []).length >= 3));
+ok("ningún tip está vacío", heroes.every((h) => (h.tips ?? []).every((t) => typeof t === "string" && t.trim().length > 10)));
+ok("los tips auto declaran su origen", heroes.filter((h) => h.curado === false).every((h) => (h.tipsOrigen ?? "").startsWith("auto")));
 ok("los counters existen", heroes.every((h) => (h.counters ?? []).every((id) => ids.has(id))));
 ok("las sinergias existen", heroes.every((h) => (h.sinergias ?? []).every((id) => ids.has(id))));
 ok("cada rol tiene al menos 3 héroes", [...ROLES].every((rol) => heroes.filter((h) => h.rol === rol).length >= 3),

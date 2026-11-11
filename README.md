@@ -7,17 +7,30 @@ sin instalar nada: abre en el celular o en la compu y arma la composición.
 
 ![Tier list](docs/tierlist.png)
 
-| Drafter | Héroes |
-|---|---|
-| ![Drafter](docs/drafter.png) | ![Héroes](docs/heroes.png) |
+| Drafter | Héroes | Ficha |
+|---|---|---|
+| ![Drafter](docs/drafter.png) | ![Héroes](docs/heroes.png) | ![Ficha](docs/ficha.png) |
 
 ## Qué hace
 
 ### Tier list
 
-S/A/B/C por héroe, con filtro por rol y buscador. Los que no están clasificados van a una quinta fila
-("?"). La lista ordena por **facilidad para ganar ranked con equipo aleatorio**, no por winrate de
-torneo: es una opinión curada, con fecha, que se edita en un JSON cuando cambia el parche.
+S/A/B/C por héroe, con filtro por rol y buscador. La tier **no es una opinión suelta**: sale de una
+lista medida con winrate y banrate, contrastada con tres listas públicas (noviembre 2026). Cada ficha
+muestra qué letra dio cada fuente:
+
+| Fuente | Qué aporta |
+|---|---|
+| [AxeeTech](https://axeetech.com/mlbb-hero-tier-list/) | **Fuente principal**: 133 héroes con winrate y banrate medidos (cruza MLBB Hub y MLCounters) |
+| [Pocket Gamer](https://www.pocketgamer.com/mobile-legends-bang-bang/tier-list/) | Corroboración: tablas por rol, S+ a D |
+| [Zathong](https://zathong.com/mobile-legends-tier-list/) | Corroboración: tabla general, S+ a D |
+| [Esports.net](https://www.esports.net/wiki/guides/mlbb-tier-list/) | Corroboración (más vieja: febrero 2026) |
+
+S+ se muestra como S y D como C, para no abrir seis filas. Los 30 héroes curados a mano conservan su
+tier. **Un héroe que ninguna fuente lista queda en "?" con el motivo escrito** (hoy: Dori, que salió
+después de las listas). Preferimos eso a inventarle una letra.
+
+La ficha también trae lo que las fuentes midieron ("54.6% win rate in ranked"), con el texto original.
 
 ### Drafter
 
@@ -42,13 +55,14 @@ torneo: es una opinión curada, con fecha, que se edita en un JSON cuando cambia
 ### Héroes
 
 **Roster completo (134 héroes)** con retrato oficial, rol y carril. 30 están **curados a mano** con
-tres tips, counters y sinergias; el resto tiene la ficha básica y se completa editando el JSON. Los
-que todavía no tienen tier aparecen en "Sin clasificar": preferimos decirlo antes que inventarles una
-letra.
+tres tips, counters y sinergias. Los otros 104 tienen **tres tips automáticos** armados con los
+atributos oficiales de la wiki (tipo de daño, alcance, especialidad, dificultad y ratings 1-10), no con
+texto genérico inventado: cambian según el rol, el carril, la especialidad y si el héroe es frágil,
+tanque o de burst. La ficha aclara el origen ("curados a mano" o "auto (rol + atributos oficiales)").
 
 Buscador propio de la vista (nombre, rol o carril), tolerante a acentos y apóstrofes: `chang e`
 encuentra a Chang'e y `yi sun shin` a Yi Sun-shin. Muestra "3 de 134" mientras filtrás. El buscador
-del encabezado sigue filtrando la tier list y el pool del drafter.
+del encabezado filtra la tier list y el del drafter, el pool.
 
 ## Cómo se calculan las ventajas
 
@@ -152,6 +166,9 @@ data/items.json         categorías de ítem y cuándo usarlas
 data/iconos.json        URLs de los retratos e íconos oficiales (wiki)
 scripts/generar-arte.mjs      regenera los SVG de respaldo
 scripts/importar-heroes.mjs   trae el roster completo (rol, carril y retrato) desde la wiki
+scripts/importar-atributos.mjs atributos oficiales: daño, alcance, especialidad, dificultad y ratings
+scripts/importar-tiers.mjs    consenso de tiers de cuatro fuentes públicas, con fecha
+scripts/generar-tips.mjs      tips automáticos para los héroes sin curar
 scripts/iconos-oficiales.mjs  refresca los retratos oficiales por API
 scripts/check.mjs       validación del dataset, del arte y de la maqueta
 docs/                   capturas para el README
@@ -163,7 +180,7 @@ docs/                   capturas para el README
 node scripts/check.mjs
 ```
 
-Valida el dataset (ids únicos, roles y carriles del juego, tiers S/A/B/C/?, tips sólo en los curados,
+Valida el dataset (ids únicos, roles y carriles del juego, tiers S/A/B/C/?, tips en todos (los auto declaran su origen),
 counters y sinergias que existan), que cada héroe tenga su retrato y que el JS escape todo lo que
 viene del JSON. Lo corre el CI en cada push; no hay dependencias ni build.
 
@@ -171,10 +188,12 @@ viene del JSON. Lo corre el CI en cada push; no hay dependencias ni build.
 
 - **No es una herramienta oficial**: Mobile Legends: Bang Bang es una marca de Moonton. Proyecto
   personal, sin relación con la empresa.
-- La tier list es una **opinión curada** con fecha, no un winrate medido. Cambia con cada parche: si
-  jugás a alto nivel, ajustala.
-- Los tips son de fundamentos (posicionamiento, cuándo entrar, qué evitar), justamente para que no
-  envejezcan con cada ajuste de números.
+- La tier sale de **cuatro fuentes públicas** (linkeadas arriba) y cambia con cada parche: la fecha del
+  consenso está en el pie. No es una verdad: si una fuente no lista a un héroe, queda en "?".
+- Los tips de los 104 no curados son **automáticos**, derivados de los atributos oficiales; no
+  reemplazan el criterio de alguien que juega el héroe todos los días. Los 30 curados sí son a mano.
+- Los ratings (durabilidad, ofensiva, control, dificultad) son los del infobox de la wiki, no una
+  medición propia.
 - No hay builds ni emblemas: cambian demasiado seguido y una build vieja hace más daño que ayuda.
 - El roster sale de la wiki, no de una API oficial. La API de MediaWiki corta en **500 categorías por
   request** y lo avisa con un `continue`: el importador parte los lotes hasta que entra todo. Sin eso,

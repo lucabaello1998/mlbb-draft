@@ -152,11 +152,9 @@ function pintarHeroes() {
           <span class="meta" style="margin-left:auto">${escapar(h.carril)}</span>
         </div>
         <h3>${escapar(h.nombre)}</h3>
-        <div class="meta">${escapar(h.rol)} · ${
-          h.curado === false ? "sin curar" : `dificultad ${"●".repeat(h.dificultad)}${"○".repeat(3 - h.dificultad)}`
-        }</div>
-        <div class="tags">${(h.tags ?? []).map((t) => `<span class="tag">${escapar(t)}</span>`).join("")}${
-          h.curado === false ? '<span class="tag">sin tips</span>' : ""
+        <div class="meta">${escapar(h.rol)} · dificultad ${"●".repeat(h.dificultad)}${"○".repeat(3 - h.dificultad)}</div>
+        <div class="tags">${(h.tags ?? []).slice(0, 4).map((t) => `<span class="tag">${escapar(t)}</span>`).join("")}${
+          h.tier === "?" ? '<span class="tag tag-origen">sin fuente</span>' : ""
         }</div>
       </button>`,
     )
@@ -683,22 +681,46 @@ function abrirFicha(id) {
         (heroe.sinergias ?? []).map((x) => `<li>${escapar(nombre(x))}</li>`).join("") || "<li>—</li>"
       }</ul></div>
     </div>`
-    : `<p class="aviso">Ficha básica: todavía no tiene tips ni counters curados. Sumalos en
-       <code>data/heroes.json</code> y la página los muestra.</p>`;
+    : `<p class="aviso">Counters y sinergias curados: todavía no. Los tips salen de los atributos oficiales
+       y la tier, de cuatro fuentes públicas; no se inventan interacciones.</p>`;
+
+  const fuentesTier = heroe.tierFuentes
+    ? Object.entries(heroe.tierFuentes).map(([f, t]) => `${escapar(f)}: ${escapar(t)}`).join(" · ")
+    : "";
+  const notas = (heroe.metaNotas ?? []).length
+    ? `<div class="bloque-medido"><h4>Por qué está en ese tier (datos de la fuente)</h4><ul>${
+        heroe.metaNotas.map((n) => `<li>${escapar(n)}</li>`).join("")
+      }</ul></div>`
+    : "";
+  const origenTips = heroe.tipsOrigen
+    ? `<div class="rotulo">Tips · ${escapar(heroe.tipsOrigen)}</div>`
+    : "";
+  const atributos = heroe.atributos
+    ? `<div class="meta">${[
+        heroe.atributos.dano && `daño ${escapar(heroe.atributos.dano)}`,
+        heroe.atributos.alcance,
+        heroe.atributos.durabilidad !== null && `durabilidad ${heroe.atributos.durabilidad}/10`,
+        heroe.atributos.ofensiva !== null && `ofensiva ${heroe.atributos.ofensiva}/10`,
+        heroe.atributos.control !== null && `control ${heroe.atributos.control}/10`,
+        heroe.atributos.dificultadOficial !== null && `dificultad ${heroe.atributos.dificultadOficial}/10`,
+      ]
+        .filter(Boolean)
+        .join(" · ")}</div>`
+    : "";
 
   $("#modal-caja").innerHTML = `
     <button class="cerrar" type="button" aria-label="Cerrar">×</button>
     <div style="display:flex;align-items:center;gap:10px">
       ${avatar(heroe, 96)}
       ${insignia(heroe.tier)}
-      <span class="meta">${heroe.tier === "?" ? "Sin clasificar" : `Tier ${escapar(heroe.tier)}`} · ${escapar(heroe.rol)} · ${escapar(heroe.carril)}</span>
+      <span class="meta">${heroe.tier === "?" ? "Sin fuente de tier" : `Tier ${escapar(heroe.tier)}`} · ${escapar(heroe.rol)} · ${escapar(heroe.carril)}</span>
     </div>
     <h2 id="modal-titulo">${escapar(heroe.nombre)}</h2>
-    <div class="meta">${
-      curado
-        ? `Dificultad ${"●".repeat(heroe.dificultad)}${"○".repeat(3 - heroe.dificultad)} · ${(heroe.tags ?? []).map(escapar).join(" · ")}`
-        : "Ficha básica (rol y carril de la wiki)"
-    }</div>
+    <div class="meta">Dificultad ${"●".repeat(heroe.dificultad)}${"○".repeat(3 - heroe.dificultad)} · ${(heroe.tags ?? []).map(escapar).join(" · ")}</div>
+    ${atributos}
+    ${heroe.tierOrigen ? `<div class="meta">Tier: ${escapar(heroe.tierOrigen)}${fuentesTier ? ` — ${fuentesTier}` : ""}</div>` : ""}
+    ${notas}
+    ${origenTips}
     ${(heroe.tips ?? []).length ? `<ul class="lista-tips">${heroe.tips.map((t) => `<li>${escapar(t)}</li>`).join("")}</ul>` : ""}
     ${parecido}
     <div class="botones">
@@ -777,12 +799,16 @@ const DEMO = {
 
 async function iniciar() {
   let actualizado = "";
+  let fuentesTier = [];
+  let tierActualizado = "";
   try {
     const respuesta = await fetch("data/heroes.json");
     if (!respuesta.ok) throw new Error(String(respuesta.status));
     const datos = await respuesta.json();
     estado.heroes = datos.heroes ?? [];
     actualizado = datos.actualizado ?? "";
+    fuentesTier = datos.tierFuentes ?? [];
+    tierActualizado = datos.tierActualizado ?? "";
   } catch (error) {
     $("#aviso-datos").hidden = false;
     console.error("No se pudo cargar el dataset:", error);
@@ -876,7 +902,11 @@ async function iniciar() {
     if (evento.key === "Escape") cerrarFicha();
   });
 
-  $("#pie").textContent = `Datos curados a mano · actualizado ${actualizado || "—"} · ${estado.heroes.length} héroes · Mobile Legends: Bang Bang es una marca de Moonton; esta página es un proyecto personal.`;
+  const fuentes = fuentesTier.map((f) => f.nombre).join(", ");
+  $("#pie").textContent =
+    `Tier: consenso de ${fuentesTier.length} fuentes (${tierActualizado || "—"})` +
+    `${fuentes ? `: ${fuentes}` : ""} · Atributos: wiki oficial · ` +
+    `${estado.heroes.length} héroes · Mobile Legends: Bang Bang es una marca de Moonton; esta página es un proyecto personal.`;
 
   pintarTier();
   pintarHeroes();
