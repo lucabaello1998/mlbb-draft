@@ -765,6 +765,63 @@ function mostrarVista(vista) {
   }
 }
 
+// Compartir el draft: los ids viajan en `?draft=a=Oro:miya;Medio:valir&e=...&b=x,y|z`,
+// así un link abre exactamente el mismo draft. Los ids que no existen en el dataset
+// se ignoran: un link viejo no rompe nada.
+function codificarDraft() {
+  const porCarril = (equipo) =>
+    CARRILES.filter((c) => equipo[c]).map((c) => `${c.toLowerCase()}:${equipo[c]}`).join(";");
+  const bans = (lado) => (estado.bans[lado] ?? []).join(",");
+  return `a=${porCarril(estado.alido)}&e=${porCarril(estado.enemigo)}&b=${bans("alido")}|${bans("enemigo")}`;
+}
+
+function aplicarDraft(codigo) {
+  const partes = {};
+  for (const trozo of String(codigo ?? "").split("&")) {
+    const corte = trozo.indexOf("=");
+    if (corte > 0) partes[trozo.slice(0, corte)] = trozo.slice(corte + 1);
+  }
+
+  const leerEquipo = (texto) => {
+    const equipo = {};
+    for (const par of String(texto ?? "").split(";")) {
+      const [carril, id] = par.split(":");
+      const nombreCarril = CARRILES.find((c) => c.toLowerCase() === String(carril).toLowerCase());
+      if (nombreCarril && id && estado.porId.has(id)) equipo[nombreCarril] = id;
+    }
+    return equipo;
+  };
+
+  const alido = leerEquipo(partes.a);
+  const enemigo = leerEquipo(partes.e);
+  const [bansAlido, bansEnemigo] = String(partes.b ?? "").split("|");
+  const limpiarBans = (texto) =>
+    String(texto ?? "")
+      .split(",")
+      .filter((id) => estado.porId.has(id))
+      .slice(0, MAX_BANS);
+
+  if (!Object.keys(alido).length && !Object.keys(enemigo).length) return false;
+  estado.alido = alido;
+  estado.enemigo = enemigo;
+  estado.bans = { alido: limpiarBans(bansAlido), enemigo: limpiarBans(bansEnemigo) };
+  return true;
+}
+
+async function copiarLinkDraft() {
+  const url = new URL(location.href);
+  url.searchParams.set("vista", "drafter");
+  url.searchParams.set("draft", codificarDraft());
+  const link = url.toString();
+  try {
+    await navigator.clipboard.writeText(link);
+    $("#compartir").textContent = "Link copiado";
+    setTimeout(() => ($("#compartir").textContent = "Compartir"), 1500);
+  } catch {
+    window.prompt("Copiá el link del draft:", link);
+  }
+}
+
 function guardar() {
   try {
     localStorage.setItem(
@@ -852,6 +909,10 @@ async function iniciar() {
     }
   }
 
+  // Un link compartido gana sobre el draft guardado en este navegador.
+  const draftParam = parametros.get("draft");
+  if (draftParam && aplicarDraft(draftParam)) guardar();
+
   const vistaInicial = parametros.get("vista");
   if (["tier", "drafter", "heroes"].includes(vistaInicial)) {
     mostrarVista(vistaInicial);
@@ -889,6 +950,7 @@ async function iniciar() {
   });
 
   $("#copiar").addEventListener("click", copiarComposicion);
+  $("#compartir").addEventListener("click", copiarLinkDraft);
   $("#limpiar").addEventListener("click", () => {
     estado.alido = {};
     estado.enemigo = {};

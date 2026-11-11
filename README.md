@@ -50,6 +50,8 @@ La ficha también trae lo que las fuentes midieron ("54.6% win rate in ranked"),
 - **Ítems que pide la partida**: si el enemigo cura mucho, pide anti-curación; si tiene dos tanques,
   penetración; si escala, cerrar temprano. Categorías con ejemplos reales, no una build cerrada.
 - **Copiar composición** deja el draft en texto listo para pegar en el chat del equipo, con los bans.
+- **Compartir** copia un link que abre el mismo draft (picks y bans) en otra compu o en el celular:
+  los ids viajan en ?draft=. Un link viejo, con héroes que ya no existen, ignora lo que no reconoce.
 - El draft y los bans se guardan en el navegador: si recargás, siguen ahí.
 
 ### Héroes
