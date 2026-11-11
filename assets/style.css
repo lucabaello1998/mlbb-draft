@@ -296,3 +296,10 @@ h1 { font-size: clamp(1.6rem, 3.4vw, 2.3rem); letter-spacing: -0.03em; margin: 0
   letter-spacing: 0.06em; color: var(--apagado);
 }
 .bloque-medido ul { margin: 0; padding-left: 18px; font-size: 0.82rem; line-height: 1.5; }
+
+/* Título con contador a la derecha y filtros en una sola línea */
+.titulo-fila { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.titulo-fila .sub { margin-bottom: 10px; }
+.barra-filtros { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+.barra-filtros .buscador { flex: 1 1 240px; max-width: 380px; }
+.barra-filtros .chips { margin: 0; }

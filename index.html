@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MLBB Draft — tier list, drafter y tips por héroe</title>
-<meta name="description" content="Tier list, drafter de 5v5 y consejos por héroe para Mobile Legends: Bang Bang. Sin cuenta, sin app.">
+<meta name="description" content="Tier list, drafter de 5v5 con bans y consejos por héroe para Mobile Legends: Bang Bang. Sin cuenta, sin app.">
 <meta property="og:title" content="MLBB Draft — tier list, drafter y tips">
 <meta property="og:description" content="Armá tu composición, mirá qué héroe contrarresta a quién y leé tips por héroe.">
 <meta property="og:type" content="website">
@@ -21,7 +21,6 @@
       <button role="tab" id="tab-drafter" aria-selected="false" aria-controls="vista-drafter" data-vista="drafter">Drafter</button>
       <button role="tab" id="tab-heroes" aria-selected="false" aria-controls="vista-heroes" data-vista="heroes">Héroes</button>
     </nav>
-    <input class="buscador" id="buscador" type="search" placeholder="Buscar en la tier list…" aria-label="Buscar héroe en la tier list">
   </header>
 
   <p class="aviso" id="aviso-datos" hidden>
@@ -31,14 +30,21 @@
 
   <!-- ===================== TIER LIST ===================== -->
   <section id="vista-tier" role="tabpanel" aria-labelledby="tab-tier">
-    <h1>Tier list</h1>
-    <p class="sub">
-      Tier S/A/B/C tomada de la lista <strong>medida con winrate y banrate</strong> (MLBB Hub + MLCounters,
-      noviembre 2026) y contrastada con tres listas más; en la ficha se ve la letra de cada fuente. Los 30
-      curados conservan la tier a mano. El que ninguna fuente lista queda en "?" con el motivo, no con una
-      letra inventada.
-    </p>
-    <div class="chips" id="chips-rol" role="group" aria-label="Filtrar por rol"></div>
+    <div class="titulo-fila">
+      <div>
+        <h1>Tier list</h1>
+        <p class="sub">Tier medida con winrate y banrate (MLBB Hub + MLCounters, nov. 2026), contrastada con
+          tres listas más. La ficha muestra la letra de cada fuente.</p>
+      </div>
+      <span class="meta" id="conteo-tier" aria-live="polite"></span>
+    </div>
+
+    <div class="barra-filtros">
+      <input class="buscador" id="buscador-tier" type="search" placeholder="Buscar héroe por nombre, rol o carril…"
+        aria-label="Buscar héroe en la tier list">
+      <div class="chips" id="chips-rol" role="group" aria-label="Filtrar por rol"></div>
+    </div>
+
     <div id="tiers"></div>
   </section>
 
@@ -132,16 +138,21 @@
 
   <!-- ===================== HÉROES ===================== -->
   <section id="vista-heroes" role="tabpanel" aria-labelledby="tab-heroes" hidden>
-    <h1>Héroes</h1>
-    <p class="sub">Roster completo: 134 héroes. 30 con tips, counters y sinergias curados a mano; el resto con
-      tips armados desde los atributos oficiales (daño, alcance, especialidad, dificultad) y tier de consenso.
-      Buscá por nombre o tocá uno para ver la ficha.</p>
-    <div class="fila-busqueda">
-      <input class="buscador" id="buscador-heroes" type="search" placeholder="Buscar héroe: nombre, rol o carril…"
-        aria-label="Buscar héroe por nombre, rol o carril">
+    <div class="titulo-fila">
+      <div>
+        <h1>Héroes</h1>
+        <p class="sub">134 héroes. 30 curados a mano; el resto con tips automáticos de atributos oficiales.
+          Buscá por nombre, rol o carril.</p>
+      </div>
       <span class="meta" id="conteo-heroes" aria-live="polite">134 héroes</span>
     </div>
-    <div class="chips" id="chips-heroes" role="group" aria-label="Filtrar por rol"></div>
+
+    <div class="barra-filtros">
+      <input class="buscador" id="buscador-heroes" type="search" placeholder="Buscar héroe: nombre, rol o carril…"
+        aria-label="Buscar héroe por nombre, rol o carril">
+      <div class="chips" id="chips-heroes" role="group" aria-label="Filtrar por rol"></div>
+    </div>
+
     <div class="grilla" id="grilla-heroes"></div>
   </section>
 

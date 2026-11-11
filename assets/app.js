@@ -98,6 +98,11 @@ function pintarTier() {
     return;
   }
 
+  const conteo = $("#conteo-tier");
+  if (conteo) {
+    conteo.textContent = `${visibles.length} ${visibles.length === 1 ? "héroe" : "héroes"}`;
+  }
+
   contenedor.innerHTML = TIERS.map((tier) => {
     const grupo = visibles.filter((h) => h.tier === tier).sort((a, b) => a.nombre.localeCompare(b.nombre));
     if (!grupo.length) return "";
@@ -868,7 +873,7 @@ async function iniciar() {
     });
   }
 
-  $("#buscador").addEventListener("input", (evento) => {
+  $("#buscador-tier").addEventListener("input", (evento) => {
     estado.busqueda = evento.target.value;
     pintarTier();
   });

@@ -125,6 +125,10 @@ El aviso de la página lo dice.
 
 ## Editar el dataset
 
+El dataset se **actualiza solo el día 1 de cada mes** con el workflow *Actualizar datos*: vuelve a traer
+el roster de la wiki, los tiers de las cuatro fuentes y los atributos oficiales, y sólo commitea si
+`scripts/check.mjs` pasa. También se puede correr a mano desde Actions.
+
 Todo vive en [`data/heroes.json`](data/heroes.json):
 
 ```json
