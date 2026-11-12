@@ -466,3 +466,48 @@ body.arrastrando .bans-lista { border-color: rgba(212, 175, 55, 0.4); background
   .slot.sobre { transform: none; }
   .ficha:hover { transform: none; }
 }
+
+/* ---------- bans en grilla fija (no estiran la tarjeta) ---------- */
+.bans {
+  display: flex; flex-direction: column; align-items: stretch; gap: 6px;
+  margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--borde);
+}
+.bans-cabecera { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.bans-lista {
+  display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px;
+  min-height: 50px;
+}
+.ban {
+  position: relative; display: grid; justify-items: center; align-content: center; gap: 2px;
+  padding: 3px 2px; border-radius: 9px; background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.35); color: #ffb4b4; min-width: 0;
+}
+.ban img { width: 26px; height: 26px; border-radius: 7px; }
+.ban .ban-nombre {
+  font-size: 0.56rem; line-height: 1.1; max-width: 100%; text-align: center;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.ban .quitar-ban {
+  position: absolute; top: -5px; right: -3px; width: 14px; height: 14px;
+  display: grid; place-items: center; padding: 0; border-radius: 50%;
+  background: #232838; border: 1px solid var(--borde); color: var(--apagado);
+  font-size: 0.6rem; line-height: 1; cursor: pointer;
+}
+.ban .quitar-ban:hover { background: #b91c1c; border-color: #b91c1c; color: #fff; }
+.ban-vacio {
+  display: grid; place-items: center; min-height: 50px; border-radius: 9px;
+  border: 1px dashed var(--borde); color: var(--apagado); font-size: 0.7rem;
+}
+
+/* Slots: el contenido entraba justo y cortaba el nombre. */
+.slot { min-height: 68px; padding: 5px 4px; gap: 2px; }
+.slot .heroe-avatar { width: 30px; height: 30px; }
+.slot .slot-texto strong { font-size: 0.68rem; }
+.slot .carril { font-size: 0.55rem; }
+.slot .slot-hint { font-size: 0.52rem; line-height: 1.1; }
+
+@media (max-width: 680px) {
+  .slot { min-height: 74px; }
+  .slot .heroe-avatar { width: 30px; height: 30px; }
+  .ban img { width: 28px; height: 28px; }
+}
