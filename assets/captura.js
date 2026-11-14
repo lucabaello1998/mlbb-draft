@@ -119,28 +119,30 @@ export function mejorCoincidencia(firma, heroes, { excluir = new Set() } = {}) {
 }
 
 /**
- * Detecta los héroes de una fila.
+ * Detecta los héroes de una línea.
  *
- * `caja` es el rectángulo que el usuario dibujó sobre las 5 fotos; se parte en
- * 5 celdas iguales. `recorte` achica cada celda un porcentaje para comerse el
- * borde del retrato del juego.
+ * `caja` es el rectángulo que el usuario dibujó sobre las fotos. La orientación
+ * se deduce sola: si es más alta que ancha, las 5 fotos están apiladas (columna
+ * de aliados/enemigos del draft); si no, van en fila (bans).
  */
-export function detectarFila(fuente, caja, heroes, { cantidad = 5, recorte = 0.12 } = {}) {
-  const anchoCelda = caja.ancho / cantidad;
+export function detectarFila(fuente, caja, heroes, { cantidad = 5, recorte = 0.04 } = {}) {
+  const vertical = caja.alto > caja.ancho * 1.3;
+  const anchoCelda = vertical ? caja.ancho : caja.ancho / cantidad;
+  const altoCelda = vertical ? caja.alto / cantidad : caja.alto;
   const resultados = [];
   const usados = new Set();
 
   for (let i = 0; i < cantidad; i += 1) {
-    const margenX = anchoCelda * recorte;
-    const margenY = caja.alto * recorte;
-    const x = caja.x + i * anchoCelda + margenX;
-    const y = caja.y + margenY;
-    const ancho = anchoCelda - margenX * 2;
-    const alto = caja.alto - margenY * 2;
+    // Recorte cuadrado centrado en la celda: el retrato es cuadrado, así que
+    // estirarlo a la forma de la celda (alta y angosta en las columnas) cambia
+    // la firma y arruina la comparación.
+    const lado = Math.min(anchoCelda, altoCelda) * 0.6;
+    const x = caja.x + (vertical ? 0 : i * anchoCelda) + (anchoCelda - lado) / 2;
+    const y = caja.y + (vertical ? i * altoCelda : 0) + (altoCelda - lado) / 2;
 
     let firma;
     try {
-      firma = firmaDeRegion(fuente, x, y, ancho, alto);
+      firma = firmaDeRegion(fuente, x, y, lado, lado);
     } catch {
       resultados.push({ indice: i, id: null, error: "celda vacía" });
       continue;

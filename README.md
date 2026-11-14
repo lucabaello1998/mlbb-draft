@@ -69,12 +69,14 @@ La ficha también trae lo que las fuentes midieron ("54.6% win rate in ranked"),
 - **Compartir** copia un link que abre el mismo draft (picks y bans) en otra compu o en el celular:
   los ids viajan en ?draft=. Un link viejo, con héroes que ya no existen, ignora lo que no reconoce.
 - El draft y los bans se guardan en el navegador: si recargás, siguen ahí.
-- **Captura**: subís una foto de la pantalla de draft y la herramienta **reconoce los 10 héroes**.
-  No hay API de MLBB, así que se lee la imagen: cada retrato oficial se redujo a una firma de 10×10
-  píxeles (`data/retratos.json`, solo números) y el recorte de tu captura se reduce igual; el héroe es
-  el de menor distancia. Arrastrás dos recuadros sobre las filas de cada equipo (la posición queda
-  memorizada) y el resultado viene con nivel de confianza y un selector para corregir. **La imagen no
-  sale del navegador**: no se sube a ningún servidor.
+- **Captura**: subís una foto de la pantalla de draft (la de carga, donde se ven los dos equipos) y la
+  herramienta **reconoce los 10 héroes**. No hay API de MLBB, así que se lee la imagen: cada retrato
+  oficial se redujo a una firma de 10×10 píxeles (`data/retratos.json`, solo números) y el recorte de tu
+  captura se reduce igual; el héroe es el de menor distancia. Los dos recuadros se arrastran sobre las
+  columnas de aliados y enemigos (o sobre filas, si el layout es horizontal: la orientación se deduce
+  sola), la posición queda memorizada y el resultado viene con nivel de confianza y un selector para
+  corregir. **La imagen no sale del navegador**: no se sube a ningún servidor. Los **bans** todavía no se
+  detectan: en el juego el badge rojo tapa el centro del retrato, que es justo lo que se compara.
 
 ### Héroes
 

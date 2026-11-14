@@ -566,3 +566,8 @@ body.arrastrando .bans-lista { border-color: rgba(212, 175, 55, 0.4); background
   .captura-fila { grid-template-columns: 16px 24px 1fr; }
   .captura-confianza { grid-column: 1 / -1; padding-left: 2px; }
 }
+
+/* Las 5 celdas se marcan según la orientación del recuadro. */
+.captura-caja[data-orientacion="vertical"] .captura-divisiones {
+  background: repeating-linear-gradient(to bottom, transparent 0 calc(20% - 1px), rgba(255,255,255,0.35) calc(20% - 1px) 20%);
+}

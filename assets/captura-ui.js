@@ -7,9 +7,11 @@
 import { cargarRetratos, confianza, detectarFila } from "./captura.js";
 
 const CLAVE_CAJAS = "mlbb-captura-cajas";
+// Por defecto, el layout de la pantalla de carga: aliados en una columna a la
+// izquierda y enemigos en otra a la derecha. Se puede arrastrar y redimensionar.
 const CAJAS_POR_DEFECTO = {
-  alido: { x: 0.02, y: 0.04, w: 0.46, h: 0.16 },
-  enemigo: { x: 0.52, y: 0.04, w: 0.46, h: 0.16 },
+  alido: { x: 0.068, y: 0.1, w: 0.05, h: 0.73 },
+  enemigo: { x: 0.868, y: 0.115, w: 0.07, h: 0.71 },
 };
 
 const LADOS = [
@@ -70,8 +72,9 @@ export function abrirCaptura({ porId, aplicar }) {
     <button class="cerrar" type="button" aria-label="Cerrar">×</button>
     <h2>Analizar captura</h2>
     <p class="aviso">
-      Subí una captura de la pantalla de draft y acomodá los dos recuadros sobre las 5 fotos de cada
-      equipo. Después revisá lo que detectó antes de aplicarlo.
+      Subí una captura de la pantalla de draft (la de carga, donde se ven los dos equipos) y acomodá los
+      dos recuadros sobre las 5 fotos de cada uno: suelen ser dos columnas a los costados. Después
+      revisá lo que detectó antes de aplicarlo.
     </p>
     <div class="captura-acciones">
       <label class="boton chico">
@@ -86,7 +89,7 @@ export function abrirCaptura({ porId, aplicar }) {
         <img id="captura-imagen" alt="Captura del draft">
         ${LADOS.map(
           (lado) => `
-          <div class="captura-caja" data-lado="${lado.clave}" style="left:${cajas[lado.clave].x * 100}%;top:${cajas[lado.clave].y * 100}%;width:${cajas[lado.clave].w * 100}%;height:${cajas[lado.clave].h * 100}%">
+          <div class="captura-caja" data-lado="${lado.clave}" data-orientacion="${cajas[lado.clave].h > cajas[lado.clave].w * 1.3 ? "vertical" : "horizontal"}" style="left:${cajas[lado.clave].x * 100}%;top:${cajas[lado.clave].y * 100}%;width:${cajas[lado.clave].w * 100}%;height:${cajas[lado.clave].h * 100}%">
             <span class="captura-rotulo">${lado.titulo}</span>
             <span class="captura-divisiones" aria-hidden="true"></span>
             <span class="captura-agarre" aria-hidden="true"></span>
@@ -181,6 +184,7 @@ export function abrirCaptura({ porId, aplicar }) {
       cajaLado.style.top = `${nueva.y * 100}%`;
       cajaLado.style.width = `${nueva.w * 100}%`;
       cajaLado.style.height = `${nueva.h * 100}%`;
+      cajaLado.dataset.orientacion = nueva.h > nueva.w * 1.3 ? "vertical" : "horizontal";
     });
 
     const soltar = () => {

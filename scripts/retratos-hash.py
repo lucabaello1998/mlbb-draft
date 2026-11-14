@@ -46,7 +46,22 @@ def descargar(url, destino):
 
 def firma(imagen):
     """10x10 RGB en base64 + dHash de 64 bits en hexadecimal."""
-    rgb = imagen.convert("RGB")
+    # El retrato de la wiki viene con transparencia; el juego lo dibuja sobre un
+    # fondo oscuro. Se compone sobre el mismo tono para que la referencia y la
+    # captura miren lo mismo.
+    fondo = Image.new("RGB", imagen.size, (13, 20, 32))
+    if imagen.mode in ("RGBA", "LA", "P"):
+        rgba = imagen.convert("RGBA")
+        fondo.paste(rgba, mask=rgba.split()[-1])
+    else:
+        fondo.paste(imagen.convert("RGB"))
+    rgb = fondo
+
+    # El retrato de la wiki es 154x250 (cuerpo entero), pero el juego lo dibuja
+    # en un cuadrado. Se aplasta a cuadrado igual que el navegador y después se
+    # toma el 60% central: así la referencia y la captura miran la misma zona.
+    rgb = rgb.resize((100, 100), Image.LANCZOS)
+    rgb = rgb.crop((20, 20, 80, 80))
     pequena = rgb.resize((LADO, LADO), Image.LANCZOS)
     crudo = bytes(pequena.tobytes())
     codificada = base64.b64encode(crudo).decode("ascii")
