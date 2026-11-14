@@ -4,3 +4,6 @@ Thumbs.db
 
 # Capturas temporales
 *.tmp
+
+# Retratos descargados para calcular firmas (no se versionan: son arte de Moonton)
+scripts/.cache/

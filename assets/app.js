@@ -1,6 +1,8 @@
 // MLBB Draft: tier list, drafter y fichas, todo desde data/heroes.json.
 // Sin dependencias y sin build: el mismo archivo que se sirve es el que se edita.
 
+import { abrirCaptura } from "./captura-ui.js";
+
 const CARRILES = ["Oro", "Medio", "Exp", "Jungla", "Roam"];
 const TIERS = ["S", "A", "B", "C", "?"];
 
@@ -1261,6 +1263,21 @@ async function iniciar() {
 
   $("#copiar").addEventListener("click", copiarComposicion);
   $("#compartir").addEventListener("click", copiarLinkDraft);
+  $("#captura").addEventListener("click", () =>
+    abrirCaptura({
+      porId: estado.porId,
+      aplicar: (seleccion) => {
+        estado.banDe = null;
+        for (const lado of ["alido", "enemigo"]) {
+          estado[lado] = {};
+          for (const id of seleccion[lado]) elegir(id, lado);
+        }
+        guardar();
+        refrescarDrafter();
+        anunciar("Draft cargado desde la captura.");
+      },
+    }),
+  );
   $("#limpiar").addEventListener("click", () => {
     estado.alido = {};
     estado.enemigo = {};
