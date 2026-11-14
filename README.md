@@ -69,14 +69,11 @@ La ficha también trae lo que las fuentes midieron ("54.6% win rate in ranked"),
 - **Compartir** copia un link que abre el mismo draft (picks y bans) en otra compu o en el celular:
   los ids viajan en ?draft=. Un link viejo, con héroes que ya no existen, ignora lo que no reconoce.
 - El draft y los bans se guardan en el navegador: si recargás, siguen ahí.
-- **Captura**: subís una foto de la pantalla de draft (la de carga, donde se ven los dos equipos) y la
-  herramienta **reconoce los 10 héroes**. No hay API de MLBB, así que se lee la imagen: cada retrato
-  oficial se redujo a una firma de 10×10 píxeles (`data/retratos.json`, solo números) y el recorte de tu
-  captura se reduce igual; el héroe es el de menor distancia. Los dos recuadros se arrastran sobre las
-  columnas de aliados y enemigos (o sobre filas, si el layout es horizontal: la orientación se deduce
-  sola), la posición queda memorizada y el resultado viene con nivel de confianza y un selector para
-  corregir. **La imagen no sale del navegador**: no se sube a ningún servidor. Los **bans** todavía no se
-  detectan: en el juego el badge rojo tapa el centro del retrato, que es justo lo que se compara.
+- **Draft desde una captura**: subís la foto de la pantalla de draft y **tocás cada retrato** para
+  elegir el héroe; se cargan los dos equipos y se aplican al drafter. La imagen no sale del navegador.
+  La detección automática por firma de imagen se probó contra capturas reales y **no es confiable**: el
+  juego dibuja los íconos con otro render y les aplica un tinte azul, así que el parecido con el arte
+  público no alcanza. Antes que un botón que se equivoca en silencio, diez toques que no fallan.
 
 ### Héroes
 
@@ -194,11 +191,8 @@ assets/items/*.svg      íconos de categoría de ítem
 data/heroes.json        el dataset de héroes: la única fuente de verdad
 data/items.json         categorías de ítem y cuándo usarlas
 data/iconos.json        URLs de los retratos e íconos oficiales (wiki)
-data/retratos.json      firmas de 10x10 para reconocer héroes en una captura
-assets/captura.js       comparación de firmas y detección por fila
-assets/captura-ui.js    modal: subir imagen, mover recuadros, corregir y aplicar
+assets/captura-ui.js    modal: subir la captura, tocar retratos y elegir héroe
 scripts/generar-arte.mjs      regenera los SVG de respaldo
-scripts/retratos-hash.py      calcula data/retratos.json (Python + Pillow, solo desarrollo)
 scripts/importar-heroes.mjs   trae el roster completo (rol, carril y retrato) desde la wiki
 scripts/importar-atributos.mjs atributos oficiales: daño, alcance, especialidad, dificultad y ratings
 scripts/importar-tiers.mjs    consenso de tiers de cuatro fuentes públicas, con fecha

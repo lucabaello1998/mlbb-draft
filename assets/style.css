@@ -511,63 +511,45 @@ body.arrastrando .bans-lista { border-color: rgba(212, 175, 55, 0.4); background
   .slot .heroe-avatar { width: 30px; height: 30px; }
   .ban img { width: 28px; height: 28px; }
 }
-
-/* ---------- captura de pantalla ---------- */
-.captura-acciones { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+/* ---------- draft desde una captura ---------- */
+.captura-acciones { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 12px 0; }
+.captura-equipos { display: inline-flex; gap: 4px; }
+.captura-equipo[aria-pressed="true"] { background: var(--oro); border-color: var(--oro); color: #14161d; }
 .captura-zona { margin-top: 8px; }
 .captura-lienzo {
   position: relative; display: inline-block; max-width: 100%;
   border-radius: 12px; overflow: hidden; border: 1px solid var(--borde);
-  background: #0b0e14; touch-action: none;
+  background: #0b0e14; cursor: crosshair;
 }
 .captura-lienzo img { display: block; max-width: 100%; height: auto; }
-.captura-caja {
-  position: absolute; border: 2px dashed rgba(212, 175, 55, 0.9);
-  border-radius: 8px; background: rgba(212, 175, 55, 0.08);
-  cursor: move; touch-action: none;
+.captura-elegidos { display: grid; gap: 8px; margin-top: 10px; }
+.captura-grupo-chips { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+.captura-grupo-chips .rotulo {
+  font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.07em;
+  color: var(--apagado); min-width: 78px;
 }
-.captura-caja:focus-visible { outline: 2px solid var(--oro); outline-offset: 2px; }
-.captura-rotulo {
-  position: absolute; top: -9px; left: 6px; padding: 1px 6px; border-radius: 6px;
-  background: var(--oro); color: #14161d; font-size: 0.6rem; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.06em;
+.captura-chip {
+  display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px 3px 4px;
+  border-radius: 999px; border: 1px solid var(--borde); background: var(--panel-2);
+  color: inherit; font-size: 0.74rem; cursor: pointer; max-width: 150px;
 }
-.captura-divisiones {
-  position: absolute; inset: 0; pointer-events: none;
-  background: repeating-linear-gradient(to right, transparent 0 calc(20% - 1px), rgba(255,255,255,0.35) calc(20% - 1px) 20%);
+.captura-chip span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.captura-chip.vacio { padding: 3px 12px; color: var(--apagado); cursor: default; }
+.captura-chip:not(.vacio):hover { border-color: rgba(239, 68, 68, 0.6); }
+.captura-buscador { margin-top: 12px; border-top: 1px solid var(--borde); padding-top: 10px; }
+.captura-buscador input {
+  width: 100%; background: var(--panel-2); color: inherit; border: 1px solid var(--borde);
+  border-radius: 10px; padding: 8px 10px; font-size: 0.85rem;
 }
-.captura-agarre {
-  position: absolute; right: -6px; bottom: -6px; width: 14px; height: 14px;
-  border-radius: 4px; background: var(--oro); border: 2px solid #14161d; cursor: nwse-resize;
+.captura-lista {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 4px; max-height: 220px; overflow-y: auto; margin-top: 8px;
 }
-.captura-resultado { display: grid; gap: 14px; margin-top: 12px; }
-.captura-grupo h4 {
-  margin: 0 0 6px; font-size: 0.72rem; text-transform: uppercase;
-  letter-spacing: 0.07em; color: var(--apagado);
+.captura-opcion {
+  display: flex; align-items: center; gap: 7px; padding: 4px 8px; border-radius: 9px;
+  border: 1px solid transparent; background: var(--panel-2); color: inherit;
+  font-size: 0.78rem; cursor: pointer; text-align: left;
 }
-.captura-fila {
-  display: grid; grid-template-columns: 18px 26px 1fr auto; align-items: center; gap: 8px;
-  padding: 4px 6px; border-radius: 8px; border: 1px solid transparent;
-}
-.captura-fila[data-nivel="alta"] { border-color: rgba(76, 201, 160, 0.35); }
-.captura-fila[data-nivel="media"] { border-color: rgba(243, 182, 74, 0.35); }
-.captura-fila[data-nivel="baja"] { border-color: rgba(239, 68, 68, 0.4); }
-.captura-celda { font-size: 0.65rem; color: var(--apagado); text-align: center; }
-.captura-fila select {
-  background: var(--panel-2); color: inherit; border: 1px solid var(--borde);
-  border-radius: 8px; padding: 4px 6px; font-size: 0.8rem; max-width: 100%;
-}
-.captura-confianza { font-size: 0.62rem; color: var(--apagado); white-space: nowrap; }
-.captura-vacio {
-  display: inline-block; width: 26px; height: 26px; border-radius: 7px;
-  border: 1px dashed var(--borde);
-}
-@media (max-width: 560px) {
-  .captura-fila { grid-template-columns: 16px 24px 1fr; }
-  .captura-confianza { grid-column: 1 / -1; padding-left: 2px; }
-}
-
-/* Las 5 celdas se marcan según la orientación del recuadro. */
-.captura-caja[data-orientacion="vertical"] .captura-divisiones {
-  background: repeating-linear-gradient(to bottom, transparent 0 calc(20% - 1px), rgba(255,255,255,0.35) calc(20% - 1px) 20%);
-}
+.captura-opcion:hover, .captura-opcion:focus-visible { border-color: var(--oro); }
+.captura-opcion span { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.captura-opcion small { color: var(--apagado); font-size: 0.62rem; }
