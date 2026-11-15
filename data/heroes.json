@@ -5875,44 +5875,6 @@
       "tipsOrigen": "auto (rol + atributos oficiales)"
     },
     {
-      "id": "dori",
-      "nombre": "Dori",
-      "rol": "Mage",
-      "carril": "Medio",
-      "dificultad": 1,
-      "tier": "?",
-      "curado": false,
-      "tags": [
-        "mágico",
-        "ranged",
-        "poke",
-        "control"
-      ],
-      "tips": [
-        "Zoned con tus habilidades y rotá al río antes de que se arme la pelea.",
-        "En medio limpiá la ola rápido y movete antes que el rival.",
-        "Pegá de lejos y retrocedé; el daño gratis antes de la pelea vale oro."
-      ],
-      "counters": [],
-      "sinergias": [],
-      "wiki": "Dori",
-      "tierOrigen": "sin fuente",
-      "atributos": {
-        "dano": "mágico",
-        "alcance": "ranged",
-        "especialidad": [
-          "poke",
-          "control"
-        ],
-        "durabilidad": 1,
-        "ofensiva": 1,
-        "control": 1,
-        "dificultadOficial": 1,
-        "recurso": "mana"
-      },
-      "tipsOrigen": "auto (rol + atributos oficiales)"
-    },
-    {
       "id": "edith",
       "nombre": "Edith",
       "rol": "Marksman",

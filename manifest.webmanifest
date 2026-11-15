@@ -1,0 +1,33 @@
+{
+  "name": "MLBB Draft",
+  "short_name": "MLBB Draft",
+  "description": "Tier list, drafter y análisis de draft para Mobile Legends: Bang Bang.",
+  "lang": "es",
+  "start_url": "/mlbb-draft/",
+  "scope": "/mlbb-draft/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0b0e14",
+  "theme_color": "#0b0e14",
+  "icons": [
+    {
+      "src": "assets/icono.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "share_target": {
+    "action": "/mlbb-draft/compartir",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "files": [
+        {
+          "name": "captura",
+          "accept": ["image/jpeg", "image/png", "image/webp", "image/*"]
+        }
+      ]
+    }
+  }
+}

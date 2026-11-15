@@ -1162,6 +1162,46 @@ function cargar() {
   }
 }
 
+// --- captura: carga manual y "Compartir" de Android -------------------------
+
+/** Vuelca lo elegido en la captura al draft, por carril natural del héroe. */
+function aplicarCaptura(seleccion) {
+  estado.banDe = null;
+  for (const lado of ["alido", "enemigo"]) {
+    estado[lado] = {};
+    for (const id of seleccion[lado]) elegir(id, lado);
+  }
+  guardar();
+  refrescarDrafter();
+  anunciar("Draft cargado desde la captura.");
+}
+
+/**
+ * Si la app se abrió desde el "Compartir" de Android, el service worker dejó la
+ * imagen en la caché: se toma de ahí, se borra y se abre el modal con la captura
+ * ya cargada. Sin permisos extra y sin subir nada.
+ */
+async function abrirCapturaCompartida() {
+  try {
+    const cache = await caches.open("mlbb-compartido");
+    const clave = new URL("captura-compartida", location.href).href;
+    const respuesta = await cache.match(clave);
+    if (!respuesta) return false;
+    const imagen = await respuesta.blob();
+    await cache.delete(clave);
+    abrirCaptura({ porId: estado.porId, aplicar: aplicarCaptura, imagen });
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js").catch(() => {
+    // Sin service worker la app funciona igual; sólo no recibe capturas compartidas.
+  });
+}
+
 const DEMO = {
   alido: { Oro: "miya", Medio: "valir", Exp: "chou", Jungla: "lancelot", Roam: "khufra" },
   enemigo: { Oro: "ling", Medio: "gusion", Exp: "paquito", Jungla: "fanny", Roam: "atlas" },
@@ -1222,6 +1262,12 @@ async function iniciar() {
   const draftParam = parametros.get("draft");
   if (draftParam && aplicarDraft(draftParam)) guardar();
 
+  // Captura compartida desde Android: viene del service worker.
+  if (parametros.get("compartido") === "1") {
+    const abierto = await abrirCapturaCompartida();
+    if (abierto) history.replaceState(null, "", "?vista=drafter");
+  }
+
   const vistaInicial = parametros.get("vista");
   if (["tier", "drafter", "heroes"].includes(vistaInicial)) {
     mostrarVista(vistaInicial);
@@ -1264,19 +1310,7 @@ async function iniciar() {
   $("#copiar").addEventListener("click", copiarComposicion);
   $("#compartir").addEventListener("click", copiarLinkDraft);
   $("#captura").addEventListener("click", () =>
-    abrirCaptura({
-      porId: estado.porId,
-      aplicar: (seleccion) => {
-        estado.banDe = null;
-        for (const lado of ["alido", "enemigo"]) {
-          estado[lado] = {};
-          for (const id of seleccion[lado]) elegir(id, lado);
-        }
-        guardar();
-        refrescarDrafter();
-        anunciar("Draft cargado desde la captura.");
-      },
-    }),
+    abrirCaptura({ porId: estado.porId, aplicar: aplicarCaptura }),
   );
   $("#limpiar").addEventListener("click", () => {
     estado.alido = {};

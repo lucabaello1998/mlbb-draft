@@ -13,7 +13,7 @@ const LADOS = [
 const escapar = (texto) =>
   String(texto ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
-export function abrirCaptura({ porId, aplicar }) {
+export function abrirCaptura({ porId, aplicar, imagen = null }) {
   const modal = document.querySelector("#modal");
   const caja = document.querySelector("#modal-caja");
   if (!modal || !caja) return;
@@ -109,6 +109,10 @@ export function abrirCaptura({ porId, aplicar }) {
   archivo.addEventListener("change", () => {
     const elegido = archivo.files?.[0];
     if (!elegido) return;
+    cargarImagen(elegido);
+  });
+
+  function cargarImagen(blob) {
     const lector = new FileReader();
     lector.onload = () => {
       img.onload = () => {
@@ -117,8 +121,10 @@ export function abrirCaptura({ porId, aplicar }) {
       };
       img.src = lector.result;
     };
-    lector.readAsDataURL(elegido);
-  });
+    lector.readAsDataURL(blob);
+  }
+
+  if (imagen) cargarImagen(imagen);
 
   for (const boton of caja.querySelectorAll(".captura-equipo")) {
     boton.addEventListener(
